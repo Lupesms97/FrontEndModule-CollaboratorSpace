@@ -1,0 +1,21 @@
+#mainNav {
+    height: 10vh;
+}
+.navbar-brand img {
+    width: 10vh;
+    height: auto;
+}
+.btn-primary{
+    height:6vh;
+    width:10vw;
+    background:#4B555E;
+    border:none;
+    border-radius:2rem;
+}
+@media(max-width:475px){
+    .btn-primary{
+        
+        width:25vw;
+        margin-left:2vw
+    }
+}

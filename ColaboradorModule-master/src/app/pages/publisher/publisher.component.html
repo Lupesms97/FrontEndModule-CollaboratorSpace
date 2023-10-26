@@ -1,0 +1,27 @@
+
+<app-navbar></app-navbar>
+
+<div class="container content-publisher mt-5">
+    <form (ngSubmit)="onSubmit(form)" #form="ngForm">
+        <div class="form-group">
+          <label for="titulo">Título</label>
+          <input type="text" id="titulo" name="titulo" [(ngModel)]="item.title" required class="inputTitulo" >
+        </div>
+        <div class="form-group">
+          <label for="descricao">Descrição Breve</label>
+          <input type="text" id="descricao" name="descricao" [(ngModel)]="item.shortContent" required class="inputShortContent">
+        </div>
+        <div class="form-group">
+          <label for="texto">Texto Grande</label>
+          <textarea id="texto" name="texto" [(ngModel)]="item.content" required class="inputContent"></textarea>
+        </div>
+        <div class="form-group">
+            <label for="texto">Imag Url</label>
+            <textarea id="texto" name="texto" [(ngModel)]="item.imageUrl" class="inputUrl"></textarea>
+          </div>
+        <button type="submit" [disabled]="form.invalid">Enviar</button>
+    </form>
+
+
+      
+</div>

@@ -1,0 +1,22 @@
+.container{
+    margin-top:15vh;
+    width:60%;
+}
+
+.title-blog-details{
+    height:25vh
+}
+
+.title-blog-details h2{
+    font-size:3rem;
+    font-weight:bold
+}
+p{
+    line-height:1.8rem
+}
+.dataInfo{
+    font-size:0.8rem;
+    color:grey;
+    padding-right:40vw;
+    margin-bottom:5vh
+}
