@@ -1,0 +1,102 @@
+<app-navbar></app-navbar>
+<div >
+  <div class="container-global" *ngIf="dataLoaded">
+    <div class="container card-view">
+      <div class="row">
+        <div class="col-lg-4 col-md-6 col-sm-12" *ngFor="let post of posts | paginate: { itemsPerPage: 9, currentPage: p }">
+          <div class="card mb-3">
+            <div class="row g-0">
+              <div class="col-md-4">
+                <img src="https://media.licdn.com/dms/image/D4D0BAQHmDsw9Gj5VCQ/company-logo_200_200/0/1666281248880?e=1706140800&v=beta&t=9GpxBxDJA2QG5kVsXVXyF-ffbJqm0LYKu0wc3W2xRJ0" class="img-fluid rounded-start" alt="...">
+              </div>
+              <div class="col-md-8">
+                <div class="card-body">
+                  <a (click)="goToPost(post.id)"><h5 class="card-title">{{post.title}}</h5></a>
+                  <p class="card-text short-content ">{{post.shortContent}}</p>
+                  <p class="card-text"><small class="text-muted">{{post.date| date : 'dd/MM/yyyy'}}</small></p>
+                </div>
+              </div>
+              <div class="row m-2" *ngIf="getAuthorization()">
+                <div class="col icons-changes">
+                  <button class="btn" (click)="editFunc(post)" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo"><i class="fa-regular fa-pen-to-square" style="color: #435e8b; font-size: 1.5rem;"></i></button>
+                  <button type="button" (click)="deleteFunc(post)" class="btn" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                    <i class="fa-solid fa-trash-can" style="color: #435e8b;font-size: 1.5rem;"></i>
+                  </button>
+                  
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Modal Apagar-->
+          <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h1 class="modal-title fs-5" id="staticBackdropLabel">Deletar</h1>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  <p>
+                    Você tem certeza que deseja apagar o post com titulo - <strong>{{postCopy.title}}</strong>?
+                  </p>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-danger" data-bs-dismiss="modal" >Cancelar</button>
+                  <button type="button" class="btn btn-dark" data-bs-dismiss="modal" (click)="submiDelet(postCopy.id)">Apagar</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Modal Edição-->
+          <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h1 class="modal-title fs-5" id="exampleModalLabel">Editar Post</h1>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  <form #editForm="ngForm">
+                    <div class="mb-3">
+                      <label for="recipient-name" class="col-form-label">Titulo:</label>
+                      <input type="text" class="form-control" id="recipient-name" [(ngModel)]="postCopy.title" name="title">
+                    </div>
+                    <div class="mb-3">
+                      <label for="recipient-name" class="col-form-label">Descrição:</label>
+                      <input type="text" class="form-control" id="recipient-name" [(ngModel)]="postCopy.shortContent" name="shortContent">
+                    </div>
+                    <div class="mb-3">
+                      <label for="message-text" class="col-form-label">Texto:</label>
+                      <textarea class="form-control" id="message-text" style="height: 20vh;" [(ngModel)]="postCopy.content" name="content"></textarea>
+                    </div>
+                  </form>
+                </div>
+                <div class="modal-footer">
+                  <button type="button"  class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                  <button type="button" (click)="submitEdit(postCopy.id)" data-bs-dismiss="modal" class="btn btn-primary">Salvar</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!----- next content ------> 
+        </div>
+  
+      </div>
+    </div>
+    <div class=" mb-5 justify-content-around me-5 pagination">
+      <pagination-controls (pageChange)="p = $event"></pagination-controls>
+    </div>
+  </div>
+</div>
+<div >
+  <div *ngIf="!dataLoaded" class="d-flex justify-content-center">
+    <div class="spinner-border" role="status">
+      <span class="visually-hidden">Loading...</span>
+    </div>
+  </div>
+</div>
+
+
+
+
+

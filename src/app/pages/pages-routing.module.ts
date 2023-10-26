@@ -10,10 +10,10 @@ import { PostEditComponent } from './post-edit/post-edit.component';
 
 const routes: Routes = [
 { path:'', redirectTo: 'blog', pathMatch: 'full' },
-{ path: 'blog', component: BlogComponent/* , canActivate: [authGuard, hasRole], data: { role: [Role.ADMIN, Role.USER] } */ }, 
+{ path: 'blog', component: BlogComponent /* , canActivate: [authGuard, hasRole], data: { role: [Role.ADMIN, Role.USER] } */  }, 
 { path: 'posts/:id', component: BlogDetailsComponent/* , canActivate: [authGuard, hasRole], data: { role: [Role.ADMIN, Role.USER] } */}, 
-{ path: 'publisher', component: PublisherComponent /* , canActivate: [authGuard, hasRole], data: { role: [Role.ADMIN] }  */ },
-{path:'edit/:id', component:PostEditComponent/* , canActivate: [authGuard, hasRole], data: { role: [Role.ADMIN] }  */ }
+{ path: 'publisher', component: PublisherComponent  /* , canActivate: [authGuard, hasRole], data: { role: [Role.ADMIN] } */  },
+{path:'edit/:id', component:PostEditComponent/* , canActivate: [authGuard, hasRole], data: { role: [Role.ADMIN] } */  }
 
 ];
 

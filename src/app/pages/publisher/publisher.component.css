@@ -1,11 +1,12 @@
 form {
-    width:60vh;
+    width:80%;
     margin: 0 auto;
     padding: 20px;
     background-color: #f2f2f2;
     border: 1px solid #ccc;
     border-radius: 5px;
     box-shadow: 0 2px 5px #888;
+    
   }
   
   .form-group {
@@ -48,6 +49,7 @@ form {
     height:15vh
   }
   .content-publisher{
+    margin-top:20vh;
     margin:10vh auto 10vh auto;
   }
   

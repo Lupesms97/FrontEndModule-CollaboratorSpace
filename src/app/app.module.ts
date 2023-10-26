@@ -21,7 +21,8 @@ import { ComponentModule } from './components/components.module';
     PagesModule,
     SharedModule,
     StoreModule.forRoot({}, {}),
-    CoreModule
+    CoreModule,
+    
   ],
   providers: [AppModule],
   bootstrap: [AppComponent]

@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { Injectable, NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { PagesRoutingModule } from './pages-routing.module';
@@ -8,8 +8,7 @@ import { PublisherComponent } from './publisher/publisher.component';
 import { FormsModule } from '@angular/forms';
 import { BlogDetailsComponent } from './blog-details/blog-details.component';
 import { PostEditComponent } from './post-edit/post-edit.component';
-
-
+import { NgxPaginationModule } from 'ngx-pagination';
 @NgModule({
   declarations: [  
     BlogComponent, PublisherComponent, BlogDetailsComponent, PostEditComponent
@@ -19,7 +18,8 @@ import { PostEditComponent } from './post-edit/post-edit.component';
     PagesRoutingModule,
     SharedModule,
     FormsModule,
-    CommonModule
+    CommonModule,
+    NgxPaginationModule
   ]
 })
 export class PagesModule { }

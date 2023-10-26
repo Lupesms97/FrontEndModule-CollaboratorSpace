@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { AuthService } from 'src/app/core/auth/auth.service';
 import { Role } from '../models/Role';
+import { PostService } from 'src/app/core/post/post.service';
 
 @Component({
   selector: 'app-navbar',
@@ -13,10 +14,11 @@ export class NavbarComponent {
 
 
   constructor(
-    private authService:AuthService
+    private authService:AuthService,
+    private post:PostService
   ) {
     this.username = authService.getUserName();
-    /* this.role = authService.getRoles();  */
+    this.role = authService.getRoles();  
     this.showPublisherButton();
    }
 
@@ -31,6 +33,12 @@ export class NavbarComponent {
       return false;
     }
   }
+
+  atualizar(){
+    this.post.refreshPosts();
+  }
+
+
 
   
 

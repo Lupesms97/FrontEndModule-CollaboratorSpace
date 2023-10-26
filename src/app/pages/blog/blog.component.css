@@ -2,7 +2,7 @@
     margin-top:10vh;
     align-self: center;
     width: 100%;
-    height: 100vh;
+    height:120vh;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -36,10 +36,24 @@
 }
 .icons-changes{
     display:flex;
-    justify-content:end
+    justify-content:flex-end
 }
 .icons-changes i:hover{
     scale:1.1;
     cursor: pointer;
     transition: 0.35s;
+}
+.pagination{
+
+    
+}
+@media(max-width:768px){
+    .container-global{
+        height:160vh
+    }
+}
+@media(max-width:475px){
+    .container-global{
+        height:260vh
+    }
 }
