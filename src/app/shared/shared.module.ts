@@ -1,7 +1,7 @@
 import { ApplicationRef, NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FooterComponent } from './footer/footer.component';
-import { NavbarComponent } from './navbar/navbar.component';
+import { NavbarComponent } from '../pages/navbar/navbar.component';
 import { RouterModule } from '@angular/router';
 import { CoreModule } from '../core/core.module';
 
@@ -10,7 +10,7 @@ import { CoreModule } from '../core/core.module';
 @NgModule({
   declarations: [
     FooterComponent,
-    NavbarComponent,
+    
     
   ],
   imports: [
@@ -19,8 +19,7 @@ import { CoreModule } from '../core/core.module';
     CoreModule
   ],
   exports:[
-    FooterComponent,
-    NavbarComponent
+    FooterComponent
   ]
 })
 export class SharedModule { }

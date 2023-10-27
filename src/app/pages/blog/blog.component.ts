@@ -1,4 +1,4 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { AfterContentChecked, AfterViewInit, Component, OnDestroy, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Observable, Subject, Subscription, map } from 'rxjs';
@@ -12,13 +12,14 @@ import { Role } from 'src/app/shared/models/Role';
   templateUrl: './blog.component.html',
   styleUrls: ['./blog.component.css']
 })
-export class BlogComponent  implements OnInit, OnDestroy {
+export class BlogComponent  implements OnInit, AfterContentChecked {
+  count:number = 0;
   authorizathion: string = Role.UNDEFINED_ROLE;
   p: any = 0;
   posts$: Observable<Post[]>;
   posts: Post[] = [];
   dataLoaded = false;
-
+  reloadPage:boolean = false;
 
   postCopy: Post = {
     id: '',
@@ -34,14 +35,18 @@ export class BlogComponent  implements OnInit, OnDestroy {
   constructor(private postService: PostService, private router: Router, private authService: AuthService) {
     this.posts$ = this.postService.getPosts();
     this.getPosts();
+    
 /*     this.loading$ = postService.loading$;
  */  }
+  ngAfterContentChecked(): void {
+    this.getPosts();
+  }
 
   ngOnInit() {
     this.authorizathion = this.authService.getRoles();
     this.getAuthorization();
     this.postService.refreshPosts();
-
+    this.reloadPageFunc();
   }
 
   getPosts(){
@@ -53,11 +58,11 @@ export class BlogComponent  implements OnInit, OnDestroy {
       this.dataLoaded = true;
     });
   }
+  reloadPageFunc(){
 
-  ngOnDestroy(): void {
-/*     this.ngUnsubscribe.next();
- */    this.ngUnsubscribe.complete();
+
   }
+
 
   goToPost(id: string) {
     this.router.navigate(['posts', id]);
@@ -105,4 +110,21 @@ export class BlogComponent  implements OnInit, OnDestroy {
       return dateB.getTime() - dateA.getTime(); // Ordenar em ordem decrescente
     });
   }
+
+  logout(){
+    this.authService.logout();
+    this.router.navigate(['login']);
+  }
+
+  navigateToPublisher(){
+    this.router.navigate(['publisher']);
+  }
+  showPublisherButton():boolean{
+    if(this.authorizathion=== Role.ADMIN){
+     return true;
+    }else{
+      return false;
+    }
+  }
+
 }

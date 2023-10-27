@@ -1,0 +1,58 @@
+<!-- <nav class="navbar navbar-expand-lg bg-body-tertiary ">
+    <div class="container-fluid">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+       
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+
+            <div class="me-2 row">
+                <button class="btn btn-outline-dark" (click)="logout()">Logout</button>
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item" *ngIf="showPublisherButton()">
+                    <a class="nav-link" (click)="goToPublisher()">Criar Post</a>
+                    </li>
+                    <li class="nav-item">
+                    <a class="nav-link " (click)="goToBlog()">Blog</a>
+                    </li>
+                                    <li class="nav-item">
+                    <a class="nav-link " (click)="goToBlog()">Blog</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</nav> -->
+
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <div class="container-fluid">
+        <a class="navbar-brand" >
+            <img src="assets/icons/so-logo.png" alt="" width="34" height="30" class="d-inline-block align-text-top">
+        </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+            <li class="nav-item ">
+                <button class="btn btn-primary" (click)="goToBlog()">Blog</button>
+            </li>
+            <li class="nav-item dropdown " >
+                <button class="nav-link btn text-white btn-primary" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Menu</button>
+                <ul class="dropdown-menu">
+                    <li><p class="dropdown-header">{{username}}</p></li>
+                    <li><hr class="dropdown-divider"></li>
+                    <li><a class="dropdown-item" (click)="goToPublisher()">Criar Post</a></li>
+                    <li><a class="dropdown-item" (click)="goToBenefits()">Beneficios</a></li>
+                    <li><a class="dropdown-item" (click)="goToBenefits()">Calendário</a></li>
+                    <li><a class="dropdown-item" href="#">Usuário</a></li>
+                    <li><hr class="dropdown-divider"></li>
+                    <li><a class="dropdown-item" (click)="logout()">Sair</a></li>
+                </ul>
+            </li>
+        </ul>
+      </div>
+    </div>
+</nav>
+
+  

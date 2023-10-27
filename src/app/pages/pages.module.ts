@@ -7,16 +7,15 @@ import { BlogComponent } from './blog/blog.component';
 import { PublisherComponent } from './publisher/publisher.component';
 import { FormsModule } from '@angular/forms';
 import { BlogDetailsComponent } from './blog-details/blog-details.component';
-import { PostEditComponent } from './post-edit/post-edit.component';
 import { NgxPaginationModule } from 'ngx-pagination';
+import { NavbarComponent } from './navbar/navbar.component';
 @NgModule({
   declarations: [  
-    BlogComponent, PublisherComponent, BlogDetailsComponent, PostEditComponent
+    BlogComponent, PublisherComponent, BlogDetailsComponent,  NavbarComponent
   ],
   imports: [
     CommonModule,
     PagesRoutingModule,
-    SharedModule,
     FormsModule,
     CommonModule,
     NgxPaginationModule

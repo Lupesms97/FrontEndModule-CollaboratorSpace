@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { NgForm } from '@angular/forms';
+import { Router } from '@angular/router';
 import { PostService } from 'src/app/core/post/post.service';
 import { Post } from 'src/app/shared/models/Post';
 import { v4 as uuidv4 } from 'uuid';
@@ -15,7 +16,8 @@ import { v4 as uuidv4 } from 'uuid';
 export class PublisherComponent {
 
   constructor(
-    private postService: PostService
+    private postService: PostService,
+    private router:Router
   ) { 
 
   }
@@ -40,7 +42,9 @@ export class PublisherComponent {
     form.resetForm();
   }
 
-  
+  navigateToPublisher(){
+    this.router.navigate(['home/blog']);
+  }
 
 }
 
