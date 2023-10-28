@@ -1,7 +1,7 @@
 import { AfterContentChecked, AfterViewInit, Component, OnDestroy, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
-import { Observable, Subject, Subscription, map } from 'rxjs';
+import { Observable, Subject, Subscription, interval, map } from 'rxjs';
 import { AuthService } from 'src/app/core/auth/auth.service';
 import { PostService } from 'src/app/core/post/post.service';
 import { Post } from 'src/app/shared/models/Post';
@@ -18,8 +18,8 @@ export class BlogComponent  implements OnInit {
   p: any = 0;
 /*   posts$: Observable<Post[]>; */
   posts: Post[] = [];
-/*   dataLoaded = true;
-  reloadPage:boolean =true; */
+dataLoaded = false;
+  reloadPage:boolean =true; 
 
   postCopy: Post = {
     id: '',
@@ -50,6 +50,11 @@ export class BlogComponent  implements OnInit {
       /* this.posts$ = data; */
       this.posts = data;
       this.sortPostsByDate();
+      interval(2000).subscribe((x) => {
+        this.count = x;
+        this.dataLoaded= true;
+      })
+      
       // Processar os dados conforme necessário
 /*       this.dataLoaded = true; */
     });

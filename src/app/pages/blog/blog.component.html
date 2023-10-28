@@ -1,7 +1,7 @@
 <app-navbar></app-navbar> 
 <div >
   <!-- *ngIf="dataLoaded" -->
-  <div class="container-global" >
+  <div class="container-global" *ngIf="dataLoaded">
     <div class="container card-view">
       <div class="row">
         <div class="col-lg-4 col-md-6 col-sm-12" *ngFor="let post of posts | paginate: { itemsPerPage: 9, currentPage: p }">
@@ -89,13 +89,324 @@
     </div>
   </div>
 </div>
-<div >
-  <div class="d-flex justify-content-center">
-    <div class="spinner-border" role="status">
-      <span class="visually-hidden">Loading...</span>
+
+
+<div class="container-global" *ngIf="!dataLoaded">
+  <div class="container card-view">
+    <div class="row">
+      <div class="col-lg-4 col-md-6 col-sm-12" >
+        <div class="card mb-3">
+          <div class="row g-0">
+            <div class="col-md-4">
+              <img src="/assets/fundo.jpg" class="img-fluid rounded-start" alt="...">
+            </div>
+            <div class="col-md-8">
+              <div class="card-body placeholder-glow">
+                <h5 class="card-title placeholder-glow">
+                  <span class="placeholder col-6"></span>
+                </h5>
+                <p class="card-text placeholder-glow">
+                  <span class="placeholder col-7"></span>
+                  <span class="placeholder col-4"></span>
+                  <span class="placeholder col-4"></span>
+                  <span class="placeholder col-6"></span>
+                  <small class="placeholder col-8"></small>
+                </p>
+              </div>
+            </div>
+            <div class="row m-2" >
+              <div class="col icons-changes">
+                <a class="btn btn-primary disabled placeholder col-1 me-2" aria-disabled="true">
+                 
+                </a>
+                <a class="btn btn-primary disabled placeholder col-1" aria-disabled="true">
+                 
+                </a>
+                
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-6 col-sm-12" >
+        <div class="card mb-3">
+          <div class="row g-0">
+            <div class="col-md-4">
+              <img src="/assets/fundo.jpg" class="img-fluid rounded-start" alt="...">
+            </div>
+            <div class="col-md-8">
+              <div class="card-body placeholder-glow">
+                <h5 class="card-title placeholder-glow">
+                  <span class="placeholder col-6"></span>
+                </h5>
+                <p class="card-text placeholder-glow">
+                  <span class="placeholder col-7"></span>
+                  <span class="placeholder col-4"></span>
+                  <span class="placeholder col-4"></span>
+                  <span class="placeholder col-6"></span>
+                  <small class="placeholder col-8"></small>
+                </p>
+              </div>
+            </div>
+            <div class="row m-2" >
+              <div class="col icons-changes">
+                <a class="btn btn-primary disabled placeholder col-1 me-2" aria-disabled="true">
+                 
+                </a>
+                <a class="btn btn-primary disabled placeholder col-1" aria-disabled="true">
+                 
+                </a>
+                
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-6 col-sm-12" >
+        <div class="card mb-3">
+          <div class="row g-0">
+            <div class="col-md-4">
+              <img src="/assets/fundo.jpg" class="img-fluid rounded-start" alt="...">
+            </div>
+            <div class="col-md-8">
+              <div class="card-body placeholder-glow">
+                <h5 class="card-title placeholder-glow">
+                  <span class="placeholder col-6"></span>
+                </h5>
+                <p class="card-text placeholder-glow">
+                  <span class="placeholder col-7"></span>
+                  <span class="placeholder col-4"></span>
+                  <span class="placeholder col-4"></span>
+                  <span class="placeholder col-6"></span>
+                  <small class="placeholder col-8"></small>
+                </p>
+              </div>
+            </div>
+            <div class="row m-2" >
+              <div class="col icons-changes">
+                <a class="btn btn-primary disabled placeholder col-1 me-2" aria-disabled="true">
+                 
+                </a>
+                <a class="btn btn-primary disabled placeholder col-1" aria-disabled="true">
+                 
+                </a>
+                
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-4 col-md-6 col-sm-12" >
+        <div class="card mb-3">
+          <div class="row g-0">
+            <div class="col-md-4">
+              <img src="/assets/fundo.jpg" class="img-fluid rounded-start" alt="...">
+            </div>
+            <div class="col-md-8">
+              <div class="card-body placeholder-glow">
+                <h5 class="card-title placeholder-glow">
+                  <span class="placeholder col-6"></span>
+                </h5>
+                <p class="card-text placeholder-glow">
+                  <span class="placeholder col-7"></span>
+                  <span class="placeholder col-4"></span>
+                  <span class="placeholder col-4"></span>
+                  <span class="placeholder col-6"></span>
+                  <small class="placeholder col-8"></small>
+                </p>
+              </div>
+            </div>
+            <div class="row m-2" >
+              <div class="col icons-changes">
+                <a class="btn btn-primary disabled placeholder col-1 me-2" aria-disabled="true">
+                 
+                </a>
+                <a class="btn btn-primary disabled placeholder col-1" aria-disabled="true">
+                 
+                </a>
+                
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-6 col-sm-12" >
+        <div class="card mb-3">
+          <div class="row g-0">
+            <div class="col-md-4">
+              <img src="/assets/fundo.jpg" class="img-fluid rounded-start" alt="...">
+            </div>
+            <div class="col-md-8">
+              <div class="card-body placeholder-glow">
+                <h5 class="card-title placeholder-glow">
+                  <span class="placeholder col-6"></span>
+                </h5>
+                <p class="card-text placeholder-glow">
+                  <span class="placeholder col-7"></span>
+                  <span class="placeholder col-4"></span>
+                  <span class="placeholder col-4"></span>
+                  <span class="placeholder col-6"></span>
+                  <small class="placeholder col-8"></small>
+                </p>
+              </div>
+            </div>
+            <div class="row m-2" >
+              <div class="col icons-changes">
+                <a class="btn btn-primary disabled placeholder col-1 me-2" aria-disabled="true">
+                 
+                </a>
+                <a class="btn btn-primary disabled placeholder col-1" aria-disabled="true">
+                 
+                </a>
+                
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-6 col-sm-12" >
+        <div class="card mb-3">
+          <div class="row g-0">
+            <div class="col-md-4">
+              <img src="/assets/fundo.jpg" class="img-fluid rounded-start" alt="...">
+            </div>
+            <div class="col-md-8">
+              <div class="card-body placeholder-glow">
+                <h5 class="card-title placeholder-glow">
+                  <span class="placeholder col-6"></span>
+                </h5>
+                <p class="card-text placeholder-glow">
+                  <span class="placeholder col-7"></span>
+                  <span class="placeholder col-4"></span>
+                  <span class="placeholder col-4"></span>
+                  <span class="placeholder col-6"></span>
+                  <small class="placeholder col-8"></small>
+                </p>
+              </div>
+            </div>
+            <div class="row m-2" >
+              <div class="col icons-changes">
+                <a class="btn btn-primary disabled placeholder col-1 me-2" aria-disabled="true">
+                 
+                </a>
+                <a class="btn btn-primary disabled placeholder col-1" aria-disabled="true">
+                 
+                </a>
+                
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-4 col-md-6 col-sm-12" >
+        <div class="card mb-3">
+          <div class="row g-0">
+            <div class="col-md-4">
+              <img src="/assets/fundo.jpg" class="img-fluid rounded-start" alt="...">
+            </div>
+            <div class="col-md-8">
+              <div class="card-body placeholder-glow">
+                <h5 class="card-title placeholder-glow">
+                  <span class="placeholder col-6"></span>
+                </h5>
+                <p class="card-text placeholder-glow">
+                  <span class="placeholder col-7"></span>
+                  <span class="placeholder col-4"></span>
+                  <span class="placeholder col-4"></span>
+                  <span class="placeholder col-6"></span>
+                  <small class="placeholder col-8"></small>
+                </p>
+              </div>
+            </div>
+            <div class="row m-2" >
+              <div class="col icons-changes">
+                <a class="btn btn-primary disabled placeholder col-1 me-2" aria-disabled="true">
+                 
+                </a>
+                <a class="btn btn-primary disabled placeholder col-1" aria-disabled="true">
+                 
+                </a>
+                
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-6 col-sm-12" >
+        <div class="card mb-3">
+          <div class="row g-0">
+            <div class="col-md-4">
+              <img src="/assets/fundo.jpg" class="img-fluid rounded-start" alt="...">
+            </div>
+            <div class="col-md-8">
+              <div class="card-body placeholder-glow">
+                <h5 class="card-title placeholder-glow">
+                  <span class="placeholder col-6"></span>
+                </h5>
+                <p class="card-text placeholder-glow">
+                  <span class="placeholder col-7"></span>
+                  <span class="placeholder col-4"></span>
+                  <span class="placeholder col-4"></span>
+                  <span class="placeholder col-6"></span>
+                  <small class="placeholder col-8"></small>
+                </p>
+              </div>
+            </div>
+            <div class="row m-2" >
+              <div class="col icons-changes">
+                <a class="btn btn-primary disabled placeholder col-1 me-2" aria-disabled="true">
+                 
+                </a>
+                <a class="btn btn-primary disabled placeholder col-1" aria-disabled="true">
+                 
+                </a>
+                
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-6 col-sm-12" >
+        <div class="card mb-3">
+          <div class="row g-0">
+            <div class="col-md-4">
+              <img src="/assets/fundo.jpg" class="img-fluid rounded-start" alt="...">
+            </div>
+            <div class="col-md-8">
+              <div class="card-body placeholder-glow">
+                <h5 class="card-title placeholder-glow">
+                  <span class="placeholder col-6"></span>
+                </h5>
+                <p class="card-text placeholder-glow">
+                  <span class="placeholder col-7"></span>
+                  <span class="placeholder col-4"></span>
+                  <span class="placeholder col-4"></span>
+                  <span class="placeholder col-6"></span>
+                  <small class="placeholder col-8"></small>
+                </p>
+              </div>
+            </div>
+            <div class="row m-2" >
+              <div class="col icons-changes">
+                <a class="btn btn-primary disabled placeholder col-1 me-2" aria-disabled="true">
+                 
+                </a>
+                <a class="btn btn-primary disabled placeholder col-1" aria-disabled="true">
+                 
+                </a>
+                
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
-</div>
+<div>
 
 
 
