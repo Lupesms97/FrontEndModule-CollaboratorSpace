@@ -35,19 +35,30 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
             <li class="nav-item ">
-                <button class="btn btn-primary" (click)="goToBlog()">Blog</button>
+                <button class="btn btn-primary" (click)="goToBlog()"><i class="fa-solid fa-newspaper"></i> Blog</button>
             </li>
-            <li class="nav-item dropdown " >
-                <button class="nav-link btn text-white btn-primary" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Menu</button>
-                <ul class="dropdown-menu">
+       <!--      <li class="nav-item dropdown dropstart" ></li> -->
+            <li class="nav-item dropdown" >
+                <a class="nav-link btn text-white btn-primary" data-bs-toggle="dropdown" href="#" role="button" data-bs-auto-close="outside" aria-expanded="false"><i class="fa-solid fa-house"></i> Menu</a>
+                <ul class="dropdown-menu dropdown-menu-end">
                     <li><p class="dropdown-header">{{username}}</p></li>
                     <li><hr class="dropdown-divider"></li>
-                    <li><a class="dropdown-item" (click)="goToPublisher()">Criar Post</a></li>
-                    <li><a class="dropdown-item" (click)="goToBenefits()">Beneficios</a></li>
-                    <li><a class="dropdown-item" (click)="goToBenefits()">Calendário</a></li>
-                    <li><a class="dropdown-item" href="#">Usuário</a></li>
+                    <li>
+                        <a class="dropdown-item" (click)="goToPublisher()"><i class="fa-solid fa-pencil" style="color: #435e8b;"></i> Criar Post</a>
+                    </li>
+                    <li>
+                        <a class="dropdown-item" (click)="goToBenefits()"><i class="fa-solid fa-bag-shopping" style="color: #435e8b;"></i> Beneficios</a>
+                    </li>
+                    <li>
+                        <a class="dropdown-item" (click)="goToCalendar()"><i class="fa-solid fa-calendar-days" style="color: #435e8b;"></i> Calendário</a>
+                    </li>
+                    <li >            
+                        <a class="dropdown-item" href="#"><i class="fa-solid fa-user-gear" style="color: #435e8b;"></i> Usuário</a>
+                    </li>
                     <li><hr class="dropdown-divider"></li>
-                    <li><a class="dropdown-item" (click)="logout()">Sair</a></li>
+                    <li>
+                        <a class="dropdown-item" (click)="logout()"><i class="fa-solid fa-right-from-bracket" style="color: #435e8b;"></i> Sair</a>
+                    </li>
                 </ul>
             </li>
         </ul>

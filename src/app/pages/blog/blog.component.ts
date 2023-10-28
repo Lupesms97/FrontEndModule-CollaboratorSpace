@@ -12,14 +12,14 @@ import { Role } from 'src/app/shared/models/Role';
   templateUrl: './blog.component.html',
   styleUrls: ['./blog.component.css']
 })
-export class BlogComponent  implements OnInit, AfterContentChecked {
+export class BlogComponent  implements OnInit {
   count:number = 0;
-  authorizathion: string = Role.UNDEFINED_ROLE;
+  authorizathion: string = Role.ADMIN;
   p: any = 0;
-  posts$: Observable<Post[]>;
+/*   posts$: Observable<Post[]>; */
   posts: Post[] = [];
-  dataLoaded = false;
-  reloadPage:boolean = false;
+/*   dataLoaded = true;
+  reloadPage:boolean =true; */
 
   postCopy: Post = {
     id: '',
@@ -33,20 +33,16 @@ export class BlogComponent  implements OnInit, AfterContentChecked {
  */  private ngUnsubscribe = new Subject();
 
   constructor(private postService: PostService, private router: Router, private authService: AuthService) {
-    this.posts$ = this.postService.getPosts();
+/*     this.posts$ = this.postService.getPosts(); */
     this.getPosts();
     
 /*     this.loading$ = postService.loading$;
  */  }
-  ngAfterContentChecked(): void {
-    this.getPosts();
-  }
 
   ngOnInit() {
-    this.authorizathion = this.authService.getRoles();
-    this.getAuthorization();
-    this.postService.refreshPosts();
-    this.reloadPageFunc();
+/*     this.authorizathion = this.authService.getRoles();
+ */    this.getAuthorization();
+
   }
 
   getPosts(){
@@ -55,12 +51,8 @@ export class BlogComponent  implements OnInit, AfterContentChecked {
       this.posts = data;
       this.sortPostsByDate();
       // Processar os dados conforme necessário
-      this.dataLoaded = true;
+/*       this.dataLoaded = true; */
     });
-  }
-  reloadPageFunc(){
-
-
   }
 
 

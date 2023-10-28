@@ -8,6 +8,7 @@ import { SharedModule } from './shared/shared.module';
 import { StoreModule } from '@ngrx/store';
 import { CoreModule } from './core/core.module';
 import { ComponentModule } from './components/components.module';
+import { CalendarModule } from 'angular-calendar';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { ComponentModule } from './components/components.module';
     SharedModule,
     StoreModule.forRoot({}, {}),
     CoreModule,
+
     
   ],
   providers: [AppModule],

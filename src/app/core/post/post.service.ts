@@ -10,7 +10,7 @@ import { Post } from 'src/app/shared/models/Post';
 })
 export class PostService {
 
-  private readonly API_URL_R = 'http://localhost:8080/content';
+  private readonly API_URL_R = '/assets/content.json';
   public posts$: Observable<Post[]> | undefined;
   
 
@@ -20,9 +20,9 @@ export class PostService {
   ) {
     this.refreshPosts();
   }
-
+/*   (`${this.API_URL_R}/getContent`) */
   private setPostsOnObservable(): Observable<Post[]> {
-    return this.http.get<Post[]>(`${this.API_URL_R}/getContent`)
+    return this.http.get<Post[]>(`${this.API_URL_R}`)
       .pipe(
         tap((posts) => {
           // Atualiza os posts quando os dados são buscados

@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Cabin:wght@400;600;700&family=Lobster&family=Tilt+Neon&display=swap');
-
+/* angular-cli file: src/styles.css */
+@import "../node_modules/angular-calendar/css/angular-calendar.css";
 
 
 /* font-family: 'Cabin', sans-serif;

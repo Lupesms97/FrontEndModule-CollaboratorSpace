@@ -47,6 +47,9 @@ export class NavbarComponent {
   goToBenefits(){
     
   }
+  goToCalendar(){
+    this.router.navigate(['/calendar']);
+  }
 
   
 

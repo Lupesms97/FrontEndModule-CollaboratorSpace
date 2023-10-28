@@ -6,13 +6,15 @@ import { BlogDetailsComponent } from './blog-details/blog-details.component';
 import { hasRole } from '../core/auth/guards/has-role.guard';
 import { Role } from '../shared/models/Role';
 import { authGuard } from '../core/auth/guards/auth.guard';
+import { CalendarComponent } from './calendar/calendar.component';
 
 
 const routes: Routes = [
 { path:'', redirectTo: 'start', pathMatch: 'full' },
-{ path: 'blog', component: BlogComponent , canActivate: [authGuard]   }, 
-{ path: 'posts/:id', component: BlogDetailsComponent, canActivate: [authGuard] }, 
-{ path: 'publisher', component: PublisherComponent  , canActivate: [authGuard] },
+{ path: 'blog', component: BlogComponent /* , canActivate: [authGuard] */   }, 
+{ path: 'posts/:id', component: BlogDetailsComponent/* , canActivate: [authGuard] */ }, 
+{ path: 'publisher', component: PublisherComponent  /* , canActivate: [authGuard] */ },
+{path:'calendar', component: CalendarComponent}
 
 /* { path: 'posts/:id', component: BlogDetailsComponent, canActivate: [authGuard, hasRole], data: { role: [Role.ADMIN, Role.USER] } }, 
  */

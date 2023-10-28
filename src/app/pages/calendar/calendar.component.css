@@ -1,0 +1,62 @@
+.calendar {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    overflow: hidden;
+    width: 90%;
+    height: 90%;
+    margin: 0 auto;
+    padding: 3rem;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  }
+  
+  .week-header {
+    display: flex;
+    justify-content: space-between;
+    background-color: #f0f0f0;
+    font-weight: bold;
+  }
+  
+
+  .day.today {
+    background-color: #ffeb3b;
+  }
+  
+  .day.other-month {
+    color: #ccc;
+  }
+  .week {
+    display: flex;
+    justify-content: space-between;
+    margin-left: -10px; /* Espaço extra no início */
+    margin-right: -10px; /* Espaço extra no final */
+  }
+  
+  .day {
+    flex: 1;
+    text-align: center;
+    padding: 10px;
+  }
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 5px;
+  }
+  
+  .grid-item {
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: center;
+    font-size: 14px;
+  }
+  
+  .week-header {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 5px;
+    font-weight: bold;
+  }
+  
+  /* Estilos adicionais conforme necessário */
+  

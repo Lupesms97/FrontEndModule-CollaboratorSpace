@@ -9,16 +9,26 @@ import { FormsModule } from '@angular/forms';
 import { BlogDetailsComponent } from './blog-details/blog-details.component';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { NavbarComponent } from './navbar/navbar.component';
+import { CalendarModule, DateAdapter } from 'angular-calendar';
+import { adapterFactory } from 'angular-calendar/date-adapters/date-fns';
+
+import { CalendarComponent } from './calendar/calendar.component';
 @NgModule({
   declarations: [  
-    BlogComponent, PublisherComponent, BlogDetailsComponent,  NavbarComponent
+    BlogComponent, PublisherComponent, BlogDetailsComponent,  NavbarComponent, CalendarComponent
   ],
   imports: [
     CommonModule,
     PagesRoutingModule,
     FormsModule,
     CommonModule,
-    NgxPaginationModule
+    NgxPaginationModule,
+    CalendarModule.forRoot({ provide: DateAdapter, useFactory: adapterFactory }),
+    
+  ],
+  exports: [CalendarComponent],
+  providers: [
+    
   ]
 })
 export class PagesModule { }

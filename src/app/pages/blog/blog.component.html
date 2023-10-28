@@ -1,6 +1,7 @@
 <app-navbar></app-navbar> 
 <div >
-  <div class="container-global" *ngIf="dataLoaded">
+  <!-- *ngIf="dataLoaded" -->
+  <div class="container-global" >
     <div class="container card-view">
       <div class="row">
         <div class="col-lg-4 col-md-6 col-sm-12" *ngFor="let post of posts | paginate: { itemsPerPage: 9, currentPage: p }">
@@ -89,12 +90,13 @@
   </div>
 </div>
 <div >
-  <div *ngIf="!dataLoaded" class="d-flex justify-content-center">
+  <div class="d-flex justify-content-center">
     <div class="spinner-border" role="status">
       <span class="visually-hidden">Loading...</span>
     </div>
   </div>
 </div>
+
 
 
 
