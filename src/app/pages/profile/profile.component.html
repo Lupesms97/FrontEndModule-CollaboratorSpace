@@ -14,7 +14,7 @@
             <div class="col-md-6">
                 <div class="profile-head">
                             <h5>
-                                {{username}}
+                                {{username||'User'}}
                             </h5>
                             <h6>
                                 Web Developer and Designer
@@ -65,7 +65,7 @@
                                         <label>Name</label>
                                     </div>
                                     <div class="col-md-6">
-                                        <p>{{username}}</p>
+                                        <p>{{username||'User'}}</p>
                                     </div>
                                 </div>
                                 <div class="row">

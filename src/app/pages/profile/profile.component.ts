@@ -12,6 +12,8 @@ username: string = '';
 
 constructor(private authService:AuthService) {
   this.username = authService.getUserName();
+  
+
 }
 
 }

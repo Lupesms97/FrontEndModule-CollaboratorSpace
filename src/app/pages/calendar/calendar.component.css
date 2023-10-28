@@ -59,4 +59,8 @@
   }
   
   /* Estilos adicionais conforme necessário */
-  
+  .event-day {
+    background-color: #ff5733; /* Defina a cor desejada */
+    color: white; /* Cor do texto */
+    font-weight: bold; /* Estilos adicionais, se necessário */
+  }
