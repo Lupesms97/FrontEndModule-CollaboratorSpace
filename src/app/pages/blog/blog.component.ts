@@ -99,7 +99,7 @@ export class BlogComponent  implements OnInit {
     this.posts.sort((a, b) => {
       const dateA = new Date(a.date as string);
       const dateB = new Date(b.date as string);
-      return dateB.getTime() - dateA.getTime(); // Ordenar em ordem decrescente
+      return dateB.getTime() - dateA.getTime(); 
     });
   }
 

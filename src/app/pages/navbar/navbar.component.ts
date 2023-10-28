@@ -20,7 +20,7 @@ export class NavbarComponent {
     private router:Router
   ) {
     this.username = authService.getUserName();
-    this.role = authService.getRoles();  
+ /*    this.role = authService.getRoles();   */
     this.showPublisherButton();
    }
 
@@ -49,6 +49,9 @@ export class NavbarComponent {
   }
   goToCalendar(){
     this.router.navigate(['/calendar']);
+  }
+  goToProfile(){
+    this.router.navigate(['/userProfile']);
   }
 
   

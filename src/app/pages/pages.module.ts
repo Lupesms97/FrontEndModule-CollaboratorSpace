@@ -13,9 +13,10 @@ import { CalendarModule, DateAdapter } from 'angular-calendar';
 import { adapterFactory } from 'angular-calendar/date-adapters/date-fns';
 
 import { CalendarComponent } from './calendar/calendar.component';
+import { ProfileComponent } from './profile/profile.component';
 @NgModule({
   declarations: [  
-    BlogComponent, PublisherComponent, BlogDetailsComponent,  NavbarComponent, CalendarComponent
+    BlogComponent, PublisherComponent, BlogDetailsComponent,  NavbarComponent, CalendarComponent, ProfileComponent
   ],
   imports: [
     CommonModule,
