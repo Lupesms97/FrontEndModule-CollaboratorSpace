@@ -2,9 +2,48 @@
 <app-navbar></app-navbar>
 <ng-container *ngIf="view">
     <div class="calendar">
-      <h3 class="text-uppercase">
-        {{ viewDate | calendarDate:(view + 'ViewTitle'):locale:weekStartsOn }}
-      </h3>
+      <div class="container mb-5">
+        <div class="row">
+          <div class="col-lg-4 col-md-12">
+            <div class="row text-center">
+              <div class="col-md-4">
+                <div class="btn-group">
+                  <div
+                    class="btn btn-primary"
+                    mwlCalendarPreviousView
+                    [view]="view"
+                    [(viewDate)]="viewDate"
+                    (viewDateChange)="closeOpenMonthViewDay()"
+                  >
+                    Previous
+                  </div>
+                  <div
+                    class="btn btn-outline-secondary"
+                    mwlCalendarToday
+                    [(viewDate)]="viewDate"
+                  >
+                    Today
+                  </div>
+                  <div
+                    class="btn btn-primary"
+                    mwlCalendarNextView
+                    [view]="view"
+                    [(viewDate)]="viewDate"
+                    (viewDateChange)="closeOpenMonthViewDay()"
+                  >
+                    Next
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-8 col-md-12 text-lg-end text-center">
+            <h3 class="text-uppercase ">
+              {{ viewDate | calendarDate:(view + 'ViewTitle'):locale:weekStartsOn }}
+            </h3>
+          </div>
+        </div>
+      </div>
       <mwl-calendar-month-view 
         [viewDate]="viewDate"
         [events]="eventss"
@@ -14,7 +53,7 @@
         type="button"  data-bs-toggle="modal" data-bs-target="#staticBackdrop"
       ></mwl-calendar-month-view>
     </div>
-</ng-container>
+
 
   <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
     <div class="modal-dialog">
@@ -24,7 +63,7 @@
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
-          <div *ngFor="let evento of eventos">
+          <div *ngFor="let evento of eventsOnModal">
             <p>
               {{evento.title}}
             </p>
@@ -34,12 +73,13 @@
             <p>
                 Termina: {{ evento.end | date: 'dd/MM/yyyy' : 'pt-BR' }}
             </p>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-primary" (click)="goToEditEvent(evento.id)" data-bs-toggle="modal" data-bs-target="#exampleModal">Editar evento</button>
+            </div>
           </div>
         </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary" (click)="addEvent()" data-bs-toggle="modal" data-bs-target="#exampleModal">Editar evento</button>
-        </div>
+       
       </div>
     </div>
   </div>
@@ -47,7 +87,7 @@
 
 
   <!-- Modal -->
-  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="editEventModal" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
@@ -81,4 +121,8 @@
       </div>
     </div>
   </div>
- 
+<div style="margin-top:20vh; height: 
+30vh;">
+
+
+</div>

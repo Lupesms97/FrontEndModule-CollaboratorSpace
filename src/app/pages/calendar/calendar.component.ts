@@ -7,6 +7,11 @@ import localePt from '@angular/common/locales/pt';
 
 import { EventColor } from 'calendar-utils';
 import { CalendarI } from 'src/app/shared/models/CalendarI';
+import { EventsService } from 'src/app/core/events/events.service';
+import { Observable } from 'rxjs';
+import { Router } from '@angular/router';
+import { FormControl, FormGroup } from '@angular/forms';
+
 
 const colors: Record<string, EventColor> = {
   red: {
@@ -22,6 +27,9 @@ const colors: Record<string, EventColor> = {
     secondary: '#FDF1BA',
   },
 };
+const today = new Date();
+const month = today.getMonth();
+const year = today.getFullYear();
 
 @Component({
   selector: 'app-calendar',
@@ -31,53 +39,54 @@ const colors: Record<string, EventColor> = {
 })
 export class CalendarComponent  {
 
-  newEvent:CalendarI ={
+/*   newEvent:CalendarI ={
     title: '',
     start: new Date(),
     end: new Date(),
     color: '',
-  }
+  } */
 
   locale: string = 'pt-BR';
   weekStartsOn: number = DAYS_OF_WEEK.MONDAY;
+  activeDayIsOpen: boolean = true;
+  eventsOnModal:CalendarEvent[] = [];
+  view: CalendarView = CalendarView.Month;
+  viewDate: Date = new Date();
+  eventss: CalendarEvent[] = [];
 
-  constructor() {
+  campaignOne = new FormGroup({
+    start: new FormControl(new Date(year, month, 13)),
+    end: new FormControl(new Date(year, month, 16)),
+  });
+  campaignTwo = new FormGroup({
+    start: new FormControl(new Date(year, month, 15)),
+    end: new FormControl(new Date(year, month, 19)),
+  });
+
+  constructor(
+    private eventsService: EventsService,
+    private router: Router
+  ) {
 
     // Defina o locale como 'pt-BR' para exibir datas e dias da semana em português.
     registerLocaleData(localePt);
-    
+    this.getEventsService();
    }
-  eventos:CalendarEvent[] = [];
-  view: CalendarView = CalendarView.Month;
-  viewDate: Date = new Date();
-  eventss: CalendarEvent[] = [
-    {
-      title: 'Event 1',
-      start: subDays(startOfDay(new Date()), 1),
-      end: addDays(new Date(), 1),
-    },
-    {
-      title: 'Event 2',
-      start: startOfDay(new Date()),
-      end: endOfDay(new Date()),
-    },
-    {
-      title: 'Event 3',
-      start: addDays(endOfDay(new Date()), 1),
-      end: addDays(endOfDay(new Date()), 2),
-      color: colors['red'],
-    },
-  ];
+
+   getEventsService(){
+      this.eventsService.getEvents().subscribe((data) => {
+        this.eventss = data;       
+      });
+   }
+
 
   dayClicked({ date, events }: { date: Date; events: CalendarEvent[] }): void {
-    this.eventos = [];
-    console.log(date);
-    console.log(events);
-    events.forEach(eventt=>{this.eventos.push(eventt)})
+    this.eventsOnModal = events;
+    
     if (isSameMonth(date, this.viewDate)) {
       if (
         (isSameDay(this.viewDate, date) && this.view === CalendarView.Day) ||
-        this.view === CalendarView.Day
+        this.view === CalendarView.Month
       ) {
         this.view = CalendarView.Month;
       } else {
@@ -87,15 +96,15 @@ export class CalendarComponent  {
     }
   }
   deleteEvent(eventToDelete: CalendarEvent) {
-    this.eventos = this.eventos.filter((event) => event !== eventToDelete);
+    this.eventsOnModal = this.eventsOnModal.filter((event) => event !== eventToDelete);
   }
-  addEvent(): void {
-    this.eventos = [
-      ...this.eventos,
+  addEvent(event:CalendarEvent): void {
+    this.eventsOnModal = [
+      ...this.eventsOnModal,
       {
-        title: this.newEvent.title,
-        start: startOfDay(this.newEvent.start),
-        end: endOfDay(this.newEvent.end),
+        title: 'Novo evento',
+        start: startOfDay(new Date()),
+        end: endOfDay(new Date()),
         color: colors['red'],
         draggable: true,
         resizable: {
@@ -104,5 +113,13 @@ export class CalendarComponent  {
         },
       },
     ];   
+  }
+
+  closeOpenMonthViewDay() {
+    this.activeDayIsOpen = false;
+  }
+  
+  goToEditEvent(eventID:any){
+    this.router.navigate(['datapicker', eventID]);
   }
 }

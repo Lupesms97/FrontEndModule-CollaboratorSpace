@@ -11,7 +11,7 @@ import { Post } from 'src/app/shared/models/Post';
 export class PostService {
 
   private readonly API_URL_R = '/assets/content.json';
-  public posts$: Observable<Post[]> | undefined;
+  private posts$: Observable<Post[]> | undefined;
   
 
   constructor(

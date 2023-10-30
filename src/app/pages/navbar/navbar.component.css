@@ -19,4 +19,12 @@
         width:100%;
     }
 }
+@media(max-width:768px){
+    .nav-item{
+        margin-bottom:1vh;
+    }
+    .dropdown-menu{
+        margin-top:1vh
+    }
+}
 

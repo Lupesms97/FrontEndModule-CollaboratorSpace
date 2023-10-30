@@ -1,7 +1,7 @@
 export interface CalendarI {
     title: string;
-    start: Date;
-    end: Date;
+    start: string;
+    end: string;
     color?: string; // Cor opcional para estilização
     // Outras propriedades personalizadas, se necessário
   }

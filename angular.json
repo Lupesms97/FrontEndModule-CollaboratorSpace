@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/grupo-sels",
+            "outputPath": "dist/collaborator-module",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": [
@@ -25,6 +25,7 @@
               "src/assets"
             ],
             "styles": [
+              
               "node_modules/angular-calendar/css/angular-calendar.css",
               "src/styles.css"
             ],
@@ -35,8 +36,8 @@
               "budgets": [
                 {
                   "type": "initial",
-                  "maximumWarning": "500kb",
-                  "maximumError": "1mb"
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
                 },
                 {
                   "type": "anyComponentStyle",

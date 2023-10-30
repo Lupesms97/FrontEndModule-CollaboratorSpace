@@ -9,6 +9,7 @@ import { StoreModule } from '@ngrx/store';
 import { CoreModule } from './core/core.module';
 import { ComponentModule } from './components/components.module';
 import { CalendarModule } from 'angular-calendar';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { CalendarModule } from 'angular-calendar';
     SharedModule,
     StoreModule.forRoot({}, {}),
     CoreModule,
+    BrowserAnimationsModule,
 
     
   ],

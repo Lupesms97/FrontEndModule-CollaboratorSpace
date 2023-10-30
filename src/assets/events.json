@@ -1,0 +1,23 @@
+[
+    {
+        "id":"b1f34563-63a6-4dcd-8bc9-7f7a5481fc7d",
+       "title": "Event 1",
+        "start": "2023/10/30",
+        "end": "2023/10/30",
+        "color":"blue"
+      },
+      {
+        "id":"a9f9ce94-9d67-48ed-8695-742d1407e0e3",
+        "title": "Event 2",
+        "start": "2023/10/28",
+        "end": "2023/10/30",
+        "color":"red"
+      },
+      { 
+        "id":"a8b1ee38-f5da-4e5c-b1e7-82766e073431",
+        "title": "Event 3",
+        "start": "2023/10/29",
+        "end": "2023/10/31",
+        "color":"red"
+      }
+]
