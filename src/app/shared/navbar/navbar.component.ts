@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
 import { AuthService } from 'src/app/core/auth/auth.service';
-import { Role } from '../../shared/models/Role';
+import { Role } from '../models/Role';
 import { PostService } from 'src/app/core/post/post.service';
 import { Router } from '@angular/router';
+import { last } from 'rxjs';
 
 @Component({
   selector: 'app-navbar',

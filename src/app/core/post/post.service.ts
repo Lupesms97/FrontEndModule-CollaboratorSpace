@@ -62,6 +62,6 @@ export class PostService {
   }
 
   public sendToBlog() {
-    this.router.navigate(['blog']);
+    this.router.navigate(['home/blog']);
   }
 }

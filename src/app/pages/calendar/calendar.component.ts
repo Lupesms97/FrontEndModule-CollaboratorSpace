@@ -11,22 +11,11 @@ import { EventsService } from 'src/app/core/events/events.service';
 import { Observable } from 'rxjs';
 import { Router } from '@angular/router';
 import { FormControl, FormGroup } from '@angular/forms';
+import { Role } from 'src/app/shared/models/Role';
+import { AuthService } from 'src/app/core/auth/auth.service';
 
 
-const colors: Record<string, EventColor> = {
-  red: {
-    primary: '#ad2121',
-    secondary: '#FAE3E3',
-  },
-  blue: {
-    primary: '#1e90ff',
-    secondary: '#D1E8FF',
-  },
-  yellow: {
-    primary: '#e3bc08',
-    secondary: '#FDF1BA',
-  },
-};
+
 const today = new Date();
 const month = today.getMonth();
 const year = today.getFullYear();
@@ -38,6 +27,7 @@ const year = today.getFullYear();
 
 })
 export class CalendarComponent  {
+  formData: any = {};
 
 /*   newEvent:CalendarI ={
     title: '',
@@ -45,6 +35,7 @@ export class CalendarComponent  {
     end: new Date(),
     color: '',
   } */
+  role:string = Role.UNDEFINED_ROLE.toString();
 
   locale: string = 'pt-BR';
   weekStartsOn: number = DAYS_OF_WEEK.MONDAY;
@@ -53,21 +44,16 @@ export class CalendarComponent  {
   view: CalendarView = CalendarView.Month;
   viewDate: Date = new Date();
   eventss: CalendarEvent[] = [];
+  colorsList: string[]=['red','blue','yellow','green'];
 
-  campaignOne = new FormGroup({
-    start: new FormControl(new Date(year, month, 13)),
-    end: new FormControl(new Date(year, month, 16)),
-  });
-  campaignTwo = new FormGroup({
-    start: new FormControl(new Date(year, month, 15)),
-    end: new FormControl(new Date(year, month, 19)),
-  });
+
 
   constructor(
     private eventsService: EventsService,
-    private router: Router
+    private router: Router,
+    private auth: AuthService
   ) {
-
+   this.role = this.auth.getRoles()|| Role.ADMIN; 
     // Defina o locale como 'pt-BR' para exibir datas e dias da semana em português.
     registerLocaleData(localePt);
     this.getEventsService();
@@ -77,6 +63,7 @@ export class CalendarComponent  {
       this.eventsService.getEvents().subscribe((data) => {
         this.eventss = data;       
       });
+     
    }
 
 
@@ -102,10 +89,10 @@ export class CalendarComponent  {
     this.eventsOnModal = [
       ...this.eventsOnModal,
       {
-        title: 'Novo evento',
-        start: startOfDay(new Date()),
-        end: endOfDay(new Date()),
-        color: colors['red'],
+        title: event.title,
+        start: startOfDay(event.start),
+        end: endOfDay(event.end as Date),
+        color: event.color,
         draggable: true,
         resizable: {
           beforeStart: true,
@@ -119,7 +106,12 @@ export class CalendarComponent  {
     this.activeDayIsOpen = false;
   }
   
-  goToEditEvent(eventID:any){
-    this.router.navigate(['datapicker', eventID]);
+  goToEventEdit(eventId: any){
+    this.router.navigate(['editEvent']);
   }
+
+  onSubmit(){
+    console.log(this.formData);
+  }
+
 }

@@ -49,5 +49,8 @@ export class BlogDetailsComponent {
       }
   
     } 
+    goBack(){
+      this.postService.sendToBlog();
+    }
 
 }

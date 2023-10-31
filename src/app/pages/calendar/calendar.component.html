@@ -15,14 +15,14 @@
                     [(viewDate)]="viewDate"
                     (viewDateChange)="closeOpenMonthViewDay()"
                   >
-                    Previous
+                    Anterior
                   </div>
                   <div
                     class="btn btn-outline-secondary"
                     mwlCalendarToday
                     [(viewDate)]="viewDate"
                   >
-                    Today
+                    Hoje
                   </div>
                   <div
                     class="btn btn-primary"
@@ -31,7 +31,7 @@
                     [(viewDate)]="viewDate"
                     (viewDateChange)="closeOpenMonthViewDay()"
                   >
-                    Next
+                    Próximo
                   </div>
                 </div>
               </div>
@@ -62,21 +62,19 @@
           <h1 class="modal-title fs-5" id="staticBackdropLabel">EVENTOS</h1>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
-        <div class="modal-body">
-          <div *ngFor="let evento of eventsOnModal">
-            <p>
+        <div class="modal-body ">
+          <div *ngFor="let evento of eventsOnModal" class=" mb-5">
+            <p class="text-uppercase fw-bolder">
               {{evento.title}}
             </p>
-            <p>
-               Começa: {{ evento.start| date: 'dd/MM/yyyy' : 'pt-BR' }}
+            <p class="p-auto">
+              {{ evento.start| date: 'dd/MM/yyyy' : 'pt-BR' }}   <i class="fa-solid fa-arrow-right" style="font-size: 0.6rem;"></i>   {{ evento.end | date: 'dd/MM/yyyy' : 'pt-BR' }}
             </p>
-            <p>
-                Termina: {{ evento.end | date: 'dd/MM/yyyy' : 'pt-BR' }}
-            </p>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-              <button type="button" class="btn btn-primary" (click)="goToEditEvent(evento.id)" data-bs-toggle="modal" data-bs-target="#exampleModal">Editar evento</button>
-            </div>
+            <hr style="font-size: 1rem;">
+          </div>
+          <div class="modal-footer" *ngIf="role=='ADMIN'">
+            <button type="button" class="btn btn-secondary"data-bs-toggle="offcanvas"  data-bs-target="#offcanvasExample" aria-controls="offcanvasExample"><a  data-bs-toggle="modal" data-bs-dismiss="modal">Editar</a></button>
+            <button type="button" class="btn btn-primary"  data-bs-toggle="modal" data-bs-dismiss="modal" data-bs-target="#novoEvento">Criar Novo</button>
           </div>
         </div>
        
@@ -87,42 +85,113 @@
 
 
   <!-- Modal -->
-  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="editEventModal" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-          <form>
-            <div class="mb-3">
-              <label for="title" class="col-form-label">Title:</label>
-              <input type="text" class="form-control" id="title">
+  <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+    <div class="offcanvas-header">
+      <h5 class="offcanvas-title" id="offcanvasExampleLabel">Edição</h5>
+      <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body">
+      <div class="modal-body">
+            <div *ngFor="let evento of eventsOnModal">
+              <p>
+                {{evento.title}}
+              </p>
+              <p>
+                Começa: {{ evento.start| date: 'dd/MM/yyyy' : 'pt-BR' }}
+              </p>
+              <p>
+                 Termina: {{ evento.end | date: 'dd/MM/yyyy' : 'pt-BR' }}
+              </p>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary"data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">Apagar</button>
+                <button type="button" class="btn btn-primary"  data-bs-toggle="modal" data-bs-target="#editModal">Editar evento</button>
+              </div>
+  
             </div>
-            <div class="mb-3">
-              <label for="start" class="col-form-label">Start:</label>
-              <input type="text" class="form-control" id="start" >
-            </div>
-            <div class="mb-3">
-              <label for="end" class="col-form-label">End:</label>
-              <input type="text" class="form-control" id="end">
-            </div>
-            <div class="mb-3">
-              <label for="color" class="col-form-label">Color:</label>
-              <input type="text" class="form-control" id="color" >
-            </div>
-          </form>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary">Save changes</button>
-        </div>
+          </div>
+    </div>
+  </div>
+</ng-container>
+
+<!--------------------- EDITAR EVENTO -------------->
+<div class="modal fade" id="editModal" tabindex="-1" aria-labelledby="editEventModal" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Editar Evento</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form #myForm="ngForm" (ngSubmit)="onSubmit()">
+          <div class="mb-3">
+            <label for="title" class="col-form-label">Título:</label>
+            <input type="text" class="form-control" id="title" name="title" [(ngModel)]="formData.title" required>
+          </div>
+          <div class="mb-3">
+            <label for="start" class="col-form-label">Começo:</label>
+            <input type="text" class="form-control" id="start" name="start" [(ngModel)]="formData.start" required>
+          </div>
+          <div class="mb-5">
+            <label for="end" class="col-form-label">Fim:</label>
+            <input type="text" class="form-control" id="end" name="end" [(ngModel)]="formData.end" required>
+          </div>
+          <div class="mb-3">
+            <select class="form-select form-select-lg mb-3" aria-label="Large select example" id="color" name="color" [(ngModel)]="formData.color" required>
+              <option value="" disabled selected>Selecione a cor</option>
+              <option value="red">Vermelho</option>
+              <option value="green">Verde</option>
+              <option value="Amarelo">Amarelo</option>
+              <option value="Azul">Azul</option>
+            </select>
+          </div>
+          <button type="submit" class="btn btn-primary">Enviar</button>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
       </div>
     </div>
   </div>
-<div style="margin-top:20vh; height: 
-30vh;">
-
-
+</div>
+<!--------------------- NOVO EVENTO -------------->
+<div class="modal fade" id="novoEvento" tabindex="-1" aria-labelledby="novoEvento" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Novo Evento</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form #myForm="ngForm" (ngSubmit)="onSubmit()">
+          <div class="mb-3">
+            <label for="title" class="col-form-label">Título:</label>
+            <input type="text" class="form-control" id="title" name="title" [(ngModel)]="formData.title" required>
+          </div>
+          <div class="mb-3">
+            <label for="start" class="col-form-label">Começo:</label>
+            <input type="text" class="form-control" id="start" name="start" [(ngModel)]="formData.start" required>
+          </div>
+          <div class="mb-5">
+            <label for="end" class="col-form-label">Fim:</label>
+            <input type="text" class="form-control" id="end" name="end" [(ngModel)]="formData.end" required>
+          </div>
+          <div class="mb-3">
+            <select class="form-select form-select-lg mb-3" aria-label="Large select example" id="color" name="color" [(ngModel)]="formData.color" required>
+              <option value="" disabled selected>Selecione a cor</option>
+              <option value="red">Vermelho</option>
+              <option value="green">Verde</option>
+              <option value="Amarelo">Amarelo</option>
+              <option value="Azul">Azul</option>
+            </select>
+          </div>
+          <button type="submit" class="btn btn-primary">Enviar</button>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
 </div>

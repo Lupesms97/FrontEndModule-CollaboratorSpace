@@ -12,10 +12,17 @@
             {{post.date| date:'dd/MM/yyyy'}}
             </p>
         </div>
-        <div class="row ">
+        <div class="row post-content">
             <p>
                 {{post.content}}
             </p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-4">
+            <button class="btn btn-primary" (click)="goBack()">
+                <i class="fa-solid fa-arrow-left"></i> Voltar
+            </button>
         </div>
     </div>
 </div>

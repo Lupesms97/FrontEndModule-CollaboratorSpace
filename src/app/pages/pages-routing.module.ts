@@ -17,9 +17,8 @@ const routes: Routes = [
 { path: 'posts/:id', component: BlogDetailsComponent/* , canActivate: [authGuard] */ }, 
 { path: 'publisher', component: PublisherComponent  /* , canActivate: [authGuard] */ },
 {path:'calendar', component: CalendarComponent},
-{path:'datapicker/:id', component: NewEventComponent},
+{path:'editEvent', component: NewEventComponent},
 {path:'userProfile', component: ProfileComponent}
-
 /* { path: 'posts/:id', component: BlogDetailsComponent, canActivate: [authGuard, hasRole], data: { role: [Role.ADMIN, Role.USER] } }, 
  */
 ];

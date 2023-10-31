@@ -45,6 +45,25 @@ export class EventsService {
       // Outras propriedades do evento, se necessário
     };
   }
+  public getPostbyId(id: string): Observable<CalendarEvent> {
+    return this.events$!.pipe(
+      map((event) => event.find(event => event.id === id)!)
+    );
+  }
+  public creatEvent(event: CalendarI) {
+    return this.http.post<CalendarI>(`${this.API_URL_R}/evenDataEntrance`, event).subscribe((resp)=> console.log(resp));
+  }
+  public updateEvent(event: CalendarI) {
+    return this.http.put<CalendarI>(`${this.API_URL_R}/eventData`, event).subscribe((resp)=> console.log(resp));
+  }
+  public deleteEvent(eventId: string) {
+    return this.http.delete<CalendarI>(`${this.API_URL_R}/eventDataDeletion/${eventId}`).subscribe((resp)=> console.log(resp));
+  }
 
 
 }
+/* "id": "e0b648d5-89c8-4573-9b91-1e557b70d3d2",
+ *//* "title": " Evento de dezembro 2",
+ *//* "start": "2023/12/15",
+ *//* "end": "2023/12/16",
+ *//* "color": "red" */

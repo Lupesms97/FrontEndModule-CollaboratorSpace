@@ -16,23 +16,23 @@ font-family: 'Tilt Neon', sans-serif; */
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
-$indigo-palette: (
- 50: #e8eaf6,
- 100: #c5cae9,
- 200: #9fa8da,
- 300: #7986cb,
- // ... continues to 900
- contrast: (
-   50: rgba(black, 0.87),
-   100: rgba(black, 0.87),
-   200: rgba(black, 0.87),
-   300: white,
-   // ... continues to 900
- )
-);
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
 @use '@angular/material' as mat;
 
-$my-palette: mat.$indigo-palette;
-
 @include mat.core();
-$my-primary: mat.define-palette(mat.$indigo-palette, 500);
+
+
+$dark-theme: mat.define-dark-theme((
+ color: (
+   primary: mat.define-palette(mat.$pink-palette),
+   accent: mat.define-palette(mat.$blue-grey-palette),
+ ),
+  // Only include `typography` and `density` in the default dark theme.
+  typography: mat.define-typography-config(),
+  density: 0,
+));
+@include mat.core-theme($dark-theme);
+@include mat.button-theme($dark-theme);

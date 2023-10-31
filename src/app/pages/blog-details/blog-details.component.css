@@ -1,5 +1,5 @@
 .container{
-    margin-top:15vh;
+    margin-top:5vh;
     width:60%;
 }
 
@@ -11,12 +11,46 @@
     font-size:3rem;
     font-weight:bold
 }
-p{
-    line-height:1.8rem
+.post-content p{
+    line-height:1.8rem;
+    font-size:1.4rem;
+    color:#4d4d4d
 }
 .dataInfo{
     font-size:0.8rem;
     color:grey;
     padding-right:40vw;
-    margin-bottom:5vh
+    margin-bottom:5vh;
+    font-weight:bold
+}
+.btn-primary{
+    margin-top:10vh;
+    margin-bottom:5vh;
+    height:6vh;
+    width:10vw;
+    background:#4B555E;
+    border:none;
+    border-radius:2rem;
+}
+@media(max-width: 768px){
+    .container{
+        margin-top:5vh;
+        width:90%;
+    }
+    .post-content p{
+        font-size:1.3rem
+    }
+
+    .dataInfo{
+        font-size:0.9rem;
+    }
+    .btn-primary{
+        width:20vw
+    }
+    
+}
+@media(max-width: 475px){
+    .btn-primary{
+        width:25vw
+    }
 }

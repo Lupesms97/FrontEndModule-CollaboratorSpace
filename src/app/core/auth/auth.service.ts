@@ -21,6 +21,7 @@ export class AuthService {
   private user = new BehaviorSubject<UserCadastro | null>(null);
   user$ = this.user.asObservable();
   isLogged$: Observable<boolean> = this.user$.pipe(map(Boolean));
+  role$: Observable<Role> = new Observable<Role>();
 
   private readonly API_URL = 'http://localhost:8081/auth';
 
@@ -40,6 +41,7 @@ export class AuthService {
     if (token) {
       const decodedToken = this.decodeJwt(token);
       this.user.next(decodedToken);
+      this.role$ = this.user$.pipe(map((user) => user!.role));
     }
 
   }

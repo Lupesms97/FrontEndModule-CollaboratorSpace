@@ -6,11 +6,12 @@ import { Component } from '@angular/core';
   styleUrls: ['./new-event.component.css']
 })
 export class NewEventComponent {
-  selectedDate: string = ''; // Variável para armazenar a data selecionada
+// Variável para armazenar a data selecionada
+formData: any = {};
 
-  constructor() {}
+onSubmit() {
+  console.log('Formulário enviado:', this.formData);
+  // Faça o que quiser com os dados do formulário aqui
+}
 
-  printTela(inf:string){
-    console.log(inf);
-  }
 }

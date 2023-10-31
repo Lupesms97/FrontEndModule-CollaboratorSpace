@@ -3,8 +3,8 @@
     <form method="post">
         <div class="row">
             <div class="col-md-4">
-                <div class="profile-img">
-                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS52y5aInsxSm31CvHOFHWujqUx_wWTS9iM6s7BAm21oEN_RiGoog" alt=""/>
+                <div class="profile-img circle">
+                    <img src="assets/user-profile.png" alt=""/>
                     <div class="file btn btn-lg btn-primary">
                         Change Photo
                         <input type="file" name="file"/>
@@ -16,17 +16,17 @@
                             <h5>
                                 {{username||'User'}}
                             </h5>
-                            <h6>
+<!--                             <h6>
                                 Web Developer and Designer
-                            </h6>
-                            <p class="proile-rating">RANKINGS : <span>8/10</span></p>
+                            </h6> -->
+  <!--                           <p class="proile-rating">RANKINGS : <span>8/10</span></p> -->
                     <ul class="nav nav-tabs" id="myTab" role="tablist">
                         <li class="nav-item">
                             <a class="nav-link active" id="home-tab" data-toggle="tab"role="tab" aria-controls="home" aria-selected="true">About</a>
                         </li>
-                        <li class="nav-item">
+<!--                         <li class="nav-item">
                             <a class="nav-link" id="profile-tab" data-toggle="tab"  role="tab" aria-controls="profile" aria-selected="false">Timeline</a>
-                        </li>
+                        </li> -->
                     </ul>
                 </div>
             </div>
@@ -35,7 +35,7 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-md-4">
+<!--             <div class="col-md-4">
                 <div class="profile-work">
                     <p>WORK LINK</p>
                     <a href="">Website Link</a><br/>
@@ -47,9 +47,9 @@
                     <a href="">WordPress</a><br/>
                     <a href="">WooCommerce</a><br/>
                     <a href="">PHP, .Net</a><br/>
-                </div>
-            </div>
-            <div class="col-md-8">
+                </div> 
+            </div> -->
+            <div class="col-md-8 ms-auto ">
                 <div class="tab-content profile-tab" id="myTabContent">
                     <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
                                 <div class="row">
@@ -57,7 +57,7 @@
                                         <label>User Id</label>
                                     </div>
                                     <div class="col-md-6">
-                                        <p>dsjkhfjj9994030334kkjn2nnnnn223</p>
+                                        <p>{{username||'a8b1ee38-f5da-4e5c-b1e7-82766e073431'}}</p>
                                     </div>
                                 </div>
                                 <div class="row">
@@ -73,7 +73,7 @@
                                         <label>Email</label>
                                     </div>
                                     <div class="col-md-6">
-                                        <p>useri@gmail.com</p>
+                                        <p>@gruposels.com.br</p>
                                     </div>
                                 </div>
                                 <div class="row">
@@ -81,15 +81,15 @@
                                         <label>Ultimo acesso</label>
                                     </div>
                                     <div class="col-md-6">
-                                        <p>23/06/2023</p>
+                                        <p>{{lastAcess|date: 'dd/MM/yyyy HH:mm:ss' : 'America/Sao_Paulo'}}</p>
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="col-md-6">
                                         <label>Setor</label>
                                     </div>
-                                    <div class="col-md-6">
-                                        <p>Grupo Sels</p>
+                                    <div class="col-md-6 ">
+                                        <p class="text-danger">Not Found</p>
                                     </div>
                                 </div>
                     </div>
