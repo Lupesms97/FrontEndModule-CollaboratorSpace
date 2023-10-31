@@ -50,7 +50,7 @@ dataLoaded = false;
       /* this.posts$ = data; */
       this.posts = data;
       this.sortPostsByDate();
-      interval(2000).subscribe((x) => {
+      interval(1000).subscribe((x) => {
         this.count = x;
         this.dataLoaded= true;
       })

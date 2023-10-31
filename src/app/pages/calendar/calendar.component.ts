@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { CalendarDateFormatter, CalendarEvent, CalendarView, DAYS_OF_WEEK } from 'angular-calendar';
 import { format, getDay, isToday, isSameMonth, isSameDay, getDate, endOfMonth, startOfMonth, eachDayOfInterval, subDays, addDays, startOfDay, endOfDay } from 'date-fns';
 import * as e from 'express';
-import { registerLocaleData } from '@angular/common';
+import { DatePipe, formatDate, registerLocaleData } from '@angular/common';
 import localePt from '@angular/common/locales/pt';
 
 import { EventColor } from 'calendar-utils';
@@ -43,15 +43,23 @@ export class CalendarComponent  {
   eventsOnModal:CalendarEvent[] = [];
   view: CalendarView = CalendarView.Month;
   viewDate: Date = new Date();
-  eventss: CalendarEvent[] = [];
-  colorsList: string[]=['red','blue','yellow','green'];
+  events: CalendarEvent[] = [];
+  formattedStartDate: string|null= '';
+  formattedEndDate: string|null= '';
+  copyEvent: CalendarEvent = {
+    title: '',
+    start: new Date(),
+    end: new Date(),
+    color: {primary: '', secondary: ''},
+  };
+  
 
 
 
   constructor(
     private eventsService: EventsService,
     private router: Router,
-    private auth: AuthService
+    private auth: AuthService,
   ) {
    this.role = this.auth.getRoles()|| Role.ADMIN; 
     // Defina o locale como 'pt-BR' para exibir datas e dias da semana em português.
@@ -61,7 +69,7 @@ export class CalendarComponent  {
 
    getEventsService(){
       this.eventsService.getEvents().subscribe((data) => {
-        this.eventss = data;       
+        this.events = data;       
       });
      
    }
@@ -113,5 +121,14 @@ export class CalendarComponent  {
   onSubmit(){
     console.log(this.formData);
   }
+  edit(event:CalendarEvent){
+    this.copyEvent ={
+      title: event.title,
+      start: new Date(formatDate(event.start, 'yyyy-MM-dd', 'pt-BR')),
+      end: event.end,
+      color: event.color,
+    };
+  }
+
 
 }

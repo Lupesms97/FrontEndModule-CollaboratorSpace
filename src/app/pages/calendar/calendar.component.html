@@ -46,7 +46,7 @@
       </div>
       <mwl-calendar-month-view 
         [viewDate]="viewDate"
-        [events]="eventss"
+        [events]="events"
         [locale]="locale"
 
         (dayClicked)="dayClicked($event.day)"
@@ -73,7 +73,7 @@
             <hr style="font-size: 1rem;">
           </div>
           <div class="modal-footer" *ngIf="role=='ADMIN'">
-            <button type="button" class="btn btn-secondary"data-bs-toggle="offcanvas"  data-bs-target="#offcanvasExample" aria-controls="offcanvasExample"><a  data-bs-toggle="modal" data-bs-dismiss="modal">Editar</a></button>
+            <button type="button" class="btn btn-secondary"data-bs-toggle="offcanvas"  data-bs-target="#offcanvasExample" aria-controls="offcanvasExample"><a data-bs-toggle="modal" data-bs-dismiss="modal">Editar</a></button>
             <button type="button" class="btn btn-primary"  data-bs-toggle="modal" data-bs-dismiss="modal" data-bs-target="#novoEvento">Criar Novo</button>
           </div>
         </div>
@@ -92,7 +92,7 @@
     </div>
     <div class="offcanvas-body">
       <div class="modal-body">
-            <div *ngFor="let evento of eventsOnModal">
+            <div *ngFor="let evento of eventsOnModal" class="mb-3">
               <p>
                 {{evento.title}}
               </p>
@@ -103,10 +103,14 @@
                  Termina: {{ evento.end | date: 'dd/MM/yyyy' : 'pt-BR' }}
               </p>
               <div class="modal-footer">
-                <button type="button" class="btn btn-secondary"data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">Apagar</button>
-                <button type="button" class="btn btn-primary"  data-bs-toggle="modal" data-bs-target="#editModal">Editar evento</button>
+                <div class="col-3">
+                  <button type="button" class="btn btn-secondary "data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">Apagar</button>
+                </div>
+                <div class="col-3">
+                  <button type="button" class="btn btn-primary"  data-bs-toggle="modal" data-bs-target="#editModal" (click)="edit(evento)">Editar</button>
+                </div>
               </div>
-  
+              <hr>
             </div>
           </div>
     </div>
@@ -125,18 +129,18 @@
         <form #myForm="ngForm" (ngSubmit)="onSubmit()">
           <div class="mb-3">
             <label for="title" class="col-form-label">Título:</label>
-            <input type="text" class="form-control" id="title" name="title" [(ngModel)]="formData.title" required>
+            <input type="text" class="form-control" id="title" name="title" [(ngModel)]="copyEvent.title" required>
           </div>
           <div class="mb-3">
             <label for="start" class="col-form-label">Começo:</label>
-            <input type="text" class="form-control" id="start" name="start" [(ngModel)]="formData.start" required>
+            <input type="text" class="form-control" id="start" name="start" [(ngModel)]="copyEvent.start" required>
           </div>
           <div class="mb-5">
             <label for="end" class="col-form-label">Fim:</label>
-            <input type="text" class="form-control" id="end" name="end" [(ngModel)]="formData.end" required>
+            <input type="text" class="form-control" id="end" name="end" [(ngModel)]="copyEvent.end" required>
           </div>
           <div class="mb-3">
-            <select class="form-select form-select-lg mb-3" aria-label="Large select example" id="color" name="color" [(ngModel)]="formData.color" required>
+            <select class="form-select form-select-lg mb-3" aria-label="Large select example" id="color" name="color" [(ngModel)]="copyEvent.color" required>
               <option value="" disabled selected>Selecione a cor</option>
               <option value="red">Vermelho</option>
               <option value="green">Verde</option>
@@ -148,7 +152,7 @@
         </form>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button  type="button" class="btn btn-secondary ms-2" data-bs-dismiss="modal">Close</button>
         <button type="button" class="btn btn-primary">Save changes</button>
       </div>
     </div>
