@@ -10,7 +10,7 @@ import { Post } from 'src/app/shared/models/Post';
 })
 export class PostService {
 
-  private readonly API_URL_R = '/assets/content.json';
+  private readonly API_URL_R = 'http://localhost:8081/posts';
   private posts$: Observable<Post[]> | undefined;
   
 
@@ -22,7 +22,7 @@ export class PostService {
   }
 /*   (`${this.API_URL_R}/getContent`) */
   private setPostsOnObservable(): Observable<Post[]> {
-    return this.http.get<Post[]>(`${this.API_URL_R}`)
+    return this.http.get<Post[]>(`${this.API_URL_R}/allPosts`)
       .pipe(
         tap((posts) => {
           // Atualiza os posts quando os dados são buscados
@@ -48,16 +48,16 @@ export class PostService {
   }
 
   public creatPost(post: Post) {
-    this.http.post<Post>(`${this.API_URL_R}/newContent`, post).subscribe((post) => { console.log(post) });
+    this.http.post<Post>(`${this.API_URL_R}/post`, post).subscribe((post) => { console.log(post) });
   }
 
   public updatePost(post: Post) {
-    this.http.put<Post>(`${this.API_URL_R}/updateContent`, post).subscribe((post) => { console.log(post) });
+    this.http.post<Post>(`${this.API_URL_R}/atualizationPost`, post).subscribe((post) => { console.log(post) });
     this.refreshPosts();
   }
 
   public deletePost(id: string) {
-    this.http.delete<Post>(`${this.API_URL_R}/deleteContent/${id}`).subscribe((post) => { console.log(post) });
+    this.http.delete<Post>(`${this.API_URL_R}/deletePost?postId=${id}`).subscribe((post) => { console.log(post) });
     this.refreshPosts();
   }
 
