@@ -1,7 +1,8 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { HttpClientModule } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { PostService } from './post.service';
+import { ContentInterceptor } from '../interceptors/content.interceptor';
 
 
 
@@ -14,8 +15,10 @@ import { PostService } from './post.service';
     HttpClientModule,
     
   ],
-  providers: [
-    PostService
+  providers:[
+    {
+      provide: HTTP_INTERCEPTORS,useClass:ContentInterceptor,multi:true
+    }
   ]
 })
 export class PostModule { }

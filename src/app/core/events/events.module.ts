@@ -1,7 +1,8 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { EventsService } from './events.service';
-import { HttpClientModule } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
+import { ContentInterceptor } from '../interceptors/content.interceptor';
 
 
 
@@ -11,10 +12,11 @@ import { HttpClientModule } from '@angular/common/http';
     CommonModule,
     HttpClientModule
   ],
-  providers: [
-    EventsService
+  providers:[
+    {
+      provide: HTTP_INTERCEPTORS,useClass:ContentInterceptor,multi:true
+    }
   ]
-
 
 })
 export class EventsModule { }
