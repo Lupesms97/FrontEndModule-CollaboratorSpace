@@ -50,12 +50,12 @@
         [locale]="locale"
 
         (dayClicked)="dayClicked($event.day)"
-        type="button"  data-bs-toggle="modal" data-bs-target="#staticBackdrop"
+        type="button"  data-bs-toggle="modal" data-bs-target="#eventsExibitionLayout"
       ></mwl-calendar-month-view>
     </div>
 
 
-  <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal fade" id="eventsExibitionLayout" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
@@ -104,10 +104,10 @@
               </p>
               <div class="modal-footer">
                 <div class="col-3">
-                  <button type="button" class="btn btn-secondary "data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">Apagar</button>
+                  <button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#deleteConfirmation" (click)="openModalDelete(evento.id)">Apagar</button>
                 </div>
                 <div class="col-3">
-                  <button type="button" class="btn btn-primary"  data-bs-toggle="modal" data-bs-target="#editModal" (click)="edit(evento)">Editar</button>
+                  <button type="button" class="btn btn-primary"  data-bs-toggle="modal" data-bs-target="#atualizarModal" (click)="openModalAtualization(evento)">Atualizar</button>
                 </div>
               </div>
               <hr>
@@ -117,8 +117,8 @@
   </div>
 </ng-container>
 
-<!--------------------- EDITAR EVENTO -------------->
-<div class="modal fade" id="editModal" tabindex="-1" aria-labelledby="editEventModal" aria-hidden="true">
+<!--------------------- ATUALIZAR EVENTO -------------->
+<div class="modal fade" id="atualizarModal" tabindex="-1" aria-labelledby="atualizarModal" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
@@ -126,26 +126,29 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        <form #myForm="ngForm" (ngSubmit)="onSubmit()">
+        <form #myForm="ngForm" (ngSubmit)="confirmAtualization()">
           <div class="mb-3">
             <label for="title" class="col-form-label">Título:</label>
             <input type="text" class="form-control" id="title" name="title" [(ngModel)]="copyEvent.title" required>
           </div>
           <div class="mb-3">
             <label for="start" class="col-form-label">Começo:</label>
-            <input type="text" class="form-control" id="start" name="start" [(ngModel)]="copyEvent.start" required>
+            <input type="date" class="form-control" id="start" name="start" [(ngModel)]="copyEvent.start" required>
           </div>
           <div class="mb-5">
             <label for="end" class="col-form-label">Fim:</label>
-            <input type="text" class="form-control" id="end" name="end" [(ngModel)]="copyEvent.end" required>
+            <input type="date" class="form-control" id="end" name="end" [(ngModel)]="copyEvent.end" required>
           </div>
           <div class="mb-3">
-            <select class="form-select form-select-lg mb-3" aria-label="Large select example" id="color" name="color" [(ngModel)]="copyEvent.color" required>
+            <label for="color"class="col-form-label">Selecione a cor:</label>
+            <select class="form-select form-select mb-3 text-black" aria-label="cxvzxcv" id="color" name="color" [(ngModel)]="copyEvent.color" required>
               <option value="" disabled selected>Selecione a cor</option>
               <option value="red">Vermelho</option>
               <option value="green">Verde</option>
-              <option value="Amarelo">Amarelo</option>
-              <option value="Azul">Azul</option>
+              <option value="yellow">Amarelo</option>
+              <option value="blue">Azul</option>
+              <option value="purple">Roxo</option>
+              <option value="pink">Rosa</option>
             </select>
           </div>
           <button type="submit" class="btn btn-primary">Enviar</button>
@@ -167,34 +170,57 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        <form #myForm="ngForm" (ngSubmit)="onSubmit()">
+        <form #myForm="ngForm" (ngSubmit)="newEvent()">
           <div class="mb-3">
             <label for="title" class="col-form-label">Título:</label>
             <input type="text" class="form-control" id="title" name="title" [(ngModel)]="formData.title" required>
           </div>
           <div class="mb-3">
             <label for="start" class="col-form-label">Começo:</label>
-            <input type="text" class="form-control" id="start" name="start" [(ngModel)]="formData.start" required>
+            <input type="date" class="form-control" id="start" name="start" [(ngModel)]="formData.start" required>
           </div>
           <div class="mb-5">
             <label for="end" class="col-form-label">Fim:</label>
-            <input type="text" class="form-control" id="end" name="end" [(ngModel)]="formData.end" required>
+            <input type="date" class="form-control" id="end" name="end" [(ngModel)]="formData.end" required>
           </div>
           <div class="mb-3">
-            <select class="form-select form-select-lg mb-3" aria-label="Large select example" id="color" name="color" [(ngModel)]="formData.color" required>
+            <label for="color"class="col-form-label">Selecione a cor:</label>
+            <select class="form-select form-select mb-3 text-black" aria-label="cxvzxcv" id="color" name="color" [(ngModel)]="copyEvent.color" required>
               <option value="" disabled selected>Selecione a cor</option>
               <option value="red">Vermelho</option>
               <option value="green">Verde</option>
-              <option value="Amarelo">Amarelo</option>
-              <option value="Azul">Azul</option>
+              <option value="yellow">Amarelo</option>
+              <option value="blue">Azul</option>
+              <option value="purple">Roxo</option>
+              <option value="pink">Rosa</option>
             </select>
+
           </div>
-          <button type="submit" class="btn btn-primary">Enviar</button>
+          <div>
+            <button type="submit" class="btn btn-primary">Enviar</button>
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+          </div>
         </form>
       </div>
+    </div>
+  </div>
+</div>
+<!--------------------- CONFIRMAÇÂO DE APAGAR -------------->
+<div class="modal fade" id="deleteConfirmation" tabindex="-1" aria-labelledby="deleteConfirmation" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="staticBackdropLabel">Deletar</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <p>
+          Você tem certeza que deseja apagar o post com titulo - <strong></strong>?
+        </p>
+      </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
+        <button type="button" class="btn btn-danger" data-bs-dismiss="modal" >Cancelar</button>
+        <button type="button" class="btn btn-dark" data-bs-dismiss="modal" (click)="confirmDelete()">Apagar</button>
       </div>
     </div>
   </div>

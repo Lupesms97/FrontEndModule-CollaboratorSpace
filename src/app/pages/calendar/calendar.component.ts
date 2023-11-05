@@ -13,6 +13,7 @@ import { Router } from '@angular/router';
 import { FormControl, FormGroup } from '@angular/forms';
 import { Role } from 'src/app/shared/models/Role';
 import { AuthService } from 'src/app/core/auth/auth.service';
+import { de } from 'date-fns/locale';
 
 
 
@@ -46,6 +47,7 @@ export class CalendarComponent  {
   events: CalendarEvent[] = [];
   formattedStartDate: string|null= '';
   formattedEndDate: string|null= '';
+  deletId:string = '';
   copyEvent: CalendarEvent = {
     title: '',
     start: new Date(),
@@ -65,6 +67,7 @@ export class CalendarComponent  {
     // Defina o locale como 'pt-BR' para exibir datas e dias da semana em português.
     registerLocaleData(localePt);
     this.getEventsService();
+
    }
 
    getEventsService(){
@@ -90,9 +93,7 @@ export class CalendarComponent  {
       }
     }
   }
-  deleteEvent(eventToDelete: CalendarEvent) {
-    this.eventsOnModal = this.eventsOnModal.filter((event) => event !== eventToDelete);
-  }
+
   addEvent(event:CalendarEvent): void {
     this.eventsOnModal = [
       ...this.eventsOnModal,
@@ -118,17 +119,31 @@ export class CalendarComponent  {
     this.router.navigate(['editEvent']);
   }
 
-  onSubmit(){
-    console.log(this.formData);
-  }
-  edit(event:CalendarEvent){
+
+  openModalAtualization(event:CalendarEvent){
     this.copyEvent ={
+      id: event.id,
       title: event.title,
-      start: new Date(formatDate(event.start, 'yyyy-MM-dd', 'pt-BR')),
+      start: new Date(event.start),
       end: event.end,
       color: event.color,
     };
   }
+  confirmAtualization(){
+    this.eventsService.updateEvent(this.copyEvent);
 
+  }
+  openModalDelete(eventId:string|number|undefined){
+    this.deletId = eventId as string;
+  }
+  confirmDelete(){
+ this.eventsService.deleteEvent(this.deletId);  
+  this.eventsOnModal = this.eventsOnModal.filter((event) => event.id !== this.deletId);
+  this.events = this.events.filter((event) => event.id !== this.deletId);
+  this.deletId = '';
+  }
+  newEvent(){
+    console.log(this.formData);
+  }
 
 }

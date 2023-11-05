@@ -23,7 +23,7 @@ export class AuthService {
   isLogged$: Observable<boolean> = this.user$.pipe(map(Boolean));
   role$: Observable<Role> = new Observable<Role>();
 
-  private readonly API_URL = 'http://localhost:8081/auth';
+  private readonly API_URL = 'http://localhost:8082/auth';
 
   private httpOptions = {
     headers: new HttpHeaders({

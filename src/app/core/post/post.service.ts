@@ -57,7 +57,7 @@ export class PostService {
   }
 
   public deletePost(id: string) {
-    this.http.delete<Post>(`${this.API_URL_R}/deletePost?postId=${id}`).subscribe((post) => { console.log(post) });
+    this.http.delete<Post>(`${this.API_URL_R}/postDeletion?postId=${id}`).subscribe((post) => { console.log(post) });
     this.refreshPosts();
   }
 

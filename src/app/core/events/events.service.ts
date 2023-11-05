@@ -12,7 +12,7 @@ import { format, getDay, isToday, isSameMonth, isSameDay, getDate, endOfMonth, s
   providedIn: 'root'
 })
 export class EventsService {
-  private readonly API_URL_R = '/assets/events.json';
+  private readonly API_URL_R = 'http://localhost:8081/events';
   private events$: Observable<CalendarEvent[]> | undefined;
 
   constructor(private http: HttpClient) {
@@ -20,7 +20,7 @@ export class EventsService {
   }
 
   setEventsOnObservable(): Observable<CalendarEvent[]> {
-    return this.http.get<CalendarI[]>(this.API_URL_R).pipe(
+    return this.http.get<CalendarI[]>(`${this.API_URL_R}/all`).pipe(
       map((items) => items.map(this.convertJsonToCalendarEvent))
     );
   }
@@ -35,6 +35,7 @@ export class EventsService {
 
   private convertJsonToCalendarEvent(item: CalendarI): CalendarEvent {
     return {
+      id: item.id,
       title: item.title,
       start: startOfDay(new Date(item.start)),
       end: endOfDay(new Date(item.end)),
@@ -50,14 +51,18 @@ export class EventsService {
       map((event) => event.find(event => event.id === id)!)
     );
   }
-  public creatEvent(event: CalendarI) {
-    return this.http.post<CalendarI>(`${this.API_URL_R}/evenDataEntrance`, event).subscribe((resp)=> console.log(resp));
+  public creatEvent(event: CalendarEvent) {
+    this.http.post<CalendarEvent>(`${this.API_URL_R}/event`, event).subscribe((resp)=> console.log(resp));
+    this.refreshEvents();
+    
   }
-  public updateEvent(event: CalendarI) {
-    return this.http.put<CalendarI>(`${this.API_URL_R}/eventData`, event).subscribe((resp)=> console.log(resp));
+  public updateEvent(event: CalendarEvent) {
+    this.http.put<CalendarEvent>(`${this.API_URL_R}/update`, event).subscribe((resp)=> console.log(resp));
+    this.refreshEvents();
   }
   public deleteEvent(eventId: string) {
-    return this.http.delete<CalendarI>(`${this.API_URL_R}/eventDataDeletion/${eventId}`).subscribe((resp)=> console.log(resp));
+    this.http.delete<CalendarEvent>(`${this.API_URL_R}/eventDeletion?eventId=${eventId}`).subscribe((resp)=> console.log(resp));
+    this.refreshEvents();
   }
 
 
