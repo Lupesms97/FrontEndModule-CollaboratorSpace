@@ -4,7 +4,6 @@ import { format, getDay, isToday, isSameMonth, isSameDay, getDate, endOfMonth, s
 import * as e from 'express';
 import { DatePipe, formatDate, registerLocaleData } from '@angular/common';
 import localePt from '@angular/common/locales/pt';
-
 import { EventColor } from 'calendar-utils';
 import { CalendarI } from 'src/app/shared/models/CalendarI';
 import { EventsService } from 'src/app/core/events/events.service';
