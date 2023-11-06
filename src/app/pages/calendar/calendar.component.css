@@ -68,6 +68,40 @@
   .example-form-field {
     margin: 0 8px 16px 0;
   }
+
+  .btn:hover .fa-plus{
+    animation:spin 1s
+  }
+  .btn:hover .fa-xmark{
+    animation:spin 1s
+  }
+  .btn:hover .fa-check{
+    animation:bounce 1s
+  }
+  .btn:hover .fa-pencil{
+    animation:bounce 1s
+  }
+  @keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
+  @keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+      transform: translateY(0);
+    }
+    40% {
+      transform: translateY(-1vh);
+      
+    }
+    60% {
+      transform: translateY(-0.8vh);
+    }
+  }
   @media(max-width:768px){
     .calendar {
       width: 100%;

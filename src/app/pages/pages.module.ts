@@ -10,16 +10,19 @@ import { BlogDetailsComponent } from './blog-details/blog-details.component';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { CalendarModule, DateAdapter } from 'angular-calendar';
 import { adapterFactory } from 'angular-calendar/date-adapters/date-fns';
-
 import { CalendarComponent } from './calendar/calendar.component';
 import { ProfileComponent } from './profile/profile.component';
-import { NewEventComponent } from './new-event/new-event.component';
 import { NavbarComponent } from '../shared/navbar/navbar.component';
 import {FormGroup, FormControl} from '@angular/forms';
 
 @NgModule({
   declarations: [  
-    BlogComponent, PublisherComponent, BlogDetailsComponent, CalendarComponent, ProfileComponent, NewEventComponent, NavbarComponent
+    BlogComponent,
+    PublisherComponent,
+    BlogDetailsComponent,
+    CalendarComponent,
+    ProfileComponent,
+    NavbarComponent
   ],
   imports: [
     CommonModule,

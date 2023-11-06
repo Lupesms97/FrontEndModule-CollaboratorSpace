@@ -8,7 +8,6 @@ import { Role } from '../shared/models/Role';
 import { authGuard } from '../core/auth/guards/auth.guard';
 import { CalendarComponent } from './calendar/calendar.component';
 import { ProfileComponent } from './profile/profile.component';
-import { NewEventComponent } from './new-event/new-event.component';
 
 
 const routes: Routes = [
@@ -17,7 +16,6 @@ const routes: Routes = [
 { path: 'posts/:id', component: BlogDetailsComponent/* , canActivate: [authGuard] */ }, 
 { path: 'publisher', component: PublisherComponent  /* , canActivate: [authGuard] */ },
 {path:'calendar', component: CalendarComponent},
-{path:'editEvent', component: NewEventComponent},
 {path:'userProfile', component: ProfileComponent}
 /* { path: 'posts/:id', component: BlogDetailsComponent, canActivate: [authGuard, hasRole], data: { role: [Role.ADMIN, Role.USER] } }, 
  */

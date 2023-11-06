@@ -27,7 +27,7 @@ const year = today.getFullYear();
   styleUrls: ['./calendar.component.css'],
 
 })
-export class CalendarComponent  {
+export class CalendarComponent {
   formData: any = {};
 
 /*   newEvent:CalendarI ={
@@ -67,15 +67,16 @@ export class CalendarComponent  {
     // Defina o locale como 'pt-BR' para exibir datas e dias da semana em português.
     registerLocaleData(localePt);
     this.getEventsService();
-
    }
 
    getEventsService(){
       this.eventsService.getEvents().subscribe((data) => {
         this.events = data;       
       });
+      console.log(this.events);
      
    }
+
 
 
   dayClicked({ date, events }: { date: Date; events: CalendarEvent[] }): void {
@@ -94,7 +95,7 @@ export class CalendarComponent  {
     }
   }
 
-  addEvent(event:CalendarEvent): void {
+/*   addEvent(event:CalendarEvent): void {
     this.eventsOnModal = [
       ...this.eventsOnModal,
       {
@@ -109,7 +110,7 @@ export class CalendarComponent  {
         },
       },
     ];   
-  }
+  } */
 
   closeOpenMonthViewDay() {
     this.activeDayIsOpen = false;
@@ -124,8 +125,8 @@ export class CalendarComponent  {
     this.copyEvent ={
       id: event.id,
       title: event.title,
-      start: new Date(event.start),
-      end: event.end,
+      start: event.start,
+      end: event.start,
       color: event.color,
     };
   }
@@ -142,8 +143,9 @@ export class CalendarComponent  {
   this.events = this.events.filter((event) => event.id !== this.deletId);
   this.deletId = '';
   }
-  newEvent(){
+  sendNewEvent(){
+    this.eventsService.creatEvent(this.formData); 
     console.log(this.formData);
+    this.formData = {};
   }
-
 }

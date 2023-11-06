@@ -5,6 +5,8 @@ import { Observable, map, tap } from 'rxjs';
 import { CalendarI } from 'src/app/shared/models/CalendarI';
 import { EventColor } from 'calendar-utils';
 import { format, getDay, isToday, isSameMonth, isSameDay, getDate, endOfMonth, startOfMonth, eachDayOfInterval, subDays, addDays, startOfDay, endOfDay } from 'date-fns';
+import { registerLocaleData } from '@angular/common';
+import localePt from '@angular/common/locales/pt';
 
 
 
@@ -14,14 +16,16 @@ import { format, getDay, isToday, isSameMonth, isSameDay, getDate, endOfMonth, s
 export class EventsService {
   private readonly API_URL_R = 'http://localhost:8081/events';
   private events$: Observable<CalendarEvent[]> | undefined;
+  private locale: string = 'pt-BR';
 
   constructor(private http: HttpClient) {
     this.refreshEvents();
+    registerLocaleData(localePt);
   }
 
   setEventsOnObservable(): Observable<CalendarEvent[]> {
     return this.http.get<CalendarI[]>(`${this.API_URL_R}/all`).pipe(
-      map((items) => items.map(this.convertJsonToCalendarEvent))
+      map((items) => items.map(this.convertJsonToCalendarEvent)),
     );
   }
 

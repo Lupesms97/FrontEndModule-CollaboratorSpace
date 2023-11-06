@@ -13,6 +13,30 @@
     border:none;
     border-radius:2rem;
 }
+.btn-primary:hover .fa-newspaper{
+    animation: bounce 1s;
+}
+.btn-primary:hover .fa-house{
+    animation: bounce 1s;
+}
+.dropdown-item:hover .fa-solid{
+    scale:1.1
+}
+.fa-house{
+ font-size:1.1rem
+}
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+      transform: translateY(0);
+    }
+    40% {
+      transform: translateY(-1vh);
+      scale:1.1
+    }
+    60% {
+      transform: translateY(-0.8vh);
+    }
+}
 
 @media(max-width:475px){
     .btn-primary{

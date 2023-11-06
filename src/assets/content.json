@@ -1,6 +1,6 @@
 [
   {
-    "id": "c286ec92-87f4-458e-92e2-7e0f88204c8e",
+    
     "title": "Aventura na Montanha",
     "shortContent": "Uma emocionante escalada pelas montanhas rochosas.",
     "content": "Nossa incrível aventura nas montanhas rochosas nos levou a paisagens de tirar o fôlego e desafios emocionantes. Descubra mais sobre nossa jornada e as vistas incríveis. A escalada pelas montanhas rochosas nos proporcionou uma experiência única e desafiadora. Enfrentamos trilhas íngremes, mas as vistas panorâmicas no topo valeram a pena. Quer saber mais sobre nossa aventura? Continue lendo para descobrir os detalhes emocionantes da nossa jornada.",
@@ -8,7 +8,7 @@
     "imageURL": "https://exemplo.com/montanha1.jpg"
   },
   {
-    "id": "f54f3dd2-205c-4f77-8316-4b56fc3d33f0",
+    
     "title": "Receita de Bolo de Chocolate",
     "shortContent": "Uma receita deliciosa para satisfazer seu desejo por chocolate.",
     "content": "Aqui está a receita perfeita para um bolo de chocolate incrivelmente fofo e saboroso. Experimente fazer em casa e saboreie cada mordida. Se você é um amante de chocolate, esta receita é um sonho tornado realidade. Cada pedaço é uma explosão de sabor de chocolate puro. Não se preocupe, compartilharemos todos os segredos para preparar este bolo em sua própria cozinha. Prepare-se para ficar com água na boca!",
@@ -16,7 +16,7 @@
     "imageURL": "https://exemplo.com/bolochocolate.jpg"
   },
   {
-    "id": "794ea4f9-3d7b-4b8a-bd33-d9a4e07395c6",
+    
     "title": "Viagem à Praia Paradisíaca",
     "shortContent": "Relaxe e aproveite o sol nas praias de areia branca.",
     "content": "Nossa viagem à praia paradisíaca foi um refúgio relaxante. Descubra mais sobre as praias de areia branca, o mar cristalino e as aventuras à beira-mar. Se você sonha em passar dias ensolarados na praia, este artigo é para você. Nossa viagem a uma praia paradisíaca foi uma experiência inesquecível. As praias de areia branca se estendiam até onde a vista alcançava, e a água cristalina era um convite para mergulhos revigorantes. Continue lendo para se transportar para este paraíso na terra.",
@@ -24,7 +24,7 @@
     "imageURL": "https://exemplo.com/praia1.jpg"
   },
   {
-    "id": "6ea41c96-2a94-4efb-a7e4-e0dd4cfa9c12",
+    
     "title": "Dicas de Produtividade",
     "shortContent": "Melhore sua produtividade com essas dicas incríveis.",
     "content": "Aumente sua eficiência e produtividade no trabalho com estas dicas práticas. Saiba como gerenciar seu tempo e atingir seus objetivos com sucesso. Todo mundo busca ser mais produtivo, e estas dicas são o caminho para alcançar essa meta. Com estratégias comprovadas, você poderá fazer mais em menos tempo e aproveitar os benefícios. Aumente sua produtividade a partir de hoje!",
@@ -32,7 +32,7 @@
     "imageURL": "https://exemplo.com/produtividade.jpg"
   },
   {
-    "id": "8bcfe3d9-8757-4ac3-b6d7-314c5a1f7f62",
+    
     "title": "História de uma Aventura",
     "shortContent": "Uma emocionante história de aventura e descoberta.",
     "content": "A jornada de um explorador em busca de novas terras e culturas. Acompanhe esta história emocionante e descubra o desconhecido. Embarque em uma jornada repleta de emoções, enquanto seguimos os passos de um destemido explorador. Das selvas densas às montanhas mais altas, esta aventura promete descobertas incríveis. Prepare-se para se maravilhar com a história deste explorador e suas incríveis descobertas!",
@@ -40,7 +40,7 @@
     "imageURL": "https://exemplo.com/aventura.jpg"
   },
   {
-    "id": "4a02c8fe-40c8-44f5-936f-e2c6db98248a",
+    
     "title": "Exercícios de Ioga em Casa",
     "shortContent": "Pratique ioga para relaxar e fortalecer o corpo.",
     "content": "Aprenda a fazer exercícios de ioga em casa e experimente os benefícios para a mente e o corpo. Descubra técnicas de relaxamento e fortalecimento. A ioga é uma prática milenar que oferece inúmeros benefícios para o corpo e a mente. Neste guia, você aprenderá a realizar exercícios de ioga no conforto da sua casa. Desfrute de momentos de relaxamento, fortalecimento e equilíbrio. Prepare-se para se sentir revigorado e em paz.",
@@ -48,7 +48,7 @@
     "imageURL": "https://exemplo.com/ioga.jpg"
   },
   {
-    "id": "b7d73a56-1057-4b63-b664-3f4b996ebdf9",
+    
     "title": "Passeio de Bicicleta na Natureza",
     "shortContent": "Explore trilhas na natureza e aprecie a vida ao ar livre.",
     "content": "Descubra a beleza da natureza em um passeio de bicicleta emocionante. Explore trilhas e desfrute do ar livre enquanto pedala por paisagens incríveis. O contato com a natureza é revigorante, e não há maneira melhor de fazê-lo do que em um passeio de bicicleta pela natureza. Prepare-se para trilhas deslumbrantes e experiências ao ar livre que o deixarão apaixonado pela natureza.",
@@ -56,7 +56,7 @@
     "imageURL": "https://exemplo.com/bicicleta.jpg"
   },
   {
-    "id": "7ea2e90a-1b17-4e5d-9b8b-692712a2d4e1",
+    
     "title": "Arte Moderna em Exibição",
     "shortContent": "Explore as últimas obras de arte moderna na exposição.",
     "content": "Conheça artistas contemporâneos e suas criações inovadoras em uma emocionante exposição de arte moderna. Veja as obras mais recentes e impactantes. A arte moderna é uma manifestação de criatividade e inovação. Nesta exposição, você terá a oportunidade de explorar as últimas criações de artistas contemporâneos. De pinturas a esculturas, prepare-se para uma experiência visual única.",
@@ -64,7 +64,7 @@
     "imageURL": "https://img.freepik.com/vetores-gratis/cenario-de-jogo-de-basquete-esporte_18591-51436.jpg"
   },
   {
-    "id": "eec7e4cf-145a-4e7b-8a6c-4db9e1d0ce6e",
+    
     "title": "Jardinagem Sustentável",
     "shortContent": "Dicas para criar um jardim sustentável em sua casa.",
     "content": "Aprenda como cultivar um jardim sustentável, com práticas amigáveis ao meio ambiente. Descubra maneiras de reduzir o desperdício e conservar recursos. A jardinagem sustentável é uma maneira de criar beleza em sua casa, enquanto protege o planeta. Neste guia, você encontrará dicas e truques para cultivar um jardim que seja ecologicamente correto e amigável ao meio ambiente. Ajude a preservar a natureza enquanto embeleza seu espaço exterior.",
@@ -72,11 +72,172 @@
     "imageURL": "https://exemplo.com/jardinagem.jpg"
   },
   {
-    "id": "0cfdeebb-3eb7-4dd1-8ec6-9d9f4d9d2c64",
+    
     "title": "Astronomia: Explorando o Cosmos",
     "shortContent": "Descubra os segredos do universo e as últimas descobertas astronômicas.",
     "content": "Viaje pelo espaço e explore os mistérios do cosmos. A astronomia nos leva a novas descobertas e compreensões do universo que nos rodeia. Se você já olhou para o céu noturno e se perguntou sobre as estrelas e os planetas, este artigo é para você. Explore o cosmos e descubra os segredos do universo. A astronomia é uma jornada de descoberta que nunca termina. Prepare-se para uma viagem pelo espaço.",
     "date": "2023-10-27",
     "imageURL": "https://exemplo.com/astronomia.jpg"
-  }
+  },
+    {
+      
+      "title": "Aventura na Montanha",
+      "shortContent": "Uma emocionante escalada pelas montanhas rochosas.",
+      "content": "Nossa incrível aventura nas montanhas rochosas nos levou a paisagens de tirar o fôlego e desafios emocionantes. Descubra mais sobre nossa jornada e as vistas incríveis. A escalada pelas montanhas rochosas nos proporcionou uma experiência única e desafiadora. Enfrentamos trilhas íngremes, mas as vistas panorâmicas no topo valeram a pena. Quer saber mais sobre nossa aventura? Continue lendo para descobrir os detalhes emocionantes da nossa jornada.",
+      "date": "2023-10-18",
+      "imageURL": "https://exemplo.com/montanha1.jpg"
+    },
+    {
+      
+      "title": "Receita de Bolo de Chocolate",
+      "shortContent": "Uma receita deliciosa para satisfazer seu desejo por chocolate.",
+      "content": "Aqui está a receita perfeita para um bolo de chocolate incrivelmente fofo e saboroso. Experimente fazer em casa e saboreie cada mordida. Se você é um amante de chocolate, esta receita é um sonho tornado realidade. Cada pedaço é uma explosão de sabor de chocolate puro. Não se preocupe, compartilharemos todos os segredos para preparar este bolo em sua própria cozinha. Prepare-se para ficar com água na boca!",
+      "date": "2023-10-19",
+      "imageURL": "https://exemplo.com/bolochocolate.jpg"
+    },
+    {
+      
+      "title": "Viagem à Praia Paradisíaca",
+      "shortContent": "Relaxe e aproveite o sol nas praias de areia branca.",
+      "content": "Nossa viagem à praia paradisíaca foi um refúgio relaxante. Descubra mais sobre as praias de areia branca, o mar cristalino e as aventuras à beira-mar. Se você sonha em passar dias ensolarados na praia, este artigo é para você. Nossa viagem a uma praia paradisíaca foi uma experiência inesquecível. As praias de areia branca se estendiam até onde a vista alcançava, e a água cristalina era um convite para mergulhos revigorantes. Continue lendo para se transportar para este paraíso na terra.",
+      "date": "2023-10-20",
+      "imageURL": "https://exemplo.com/praia1.jpg"
+    },
+    {
+      
+      "title": "Dicas de Produtividade",
+      "shortContent": "Melhore sua produtividade com essas dicas incríveis.",
+      "content": "Aumente sua eficiência e produtividade no trabalho com estas dicas práticas. Saiba como gerenciar seu tempo e atingir seus objetivos com sucesso. Todo mundo busca ser mais produtivo, e estas dicas são o caminho para alcançar essa meta. Com estratégias comprovadas, você poderá fazer mais em menos tempo e aproveitar os benefícios. Aumente sua produtividade a partir de hoje!",
+      "date": "2023-10-21",
+      "imageURL": "https://exemplo.com/produtividade.jpg"
+    },
+    {
+      
+      "title": "História de uma Aventura",
+      "shortContent": "Uma emocionante história de aventura e descoberta.",
+      "content": "A jornada de um explorador em busca de novas terras e culturas. Acompanhe esta história emocionante e descubra o desconhecido. Embarque em uma jornada repleta de emoções, enquanto seguimos os passos de um destemido explorador. Das selvas densas às montanhas mais altas, esta aventura promete descobertas incríveis. Prepare-se para se maravilhar com a história deste explorador e suas incríveis descobertas!",
+      "date": "2023-10-22",
+      "imageURL": "https://exemplo.com/aventura.jpg"
+    },
+    {
+      
+      "title": "Exercícios de Ioga em Casa",
+      "shortContent": "Pratique ioga para relaxar e fortalecer o corpo.",
+      "content": "Aprenda a fazer exercícios de ioga em casa e experimente os benefícios para a mente e o corpo. Descubra técnicas de relaxamento e fortalecimento. A ioga é uma prática milenar que oferece inúmeros benefícios para o corpo e a mente. Neste guia, você aprenderá a realizar exercícios de ioga no conforto da sua casa. Desfrute de momentos de relaxamento, fortalecimento e equilíbrio. Prepare-se para se sentir revigorado e em paz.",
+      "date": "2023-10-23",
+      "imageURL": "https://exemplo.com/ioga.jpg"
+    },
+    {
+      
+      "title": "Passeio de Bicicleta na Natureza",
+      "shortContent": "Explore trilhas na natureza e aprecie a vida ao ar livre.",
+      "content": "Descubra a beleza da natureza em um passeio de bicicleta emocionante. Explore trilhas e desfrute do ar livre enquanto pedala por paisagens incríveis. O contato com a natureza é revigorante, e não há maneira melhor de fazê-lo do que em um passeio de bicicleta pela natureza. Prepare-se para trilhas deslumbrantes e experiências ao ar livre que o deixarão apaixonado pela natureza.",
+      "date": "2023-10-24",
+      "imageURL": "https://exemplo.com/bicicleta.jpg"
+    },
+    {
+      
+      "title": "Arte Moderna em Exibição",
+      "shortContent": "Explore as últimas obras de arte moderna na exposição.",
+      "content": "Conheça artistas contemporâneos e suas criações inovadoras em uma emocionante exposição de arte moderna. Veja as obras mais recentes e impactantes. A arte moderna é uma manifestação de criatividade e inovação. Nesta exposição, você terá a oportunidade de explorar as últimas criações de artistas contemporâneos. De pinturas a esculturas, prepare-se para uma experiência visual única.",
+      "date": "2023-10-25",
+      "imageURL": "https://img.freepik.com/vetores-gratis/cenario-de-jogo-de-basquete-esporte_18591-51436.jpg"
+    },
+    {
+      
+      "title": "Jardinagem Sustentável",
+      "shortContent": "Dicas para criar um jardim sustentável em sua casa.",
+      "content": "Aprenda como cultivar um jardim sustentável, com práticas amigáveis ao meio ambiente. Descubra maneiras de reduzir o desperdício e conservar recursos. A jardinagem sustentável é uma maneira de criar beleza em sua casa, enquanto protege o planeta. Neste guia, você encontrará dicas e truques para cultivar um jardim que seja ecologicamente correto e amigável ao meio ambiente. Ajude a preservar a natureza enquanto embeleza seu espaço exterior.",
+      "date": "2023-10-26",
+      "imageURL": "https://exemplo.com/jardinagem.jpg"
+    },
+    {
+      
+      "title": "Astronomia: Explorando o Cosmos",
+      "shortContent": "Descubra os segredos do universo e as últimas descobertas astronômicas.",
+      "content": "Viaje pelo espaço e explore os mistérios do cosmos. A astronomia nos leva a novas descobertas e compreensões do universo que nos rodeia. Se você já olhou para o céu noturno e se perguntou sobre as estrelas e os planetas, este artigo é para você. Explore o cosmos e descubra os segredos do universo. A astronomia é uma jornada de descoberta que nunca termina. Prepare-se para uma viagem pelo espaço.",
+      "date": "2023-10-27",
+      "imageURL": "https://exemplo.com/astronomia.jpg"
+    },  {
+      
+      "title": "Aventura na Montanha",
+      "shortContent": "Uma emocionante escalada pelas montanhas rochosas.",
+      "content": "Nossa incrível aventura nas montanhas rochosas nos levou a paisagens de tirar o fôlego e desafios emocionantes. Descubra mais sobre nossa jornada e as vistas incríveis. A escalada pelas montanhas rochosas nos proporcionou uma experiência única e desafiadora. Enfrentamos trilhas íngremes, mas as vistas panorâmicas no topo valeram a pena. Quer saber mais sobre nossa aventura? Continue lendo para descobrir os detalhes emocionantes da nossa jornada.",
+      "date": "2023-10-18",
+      "imageURL": "https://exemplo.com/montanha1.jpg"
+    },
+    {
+      
+      "title": "Receita de Bolo de Chocolate",
+      "shortContent": "Uma receita deliciosa para satisfazer seu desejo por chocolate.",
+      "content": "Aqui está a receita perfeita para um bolo de chocolate incrivelmente fofo e saboroso. Experimente fazer em casa e saboreie cada mordida. Se você é um amante de chocolate, esta receita é um sonho tornado realidade. Cada pedaço é uma explosão de sabor de chocolate puro. Não se preocupe, compartilharemos todos os segredos para preparar este bolo em sua própria cozinha. Prepare-se para ficar com água na boca!",
+      "date": "2023-10-19",
+      "imageURL": "https://exemplo.com/bolochocolate.jpg"
+    },
+    {
+      
+      "title": "Viagem à Praia Paradisíaca",
+      "shortContent": "Relaxe e aproveite o sol nas praias de areia branca.",
+      "content": "Nossa viagem à praia paradisíaca foi um refúgio relaxante. Descubra mais sobre as praias de areia branca, o mar cristalino e as aventuras à beira-mar. Se você sonha em passar dias ensolarados na praia, este artigo é para você. Nossa viagem a uma praia paradisíaca foi uma experiência inesquecível. As praias de areia branca se estendiam até onde a vista alcançava, e a água cristalina era um convite para mergulhos revigorantes. Continue lendo para se transportar para este paraíso na terra.",
+      "date": "2023-10-20",
+      "imageURL": "https://exemplo.com/praia1.jpg"
+    },
+    {
+      
+      "title": "Dicas de Produtividade",
+      "shortContent": "Melhore sua produtividade com essas dicas incríveis.",
+      "content": "Aumente sua eficiência e produtividade no trabalho com estas dicas práticas. Saiba como gerenciar seu tempo e atingir seus objetivos com sucesso. Todo mundo busca ser mais produtivo, e estas dicas são o caminho para alcançar essa meta. Com estratégias comprovadas, você poderá fazer mais em menos tempo e aproveitar os benefícios. Aumente sua produtividade a partir de hoje!",
+      "date": "2023-10-21",
+      "imageURL": "https://exemplo.com/produtividade.jpg"
+    },
+    {
+      
+      "title": "História de uma Aventura",
+      "shortContent": "Uma emocionante história de aventura e descoberta.",
+      "content": "A jornada de um explorador em busca de novas terras e culturas. Acompanhe esta história emocionante e descubra o desconhecido. Embarque em uma jornada repleta de emoções, enquanto seguimos os passos de um destemido explorador. Das selvas densas às montanhas mais altas, esta aventura promete descobertas incríveis. Prepare-se para se maravilhar com a história deste explorador e suas incríveis descobertas!",
+      "date": "2023-10-22",
+      "imageURL": "https://exemplo.com/aventura.jpg"
+    },
+    {
+      
+      "title": "Exercícios de Ioga em Casa",
+      "shortContent": "Pratique ioga para relaxar e fortalecer o corpo.",
+      "content": "Aprenda a fazer exercícios de ioga em casa e experimente os benefícios para a mente e o corpo. Descubra técnicas de relaxamento e fortalecimento. A ioga é uma prática milenar que oferece inúmeros benefícios para o corpo e a mente. Neste guia, você aprenderá a realizar exercícios de ioga no conforto da sua casa. Desfrute de momentos de relaxamento, fortalecimento e equilíbrio. Prepare-se para se sentir revigorado e em paz.",
+      "date": "2023-10-23",
+      "imageURL": "https://exemplo.com/ioga.jpg"
+    },
+    {
+      
+      "title": "Passeio de Bicicleta na Natureza",
+      "shortContent": "Explore trilhas na natureza e aprecie a vida ao ar livre.",
+      "content": "Descubra a beleza da natureza em um passeio de bicicleta emocionante. Explore trilhas e desfrute do ar livre enquanto pedala por paisagens incríveis. O contato com a natureza é revigorante, e não há maneira melhor de fazê-lo do que em um passeio de bicicleta pela natureza. Prepare-se para trilhas deslumbrantes e experiências ao ar livre que o deixarão apaixonado pela natureza.",
+      "date": "2023-10-24",
+      "imageURL": "https://exemplo.com/bicicleta.jpg"
+    },
+    {
+      
+      "title": "Arte Moderna em Exibição",
+      "shortContent": "Explore as últimas obras de arte moderna na exposição.",
+      "content": "Conheça artistas contemporâneos e suas criações inovadoras em uma emocionante exposição de arte moderna. Veja as obras mais recentes e impactantes. A arte moderna é uma manifestação de criatividade e inovação. Nesta exposição, você terá a oportunidade de explorar as últimas criações de artistas contemporâneos. De pinturas a esculturas, prepare-se para uma experiência visual única.",
+      "date": "2023-10-25",
+      "imageURL": "https://img.freepik.com/vetores-gratis/cenario-de-jogo-de-basquete-esporte_18591-51436.jpg"
+    },
+    {
+      
+      "title": "Jardinagem Sustentável",
+      "shortContent": "Dicas para criar um jardim sustentável em sua casa.",
+      "content": "Aprenda como cultivar um jardim sustentável, com práticas amigáveis ao meio ambiente. Descubra maneiras de reduzir o desperdício e conservar recursos. A jardinagem sustentável é uma maneira de criar beleza em sua casa, enquanto protege o planeta. Neste guia, você encontrará dicas e truques para cultivar um jardim que seja ecologicamente correto e amigável ao meio ambiente. Ajude a preservar a natureza enquanto embeleza seu espaço exterior.",
+      "date": "2023-10-26",
+      "imageURL": "https://exemplo.com/jardinagem.jpg"
+    },
+    {
+      
+      "title": "Astronomia: Explorando o Cosmos",
+      "shortContent": "Descubra os segredos do universo e as últimas descobertas astronômicas.",
+      "content": "Viaje pelo espaço e explore os mistérios do cosmos. A astronomia nos leva a novas descobertas e compreensões do universo que nos rodeia. Se você já olhou para o céu noturno e se perguntou sobre as estrelas e os planetas, este artigo é para você. Explore o cosmos e descubra os segredos do universo. A astronomia é uma jornada de descoberta que nunca termina. Prepare-se para uma viagem pelo espaço.",
+      "date": "2023-10-27",
+      "imageURL": "https://exemplo.com/astronomia.jpg"
+    }
+  
+  
 ]
