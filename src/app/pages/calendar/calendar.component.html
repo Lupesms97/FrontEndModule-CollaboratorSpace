@@ -69,11 +69,11 @@
                 {{evento.title}}
               </p>
               <p class="card-tex p-auto">
-                {{ evento.start| date: 'dd/MM/yyyy' : 'pt-BR' }}   <i class="fa-solid fa-arrow-right" style="font-size: 0.6rem;"></i>   {{ evento.end | date: 'dd/MM/yyyy' : 'pt-BR' }}
+                {{ evento.start| date : 'dd/MM/yyyy' :'pt-BR' }}   <i class="fa-solid fa-arrow-right" style="font-size: 0.6rem;"></i>   {{ evento.end | date: 'dd/MM/yyyy' : 'pt-BR' }}
               </p>
             </div>
           </div>
-          <div class="modal-footer" *ngIf="role=='ADMIN'">
+          <div class="modal-footer" *ngIf="authorizathion=='ADMIN'">
             <button type="button" class="btn btn-secondary"data-bs-toggle="offcanvas"  data-bs-target="#offcanvasExample" aria-controls="offcanvasExample"><a data-bs-toggle="modal" data-bs-dismiss="modal"><i class="fa-solid fa-pencil fa-sm"></i>&nbsp;Editar</a></button>
             <button type="button" class="btn btn-primary"  data-bs-toggle="modal" data-bs-dismiss="modal" data-bs-target="#novoEvento"><i class="fa-solid fa-plus fa-sm"></i>&nbsp;Criar</button>
           </div>
@@ -102,16 +102,16 @@
                 </div>
                 <div class="card-text">
                   <p>
-                    Começa: {{ evento.start| date: 'dd/MM/yyyy' : 'pt-BR' }}
+                    Começa: {{ evento.start| date : 'dd/MM/yyyy' :'pt-BR'  }}
                   </p>
                   <p>
-                     Termina: {{ evento.end | date: 'dd/MM/yyyy' : 'pt-BR' }}
+                     Termina: {{ evento.end | date : 'dd/MM/yyyy' :'pt-BR'  }}
                   </p>
                 </div>
               </div>
               <div class="modal-footer m-2">
                 <button type="button" class="btn btn-primary"  data-bs-toggle="modal" data-bs-target="#atualizarModal" (click)="openModalAtualization(evento)"><i class="fa-regular fa-keyboard fa-sm"></i>&nbsp;Atualizar</button>
-                <button type="button" class="btn btn-secondary ms-2" data-bs-toggle="modal" data-bs-target="#deleteConfirmation" (click)="openModalDelete(evento.id)"><i class="fa-solid fa-trash fa-sm"></i>&nbsp;Apagar</button>
+                <button type="button" class="btn btn-secondary ms-2" data-bs-toggle="modal" data-bs-target="#deleteConfirmation" (click)="openModalDelete(evento.id, evento.title)"><i class="fa-solid fa-trash fa-sm"></i>&nbsp;Apagar</button>
               </div>
             </div>
           </div>
@@ -217,7 +217,7 @@
       </div>
       <div class="modal-body">
         <p>
-          Você tem certeza que deseja apagar o post com titulo - <strong></strong>?
+          Você tem certeza que deseja apagar o evento com titulo - <strong>{{eventTitleForDeletion}}</strong>?
         </p>
       </div>
       <div class="modal-footer ">

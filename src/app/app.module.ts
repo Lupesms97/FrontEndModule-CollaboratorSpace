@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
+import { BrowserModule, bootstrapApplication } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
@@ -10,6 +10,7 @@ import { CoreModule } from './core/core.module';
 import { ComponentModule } from './components/components.module';
 import { CalendarModule } from 'angular-calendar';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ToastrModule } from 'ngx-toastr';
 
 @NgModule({
   declarations: [
@@ -25,8 +26,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     StoreModule.forRoot({}, {}),
     CoreModule,
     BrowserAnimationsModule,
-
-    
+    BrowserAnimationsModule, // required animations module
+    ToastrModule.forRoot(),
   ],
   providers: [AppModule],
   bootstrap: [AppComponent]

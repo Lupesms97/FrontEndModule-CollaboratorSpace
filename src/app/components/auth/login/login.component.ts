@@ -3,7 +3,9 @@ import { Component } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthService } from 'src/app/core/auth/auth.service';
+import { NotificationService } from 'src/app/core/notificationService/notification.service';
 import { ResponseDto } from 'src/app/shared/models/ResponseDto';
+import { TypeToast } from 'src/app/shared/models/TypeToastenum';
 import { UserLogin } from 'src/app/shared/models/UserLogin';
 
 @Component({
@@ -12,10 +14,13 @@ import { UserLogin } from 'src/app/shared/models/UserLogin';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent {
+
+
   constructor(private authService: AuthService,
-    private router: Router) {}
+    private router: Router,
+    private notifications: NotificationService
+    ) {}
   alertMessage: any = ''
-  exibirAlert: boolean = false;
 
   user: UserLogin = {
     login: '',
@@ -26,6 +31,8 @@ export class LoginComponent {
     token: '',
     message: ''
   }
+
+
 
 
 
@@ -42,17 +49,15 @@ export class LoginComponent {
           const token = response.body?.token;
           const status = response.status;
           const role:string = this.authService.decodeJwt(token!).roles;
-          this.exibirAlert = true;
           this.alertMessage = response.body?.message;
+          this.notifications.showToast(TypeToast.Success, 'Login', 'Login realizado com sucesso');
           
         },
-        (error) => {
-          this.exibirAlert = true;
-          this.alertMessage = 'Usuário ou senha inválidos';
-          console.log(error);
+        (error) => {          this.alertMessage = 'Usuário ou senha inválidos';
+          this.notifications.showToast(TypeToast.Error, 'Login', 'Usuário ou senha inválidos');
         }
       );
-      this.exibirAlert = false;
+
   }
     
 }

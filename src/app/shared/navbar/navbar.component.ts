@@ -4,6 +4,7 @@ import { Role } from '../models/Role';
 import { PostService } from 'src/app/core/post/post.service';
 import { Router } from '@angular/router';
 import { last } from 'rxjs';
+import { NotificationService } from 'src/app/core/notificationService/notification.service';
 
 @Component({
   selector: 'app-navbar',
@@ -12,17 +13,17 @@ import { last } from 'rxjs';
 })
 export class NavbarComponent {
   username: string = '';
-  role:string = Role.ADMIN;
+  authorizathion:string = Role.UNDEFINED_ROLE;
 
 
   constructor(
-    private authService:AuthService,
-    private post:PostService, 
+    private authService:AuthService,    
     private router:Router
   ) {
     this.username = authService.getUserName();
- /*    this.role = authService.getRoles();   */
+    this.authorizathion = authService.getRoles();  
     this.showPublisherButton();
+
    }
 
   logout(){
@@ -31,7 +32,7 @@ export class NavbarComponent {
   }
 
   showPublisherButton():boolean{
-    if(this.role === Role.ADMIN){
+    if(this.authorizathion === Role.ADMIN){
      return true;
     }else{
       return false;
@@ -39,8 +40,10 @@ export class NavbarComponent {
   }
 
   goToBlog() {
+    
     // Gere um parâmetro aleatório
     this.router.navigate(['home/blog']);
+
   }
   goToPublisher(){
     this.router.navigate(['/publisher']);

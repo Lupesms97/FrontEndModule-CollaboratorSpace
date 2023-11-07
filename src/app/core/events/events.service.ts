@@ -1,10 +1,11 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { CalendarEvent } from 'angular-calendar';
 import { Observable, map, tap } from 'rxjs';
 import { CalendarI } from 'src/app/shared/models/CalendarI';
 import { EventColor } from 'calendar-utils';
 import { format, getDay, isToday, isSameMonth, isSameDay, getDate, endOfMonth, startOfMonth, eachDayOfInterval, subDays, addDays, startOfDay, endOfDay } from 'date-fns';
+import ptBR from 'date-fns/locale/pt-BR';
 
 
 
@@ -35,14 +36,16 @@ export class EventsService {
   }
 
   private convertJsonToCalendarEvent(item: CalendarI): CalendarEvent {
+    const formatDate = (date: number | Date) => format(date, 'yyyy/MM/dd', { locale: ptBR });
+
     return {
       id: item.id,
       title: item.title,
-      start: startOfDay(new Date(item.start)),
-      end: endOfDay(new Date(item.end)),
+      start: startOfDay(new Date( formatDate(new Date(item.start)))),
+      end: startOfDay(new Date( formatDate(new Date(item.end)))),
       color: {
         primary: item.color!, // Usando uma string vazia como valor padrão
-        secondary: item.color || '', // Usando uma string vazia como valor padrão
+        secondary: item.color!, // Usando uma string vazia como valor padrão
       },
       // Outras propriedades do evento, se necessário
     };
@@ -52,18 +55,22 @@ export class EventsService {
       map((event) => event.find(event => event.id === id)!)
     );
   }
-  public creatEvent(event: CalendarEvent) {
-    this.http.post<CalendarEvent>(`${this.API_URL_R}/event`, event).subscribe((resp)=> console.log(resp));
-    this.refreshEvents();
-    
+  public createEvent(event: CalendarEvent): Observable<CalendarEvent> {
+    return this.http.post<CalendarEvent>(`${this.API_URL_R}/event`, event).pipe(
+      tap(() => this.refreshEvents())
+    );
   }
-  public updateEvent(event: CalendarEvent) {
-    this.http.put<CalendarEvent>(`${this.API_URL_R}/update`, event).subscribe((resp)=> console.log(resp));
-    this.refreshEvents();
+  
+  public updateEvent(event: CalendarEvent): Observable<CalendarEvent> {
+    return this.http.put<CalendarEvent>(`${this.API_URL_R}/update`, event).pipe(
+      tap(() => this.refreshEvents())
+    );
   }
-  public deleteEvent(eventId: string) {
-    this.http.delete<CalendarEvent>(`${this.API_URL_R}/eventDeletion?eventId=${eventId}`).subscribe((resp)=> console.log(resp));
-    this.refreshEvents();
+  
+  public deleteEvent(eventId: string): Observable<CalendarEvent> {
+    return this.http.delete<CalendarEvent>(`${this.API_URL_R}/eventDeletion?eventId=${eventId}`).pipe(
+      tap(() => this.refreshEvents())
+    );
   }
 
 

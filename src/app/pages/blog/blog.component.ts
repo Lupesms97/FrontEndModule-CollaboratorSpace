@@ -3,9 +3,11 @@ import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Observable, Subject, Subscription, interval, map } from 'rxjs';
 import { AuthService } from 'src/app/core/auth/auth.service';
+import { NotificationService } from 'src/app/core/notificationService/notification.service';
 import { PostService } from 'src/app/core/post/post.service';
 import { Post } from 'src/app/shared/models/Post';
 import { Role } from 'src/app/shared/models/Role';
+import { TypeToast } from 'src/app/shared/models/TypeToastenum';
 
 @Component({
   selector: 'app-blog',
@@ -14,11 +16,11 @@ import { Role } from 'src/app/shared/models/Role';
 })
 export class BlogComponent  implements OnInit {
   count:number = 0;
-  authorizathion: string = Role.ADMIN;
+  authorizathion: string = Role.UNDEFINED_ROLE;
   p: any = 0;
 /*   posts$: Observable<Post[]>; */
   posts: Post[] = [];
-dataLoaded = false;
+  dataLoaded = false;
   reloadPage:boolean =true; 
 
   postCopy: Post = {
@@ -29,34 +31,29 @@ dataLoaded = false;
     date: '',
     imageUrl: '',
   };
-/*   loading$: Observable<boolean>;
- */  private ngUnsubscribe = new Subject();
 
-  constructor(private postService: PostService, private router: Router, private authService: AuthService) {
-/*     this.posts$ = this.postService.getPosts(); */
+  constructor(
+    private postService: PostService,
+    private router: Router,
+    private authService: AuthService,
+    private notification: NotificationService) 
+    {
     this.getPosts();
+    this.authorizathion = this.authService.getRoles();
     
-/*     this.loading$ = postService.loading$;
- */  }
+  }
 
   ngOnInit() {
-/*     this.authorizathion = this.authService.getRoles();
- */    this.getAuthorization();
+   this.getAuthorization();
 
   }
 
   getPosts(){
     this.postService.getPosts().subscribe((data) => {
-      /* this.posts$ = data; */
       this.posts = data;
       this.sortPostsByDate();
-      interval(1000).subscribe((x) => {
-        this.count = x;
-        this.dataLoaded= true;
-      })
-      
-      // Processar os dados conforme necessário
-/*       this.dataLoaded = true; */
+      this.dataLoaded = true;
+
     });
   }
 
@@ -88,16 +85,37 @@ dataLoaded = false;
       this.posts[updatedPostIndex] = { ...this.postCopy };
     }
 
-    this.postService.updatePost(this.postCopy);
+    this.postService.updatePost(this.postCopy).subscribe(
+      (response) => {
+        this.notification.showToast(TypeToast.Success, 'POST', 'Post atualizado com sucesso');
+      },
+      (error) => {
+        this.notification.showToast(TypeToast.Error, 'POST', 'Não foi possivel atualizar');
+
+      }
+    );
   }
 
   submiDelet(id: string) {
-    this.postService.deletePost(id);
+    this.postService.deletePost(id)
+    .subscribe(
+      (response) => {
+        this.notification.showToast(TypeToast.Error, 'POST', 'Não foi possivel deletar');
+      },
+      (error) => {
+        this.notification.showToast(TypeToast.Success, 'POST', 'Post deletado com sucesso');
+      }
+    )
+    ;
     this.posts = this.posts.filter((post) => post.id !== id);
   }
 
    getAuthorization(): boolean {
-    return this.authorizathion === Role.ADMIN || this.authorizathion === 'ADMIN';
+    if(this.authorizathion === Role.ADMIN){
+      return true;
+    }else{
+      return false;
+    }
   }
 
   sortPostsByDate() {

@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { map, tap } from 'rxjs/operators';
 import { Post } from 'src/app/shared/models/Post';
+import { PostPublisher } from 'src/app/shared/models/PostPublisher';
 
 @Injectable({
   providedIn: 'root'
@@ -20,7 +21,7 @@ export class PostService {
   ) {
     this.refreshPosts();
   }
-/*   (`${this.API_URL_R}/getContent`) */
+
   private setPostsOnObservable(): Observable<Post[]> {
     return this.http.get<Post[]>(`${this.API_URL_R}/allPosts`)
       .pipe(
@@ -32,6 +33,7 @@ export class PostService {
         })
       );
   }
+
 
   public refreshPosts() {
     this.posts$ = this.setPostsOnObservable();
@@ -47,18 +49,31 @@ export class PostService {
     );
   }
 
-  public creatPost(post: Post) {
-    this.http.post<Post>(`${this.API_URL_R}/post`, post).subscribe((post) => { console.log(post) });
+  public createPost(post: PostPublisher): Observable<Post> {
+    return this.http.post<Post>(`${this.API_URL_R}/post`, post).pipe(
+      tap((newPost) => {
+        // Você pode remover ou personalizar o que deseja fazer com a resposta
+        this.refreshPosts();
+      })
+    );
   }
 
-  public updatePost(post: Post) {
-    this.http.post<Post>(`${this.API_URL_R}/atualizationPost`, post).subscribe((post) => { console.log(post) });
-    this.refreshPosts();
+  public updatePost(post: Post): Observable<Post> {
+    return this.http.put<Post>(`${this.API_URL_R}/update`, post).pipe(
+      tap((updatedPost) => {
+       // personalizar o que deseja fazer com a resposta
+        this.refreshPosts();
+      })
+    );
   }
 
-  public deletePost(id: string) {
-    this.http.delete<Post>(`${this.API_URL_R}/postDeletion?postId=${id}`).subscribe((post) => { console.log(post) });
-    this.refreshPosts();
+  public deletePost(id: string): Observable<any> {
+    return this.http.delete<Post>(`${this.API_URL_R}/postDeletion?postId=${id}`).pipe(
+      tap((deletedPost) => {
+        console.log(deletedPost); // Você pode remover ou personalizar o que deseja fazer com a resposta
+        this.refreshPosts();
+      })
+    );
   }
 
   public sendToBlog() {
