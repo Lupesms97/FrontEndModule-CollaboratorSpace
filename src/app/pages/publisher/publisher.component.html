@@ -5,15 +5,34 @@
     <form (ngSubmit)="onSubmit(form)" #form="ngForm">
         <div class="form-group">
           <label for="titulo">Título</label>
-          <input type="text" id="titulo" name="titulo" [(ngModel)]="item.title" required class="inputTitulo" >
+          <input type="text" 
+          id="titulo" 
+          name="titulo" 
+          [(ngModel)]="item.title" 
+          required 
+          class="inputTitulo" 
+          maxlength="30">
         </div>
         <div class="form-group">
           <label for="descricao">Descrição</label>
-          <input type="text" id="descricao" name="descricao" [(ngModel)]="item.shortContent" required class="inputShortContent">
+          <input 
+            type="text"
+            id="descricao"
+            name="descricao" 
+            [(ngModel)]="item.shortContent" 
+            class="inputShortContent" 
+            minLength="10" #descricao="ngModel"
+            required
+          >
+          <div *ngIf="descricao.hasError('minLength') && descricao.dirty" class="alert alert-danger" style="height: 10vh;">
+            <p class="text-black">
+                A senha precisa ter pelo menos 10 digitos
+            </p>
+          </div>
         </div>
         <div class="form-group">
           <label for="texto">Conteúdo</label>
-          <textarea id="texto" name="texto" [(ngModel)]="item.content" required class="inputContent"></textarea>
+          <textarea id="texto" name="texto" [(ngModel)]="item.content" required class="inputContent" ></textarea>
         </div>
         <button type="submit" [disabled]="form.invalid">Enviar</button>
   </form>

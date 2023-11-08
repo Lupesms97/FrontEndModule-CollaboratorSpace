@@ -1,0 +1,91 @@
+<app-navbar></app-navbar>
+<h1 class="text-uppercase text-center" style="margin-top: 10vh;">benefícios existentes e ativos</h1>
+<div class="container mt-5 pt-5">
+    <div class="row text-center">
+        <div class="col-lg-6 col-sm-12 " >   
+            <div class="size-up-icon">
+               <i (click)="showTextMediceFunc()"class="fa-solid fa-prescription-bottle-medical"><h5 >Convênio Farmácia</h5></i>
+               <div *ngIf="showTextMedice">
+                <div class="col-12 pt-5">
+                    <ul class="text-start">
+                        <h6 class="pb-5" style="font-size: 1.3rem;">
+                            Condições e informações para adesão:
+                        </h6>
+                        <li>
+                            <p>
+                                O convênio é referente as farmácias da rede <span>Drogaria Retiro</span>.
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                                Após 3 meses de experiência.
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                                Após o prazo supracitado o colaborador deve solicitar através do seguinte e-mail: <span>rh&#64;gruposels.com.br</span>.
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                                Limite de compra de <span>R$ 150,00</span> a ser descontado em folha no mês subsequente
+                            </p>
+                        </li>
+                    </ul>
+                    <br>      
+                    <p style="font-size: 0.8rem;">
+                        <small>
+                            *Em caso de dúvidas, entre em contato com o RH.
+                        </small>
+                    </p>        
+               </div>
+
+               </div>
+            </div>
+        </div>
+        <div class="col-lg-6 col-sm-12 " >   
+            <div class="size-up-icon">
+                <i (click)="showTextToothFunc()" class="fa-solid fa-tooth"><h5>Plano Odontológico</h5> </i>
+                <div *ngIf="showTextTooth" class="row">
+                    <div class="col-12 pt-5">
+                        <ul  class="text-start">
+                            <h6 class="pb-5" style="font-size: 1.3rem;">
+                                Condições e informações para adesão:
+                            </h6>
+                            <li>
+                                <p>
+                                    Após 3 meses de experiência.
+                                </p>
+                            </li>
+                            <li>
+                                <p>
+                                    Após o prazo supracitado o colaborador deve solicitar através do seguinte e-mail: <span>rh&#64;gruposels.com.br</span>.
+                                </p>
+                            </li>
+                            <li>
+                                <p>
+                                    O plano é custeado pela empresa.
+                                </p>
+                            </li>
+                            <li>
+                                <p>
+                                    Após a vigência do plano o colaborador terá acesso a um cartão virtual e através do App -  <a href="http://uniodonto.me/AppBeneficiario">Passo a passo</a>
+                                </p>
+                            </li>
+                        </ul>
+                        <br>  
+                        <p style="font-size: 0.8rem;">
+                            <small>
+                                *Em caso de dúvidas, entre em contato com o RH.
+                            </small>
+                        </p>             
+                   </div>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+<div class="container" style="padding: 10rem;">
+    
+</div>

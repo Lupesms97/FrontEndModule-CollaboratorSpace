@@ -11,8 +11,8 @@
                 <img src="https://media.licdn.com/dms/image/D4D0BAQHmDsw9Gj5VCQ/company-logo_200_200/0/1666281248880?e=1706140800&v=beta&t=9GpxBxDJA2QG5kVsXVXyF-ffbJqm0LYKu0wc3W2xRJ0" class="img-fluid rounded-start" alt="...">
               </div>
               <div class="col-md-8">
-                <div class="card-body">
-                  <a (click)="goToPost(post.id)"><h5 class="card-title">{{post.title}}</h5></a>
+                <div class="card-body" (click)="goToPost(post.id)">
+                  <h5 class="card-title">{{post.title}}</h5>
                   <p class="card-text short-content">{{post.shortContent}}</p>
                   <p class="card-text date-show"><small class="text-body-secondary text-muted">{{post.date| date : 'dd/MM/yyyy'}}</small></p>
                 </div>
@@ -58,13 +58,13 @@
                 </div>
                 <div class="modal-body">
                   <form #editForm="ngForm">
-                    <div class="mb-3">
+                    <div class="mb-3 ">
                       <label for="recipient-name" class="col-form-label">Titulo:</label>
-                      <input type="text" class="form-control" id="recipient-name" [(ngModel)]="postCopy.title" name="title">
+                      <input type="text" class="form-control" id="recipient-name" [(ngModel)]="postCopy.title" name="title" maxlength="30">
                     </div>
                     <div class="mb-3">
                       <label for="recipient-name" class="col-form-label">Descrição:</label>
-                      <input type="text" class="form-control" id="recipient-name" [(ngModel)]="postCopy.shortContent" name="shortContent">
+                      <input #inputElement type="text" class="form-control" id="recipient-name" [(ngModel)]="postCopy.shortContent" name="shortContent" maxlength="65">
                     </div>
                     <div class="mb-3">
                       <label for="message-text" class="col-form-label">Texto:</label>

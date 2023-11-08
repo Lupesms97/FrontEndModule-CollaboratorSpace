@@ -9,6 +9,8 @@ import { UserCadastro } from 'src/app/shared/models/UserCadastro';
 import { UserInterface } from 'src/app/shared/models/UserInterface';
 import { Role } from 'src/app/shared/models/Role';
 import { ResponseDto } from 'src/app/shared/models/ResponseDto';
+import { NotificationService } from '../notificationService/notification.service';
+import { TypeToast } from 'src/app/shared/models/TypeToastenum';
 
 const TOKEN_KEY = '_tky-usr';
 const ROLES_KEY = '_rly-usr';
@@ -35,7 +37,8 @@ export class AuthService {
     private http: HttpClient,
     private cookieService: CookieService,
     private router: Router,
-    private store: Store<{user: UserInterface}>
+    private store: Store<{user: UserInterface}>,
+    private notificationService: NotificationService
   ) {
     const token = this.getToken(TOKEN_KEY);
     if (token) {
@@ -95,9 +98,14 @@ export class AuthService {
           const decodedToken = this.decodeJwt(token);
           this.setRoles(decodedToken.roles);
           this.redirectToBlog();
+          this.notificationService.showToast(TypeToast.Success, 'Login', 'Login efetuado com sucesso');
         }),
+        
         ignoreElements()
       );
+
+      
+      
   }
 
   logout() {
@@ -105,7 +113,9 @@ export class AuthService {
     this.cookieService.delete(ROLES_KEY);
     this.router.navigateByUrl('/login');
     this.store.dispatch({type: 'reset'});
+
   }
+  
 
   private setCookie(name: string, value: string, expires?: number) {
     if (expires) {
@@ -158,4 +168,7 @@ export class AuthService {
   private redirectToBlog() {
     this.router.navigate(['home'])
   }
+
+
+
 }

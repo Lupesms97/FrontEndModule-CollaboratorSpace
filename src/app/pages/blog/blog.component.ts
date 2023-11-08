@@ -1,4 +1,4 @@
-import { AfterContentChecked, AfterViewInit, Component, OnDestroy, OnInit } from '@angular/core';
+import { AfterContentChecked, AfterViewInit, Component, ElementRef, OnDestroy, OnInit, ViewChild } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Observable, Subject, Subscription, interval, map } from 'rxjs';
@@ -32,6 +32,7 @@ export class BlogComponent  implements OnInit {
     imageUrl: '',
   };
 
+
   constructor(
     private postService: PostService,
     private router: Router,
@@ -43,8 +44,14 @@ export class BlogComponent  implements OnInit {
     
   }
 
+  ngAfterViewInit() {
+    // Agora você pode acessar o elemento no método ngAfterViewInit
+
+  }
+
   ngOnInit() {
    this.getAuthorization();
+
 
   }
 
@@ -141,5 +148,12 @@ export class BlogComponent  implements OnInit {
       return false;
     }
   }
+
+
+  
+  
+  
+  
+  
 
 }

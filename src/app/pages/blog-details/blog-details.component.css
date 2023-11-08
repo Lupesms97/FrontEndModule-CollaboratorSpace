@@ -40,7 +40,10 @@
     .post-content p{
         font-size:1.3rem
     }
-
+    .title-blog-details h2{
+        font-size:2rem;
+        font-weight:bold
+    }
     .dataInfo{
         font-size:0.9rem;
     }

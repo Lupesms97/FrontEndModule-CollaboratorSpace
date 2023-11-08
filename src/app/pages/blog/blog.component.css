@@ -21,6 +21,9 @@
 .short-content p{
     line-height:0.9
 }
+.card-body:hover{
+    cursor: pointer;
+}
 .card:hover{
     scale:1.1;
     transition-timing-function:easy-in-out;
@@ -29,7 +32,6 @@
 .card-title:hover{
     transition-timing-function:easy-in-out;
     transition: 0.35s;
-    cursor: pointer;
     color: #435E8B;
 }
 .card-title{

@@ -1,120 +1,72 @@
 [
-  {
-      
-      "title": "Azul: Eventos diversos",
-      "start": "2023-10-30",
-      "end": "2023-10-30",
-      "color": "blue"
-  },
-  {
-      
-      "title": "Vermelho: Eventos ou reuniões obrigatórias",
-      "start": "2023-10-28",
-      "end": "2023-10-30",
-      "color": "red"
-  },
-  {
-      
-      "title": "Amarelo: Reunião ou evento que demande atenção",
-      "start": "2023-10-29",
-      "end": "2023-10-31",
-      "color": "yellow"
-  },
-  {
-      
-      "title": "Verde: Verde é FOLGA",
-      "start": "2023-10-26",
-      "end": "2023-10-30",
-      "color": "green"
-  },
-  {
-      
-      "title": "Roxo: Evento de novembro 1",
-      "start": "2023-11-01",
-      "end": "2023-11-02",
-      "color": "purple"
-  },
-  {
-      
-      "title": "Laranja: Evento de novembro 2",
-      "start": "2023-11-15",
-      "end": "2023-11-16",
-      "color": "orange"
-  },
-  {
-      
-      "title": "Ciano: Evento de novembro 3",
-      "start": "2023-11-25",
-      "end": "2023-11-26",
-      "color": "blue"
-  },
-  {
-      
-      "title": "Marrom: Evento de dezembro 1",
-      "start": "2023-12-05",
-      "end": "2023-12-06",
-      "color": "yellow"
-  },
-  {
-      
-      "title": " Evento de dezembro 2",
-      "start": "2023-12-15",
-      "end": "2023-12-16",
-      "color": "red"
-  },
-  {
-      
-      "title": "Evento de dezembro 3",
-      "start": "2023-12-25",
-      "end": "2023-12-26",
-      "color": "green"
-  },
-    {
-        "title": "Evento 1",
-        "start": "2023-11-04",
-        "end": "2023-11-05",
-        "color": "Blue"
-    },
-    {
-        "title": "Evento 2",
-        "start": "2023-11-06",
-        "end": "2023-11-07",
-        "color": "Red"
-    },
-    {
-        "title": "Evento 3",
-        "start": "2023-11-08",
-        "end": "2023-11-09",
-        "color": "Green"
-    },
-    {
-        "title": "Evento 4",
-        "start": "2023-11-10",
-        "end": "2023-11-11",
-        "color": "Yellow"
-    },
-    {
-        "title": "Evento 5",
-        "start": "2023-11-12",
-        "end": "2023-11-13",
-        "color": "Orange"
-    },
-    {
-        "title": "Evento 6",
-        "start": "2023-11-14",
-        "end": "2023-11-15",
-        "color": "Purple"
-    },
-    {
-        "title": "Evento 7",
-        "start": "2023-11-16",
-        "end": "2023-11-17",
-        "color": "Pink"
-    },
-    {
-        "title": "Evento 8",
-        "start": "2023-11-18",
-        "end": "2023-11-19",
-        "color": "Brown"
-    }
+	{
+		"id": "654a932d24329655e89d098e",
+		"title": "Lançamento da Inovação de Outono",
+		"start": "2023-11-01",
+		"end": "2023-11-02",
+		"color": "purple"
+	},
+	{
+		"id": "654a932d24329655e89d098f",
+		"title": "Dia da Diversidade e Tolerância Global",
+		"start": "2023-11-15",
+		"end": "2023-11-16",
+		"color": "orange"
+	},
+	{
+		"id": "654a932d24329655e89d0990",
+		"title": "Conferência Mundial de Ciência e Tecnologia",
+		"start": "2023-11-25",
+		"end": "2023-11-26",
+		"color": "blue"
+	},
+	{
+		"id": "654a932d24329655e89d0991",
+		"title": "Seminário de Inovação e Sustentabilidade",
+		"start": "2023-11-04",
+		"end": "2023-11-05",
+		"color": "blue"
+	},
+	{
+		"id": "654a932d24329655e89d0992",
+		"title": "Fórum de Liderança Empresarial",
+		"start": "2023-11-06",
+		"end": "2023-11-07",
+		"color": "red"
+	},
+	{
+		"id": "654a932d24329655e89d0993",
+		"title": "Cimeira da Ciência e Tecnologia Global",
+		"start": "2023-11-08",
+		"end": "2023-11-09",
+		"color": "green"
+	},
+	{
+		"id": "654a932d24329655e89d0994",
+		"title": "Workshop sobre Inovação e Criatividade",
+		"start": "2023-11-10",
+		"end": "2023-11-11",
+		"color": "yellow"
+	},
+	{
+		"id": "654a932d24329655e89d0995",
+		"title": "Expo de Tecnologia e Inovação",
+		"start": "2023-11-12",
+		"end": "2023-11-13",
+		"color": "orange"
+	},
+	{
+		"id": "654a932d24329655e89d0996",
+		"title": "Festival de Artes e Ciência",
+		"start": "2023-11-14",
+		"end": "2023-11-15",
+		"color": "purple"
+	},
+	{
+		"id": "654a932d24329655e89d0997",
+		"title": "Convenção Internacional de Saúde",
+		"start": "2023-11-16",
+		"end": "2023-11-17",
+		"color": "pink"
+	}
 ]

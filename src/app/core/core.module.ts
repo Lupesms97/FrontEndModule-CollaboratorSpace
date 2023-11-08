@@ -26,9 +26,7 @@ import { ToastrModule } from 'ngx-toastr';
     PostModule
   ],
   providers:[
-    {
-      provide: HTTP_INTERCEPTORS,useClass:ContentInterceptor,multi:true
-    }
+
   ]
 })
 export class CoreModule { }

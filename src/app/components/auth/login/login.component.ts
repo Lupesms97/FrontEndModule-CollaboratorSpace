@@ -50,7 +50,7 @@ export class LoginComponent {
           const status = response.status;
           const role:string = this.authService.decodeJwt(token!).roles;
           this.alertMessage = response.body?.message;
-          this.notifications.showToast(TypeToast.Success, 'Login', 'Login realizado com sucesso');
+
           
         },
         (error) => {          this.alertMessage = 'Usuário ou senha inválidos';
@@ -59,5 +59,6 @@ export class LoginComponent {
       );
 
   }
+
     
 }

@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { IndividualConfig, ToastrService } from 'ngx-toastr';
+import { BehaviorSubject, Observable } from 'rxjs';
 import { TypeToast } from 'src/app/shared/models/TypeToastenum';
 
 @Injectable({
@@ -7,18 +8,13 @@ import { TypeToast } from 'src/app/shared/models/TypeToastenum';
 })
 export class NotificationService {
 
+
   constructor(
     private toastr: ToastrService,
   ) {
 
    }
 
-  showSuccess() {
-    this.toastr.success('Hello world!', 'Toastr fun!');
-  }
-  showError() {
-    this.toastr.error('Hello world!', 'Toastr fun!');
-  }
 
 
 

@@ -7,6 +7,7 @@ import { PostPublisher } from 'src/app/shared/models/PostPublisher';
 import localePt from '@angular/common/locales/pt';
 import { NotificationService } from 'src/app/core/notificationService/notification.service';
 import { TypeToast } from 'src/app/shared/models/TypeToastenum';
+import { UserLogin } from 'src/app/shared/models/UserLogin';
 
 
 
@@ -56,7 +57,12 @@ export class PublisherComponent {
     this.router.navigate(['home/blog']);
   }
 
+  user: UserLogin = {
+    login: '',
+    password: ''
+  }
 
+  autenticar(ng: NgForm){}
 
 }
 

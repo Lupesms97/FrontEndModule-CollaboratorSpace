@@ -53,4 +53,8 @@ form {
     margin-top:20vh;
     margin:10vh auto 10vh auto;
   }
+  input.ng-invalid.ng-dirty{
+    border: 2px solid red; /* Cor da borda vermelha para indicar erro */
+    box-shadow: 0 0 10px rgba(255, 0, 0, 0.5); 
+}
   

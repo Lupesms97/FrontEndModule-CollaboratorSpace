@@ -8,17 +8,18 @@ import { Role } from '../shared/models/Role';
 import { authGuard } from '../core/auth/guards/auth.guard';
 import { CalendarComponent } from './calendar/calendar.component';
 import { ProfileComponent } from './profile/profile.component';
+import { BenefitsComponent } from './benefits/benefits.component';
 
 
 const routes: Routes = [
-{ path:'', redirectTo: 'start', pathMatch: 'full' },
-{ path: 'blog', component: BlogComponent /* , canActivate: [authGuard] */   }, 
-{ path: 'posts/:id', component: BlogDetailsComponent/* , canActivate: [authGuard] */ }, 
-{ path: 'publisher', component: PublisherComponent  /* , canActivate: [authGuard] */ },
-{path:'calendar', component: CalendarComponent},
-{path:'userProfile', component: ProfileComponent}
-/* { path: 'posts/:id', component: BlogDetailsComponent, canActivate: [authGuard, hasRole], data: { role: [Role.ADMIN, Role.USER] } }, 
- */
+{ path:'', redirectTo: 'blog', pathMatch: 'full' },
+{ path: 'blog', component: BlogComponent , canActivate: [authGuard, hasRole], data: { role: [Role.ADMIN, Role.USER] }  }, 
+{ path: 'posts/:id', component: BlogDetailsComponent, canActivate: [authGuard, hasRole], data: { role: [Role.ADMIN, Role.USER] }  }, 
+{ path: 'publisher', component: PublisherComponent , canActivate: [authGuard, hasRole], data: { role: [Role.ADMIN, Role.USER] }  }, 
+{path:'calendar', component: CalendarComponent, canActivate: [authGuard, hasRole], data: { role: [Role.ADMIN, Role.USER] }  }, 
+{path:'userProfile', component: ProfileComponent, canActivate: [authGuard, hasRole], data: { role: [Role.ADMIN, Role.USER] }  }, 
+{path:'benefits', component: BenefitsComponent, canActivate: [authGuard, hasRole], data: { role: [Role.ADMIN, Role.USER] }  }, 
+
 ];
 
 @NgModule({

@@ -1,0 +1,31 @@
+.size-up-icon i{
+    font-size:4rem;
+    padding:10vh
+}
+.size-up-icon{
+    border-radius:2rem;
+    transition:1s;
+    background-color:#435E8B;
+    color:white;
+}
+.size-up-icon{
+    border: 1px solid #435E8B;
+    border-radius:2rem
+}
+@media(max-width:680px){
+    .size-up-icon{
+        margin-bottom:4vh;
+        padding:2vh;
+    }
+    .size-up-icon ul li p{
+        width:100%!important;
+        font-size:1.2rem;
+       
+    }
+    .size-up-icon i{
+
+        padding:5vh
+    }
+
+    
+}

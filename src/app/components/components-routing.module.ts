@@ -9,7 +9,7 @@ const AuthRoutes:Routes = [
   {path:'', redirectTo:'login', pathMatch:'full'},
   {path:'login', component: LoginComponent},
   {path:'register', component: RegisterComponent},
-  {path : 'home', loadChildren: () => import('../pages/pages-routing.module').then(m => m.PagesRoutingModule)},
+  {path : 'home', loadChildren: () => import('../pages/pages-routing.module').then(m => m.PagesRoutingModule), canActivate: [authModuleGuard]},
 
 /*   {path: 'chat', component: ChatComponent},
   {path: 'user', component : UserComponent, canActivate: [authGuard, hasRole], data: {role: Role.USER}},

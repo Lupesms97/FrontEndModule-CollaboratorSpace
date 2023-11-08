@@ -49,7 +49,7 @@ export class NavbarComponent {
     this.router.navigate(['/publisher']);
   }
   goToBenefits(){
-    
+    this.router.navigate(['/benefits']);
   }
   goToCalendar(){
     this.router.navigate(['/calendar']);
