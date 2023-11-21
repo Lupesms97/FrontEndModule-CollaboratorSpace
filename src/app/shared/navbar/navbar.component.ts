@@ -39,23 +39,9 @@ export class NavbarComponent {
     }
   }
 
-  goToBlog() {
-    
-    // Gere um parâmetro aleatório
-    this.router.navigate(['home/blog']);
+  navigateTo(path:string){
+    this.router.navigate([path]);
 
-  }
-  goToPublisher(){
-    this.router.navigate(['/publisher']);
-  }
-  goToBenefits(){
-    this.router.navigate(['/benefits']);
-  }
-  goToCalendar(){
-    this.router.navigate(['/calendar']);
-  }
-  goToProfile(){
-    this.router.navigate(['/userProfile']);
   }
 
   

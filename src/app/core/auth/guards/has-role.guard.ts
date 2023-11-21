@@ -20,7 +20,7 @@ export const hasRole: CanActivateFn = (route, state) =>  {
         if (!hasRole || expectedRole.includes(Role.UNDEFINED_ROLE)) {
           serviceAuth.cleanRoles();
           serviceAuth.logout();
-          router.navigate(['../login']);
+           router.navigate(['../login']); 
           notification.showToast(TypeToast.Error,'Erro de autorização','Acesso negado para ' + serviceAuth.getUserName());
           return false;
         }
@@ -32,7 +32,7 @@ export const hasRole: CanActivateFn = (route, state) =>  {
         return false;
       } else {
         notification.showToast(TypeToast.Error,'Erro de autorização', serviceAuth.getUserName()+ ' Você não tem autorização para acessar essa área 😡🤷‍♂️❌' );
-        router.navigate(['../login']);
+       router.navigate(['../login']);
         return false; // O usuário não tem uma função esperada
       }
     }),

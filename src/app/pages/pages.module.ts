@@ -15,6 +15,7 @@ import { ProfileComponent } from './profile/profile.component';
 import { NavbarComponent } from '../shared/navbar/navbar.component';
 import {FormGroup, FormControl} from '@angular/forms';
 import { BenefitsComponent } from './benefits/benefits.component';
+import { TiComponent } from './ti/ti.component';
 
 @NgModule({
   declarations: [  
@@ -24,7 +25,8 @@ import { BenefitsComponent } from './benefits/benefits.component';
     CalendarComponent,
     ProfileComponent,
     NavbarComponent,
-    BenefitsComponent
+    BenefitsComponent,
+    TiComponent
   ],
   imports: [
     CommonModule,

@@ -1,0 +1,11 @@
+/* Estilos CSS para indicar a ordenação */
+th.sorted {
+    background-color: #f2f2f2;
+    color: #007bff;
+  }
+
+
+  td{
+    color:black
+  }
+  

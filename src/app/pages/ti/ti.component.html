@@ -1,0 +1,17 @@
+<app-navbar></app-navbar>
+<table>
+    <thead>
+      <tr>
+        <th (click)="sort('name')" [class.sorted]="sortKey === 'name'">Nome</th>
+        <th (click)="sort('age')" [class.sorted]="sortKey === 'age'">Idade</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let person of people">
+        <td>{{ person.name }}</td>
+        <td>{{ person.age }}</td>
+      </tr>
+    </tbody>
+  </table>
+<!-- Adicione classes CSS para indicar a ordenação -->
+

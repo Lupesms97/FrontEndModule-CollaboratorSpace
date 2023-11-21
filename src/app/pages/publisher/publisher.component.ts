@@ -43,14 +43,14 @@ export class PublisherComponent {
     .subscribe(
       (response) => {
         this.notifications.showToast(TypeToast.Success, 'POST', 'Post criado com sucesso');
+        form.resetForm();
       },
       (error) => {
         this.notifications.showToast(TypeToast.Error, 'POST', 'Erro ao criar post');
       }
     );
-
     console.log(this.item);
-    form.resetForm();
+
   }
 
   navigateToPublisher(){

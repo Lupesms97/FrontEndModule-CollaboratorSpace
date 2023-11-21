@@ -12,6 +12,7 @@
     background:#4B555E;
     border:none;
     border-radius:2rem;
+    color:white;
 }
 .btn-primary:hover .fa-newspaper{
     animation: bounce 1s;
@@ -25,6 +26,7 @@
 .fa-house{
  font-size:1.1rem
 }
+
 @keyframes bounce {
     0%, 20%, 50%, 80%, 100% {
       transform: translateY(0);

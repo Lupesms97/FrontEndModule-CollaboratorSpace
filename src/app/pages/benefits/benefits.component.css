@@ -7,10 +7,13 @@
     transition:1s;
     background-color:#435E8B;
     color:white;
-}
-.size-up-icon{
     border: 1px solid #435E8B;
-    border-radius:2rem
+    margin-bottom:10vh
+
+}
+p small{
+    font-size:0.8rem;
+    padding:3vh;
 }
 @media(max-width:680px){
     .size-up-icon{

@@ -38,7 +38,8 @@ export class LoginComponent {
 
 
   autenticar(form: NgForm){
-    let userLogin:UserLogin = {
+    this.router.navigate(['//home/news']);
+/*     let userLogin:UserLogin = {
       login: form.value.login,
       password: form.value.password
     }
@@ -49,14 +50,12 @@ export class LoginComponent {
           const token = response.body?.token;
           const status = response.status;
           const role:string = this.authService.decodeJwt(token!).roles;
-          this.alertMessage = response.body?.message;
-
-          
+          this.alertMessage = response.body?.message;       
         },
         (error) => {          this.alertMessage = 'Usuário ou senha inválidos';
           this.notifications.showToast(TypeToast.Error, 'Login', 'Usuário ou senha inválidos');
         }
-      );
+      ); */
 
   }
 

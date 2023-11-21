@@ -9,7 +9,7 @@ export const authModuleGuard: CanMatchFn = (route, segments) => {
   const serviceAuth = inject(AuthService);
   const router = inject(Router);
   if (serviceAuth.isLogged$) {
-    router.navigate(['blog']);
+    router.navigate(['news']);
     return false;
   }
   return true;
