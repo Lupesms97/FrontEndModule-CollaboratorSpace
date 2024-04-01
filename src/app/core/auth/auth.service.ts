@@ -2,30 +2,30 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpResponse} from '@angular/common/http';
 import { BehaviorSubject, Observable, ignoreElements, map, tap } from 'rxjs';
 import { CookieService } from 'ngx-cookie-service';
-import jwt_decode from 'jwt-decode';
 import { Router } from '@angular/router';
-import { Store } from '@ngrx/store';
-import { UserCadastro } from 'src/app/shared/models/UserCadastro';
-import { UserInterface } from 'src/app/shared/models/UserInterface';
 import { Role } from 'src/app/shared/models/Role';
-import { ResponseDto } from 'src/app/shared/models/ResponseDto';
 import { NotificationService } from '../notificationService/notification.service';
 import { TypeToast } from 'src/app/shared/models/TypeToastenum';
-
-const TOKEN_KEY = '_tky-usr';
-const ROLES_KEY = '_rly-usr';
-const USER_NAME = 'name';
+import { environment } from 'src/app/environments/variables.environments';
+import { IResponseLoginDto } from 'src/app/shared/models/IResponseLoginDto';
+import { IToken } from 'src/app/shared/models/IToken';
+import { IUserLogin } from 'src/app/shared/models/IUserLogin';
+import { IResponseReset } from 'src/app/shared/models/IResponseReset';
+import { EmailObjPasswordAndTokenDto } from 'src/app/shared/models/EmailObjPasswordAndTokenDto';
+import jwtDecode from 'jwt-decode';
 
 @Injectable({
   providedIn: 'root',
 })
 export class AuthService {
-  private user = new BehaviorSubject<UserCadastro | null>(null);
+  private user = new BehaviorSubject<IResponseLoginDto | null>(null);
+  token$ = new BehaviorSubject<IToken | null>(null);
   user$ = this.user.asObservable();
   isLogged$: Observable<boolean> = this.user$.pipe(map(Boolean));
-  role$: Observable<Role> = new Observable<Role>();
+  role$ = new BehaviorSubject<Role>(Role.UNDEFINED_ROLE);
+  ouvidoria$ = new BehaviorSubject<boolean>(false);
 
-  private readonly API_URL = 'http://localhost:8082/auth';
+  private readonly API_URL = environment.api_url_auth;
 
   private httpOptions = {
     headers: new HttpHeaders({
@@ -37,83 +37,75 @@ export class AuthService {
     private http: HttpClient,
     private cookieService: CookieService,
     private router: Router,
-    private store: Store<{user: UserInterface}>,
-    private notificationService: NotificationService
+    private notifications: NotificationService
   ) {
-    const token = this.getToken(TOKEN_KEY);
+    const token = this.getToken(environment.TOKEN_KEY);
     if (token) {
       const decodedToken = this.decodeJwt(token);
       this.user.next(decodedToken);
-      this.role$ = this.user$.pipe(map((user) => user!.role));
+      this.role$.pipe(map((role) => role));
     }
-
   }
 
-  newUser(
-    email: string,
-    password: string,
-    name: string,
-    unidade: string,
-    role: string
-  ): Observable<HttpResponse<any>> {
-    const roleAsRole: Role = role == 'ADMIN' ? Role.ADMIN : Role.USER;
-    const user: UserCadastro = {
-      email,
-      login: email,
-      password,
-      name,
-      unidade,
-      role: roleAsRole,
-    };
-
-    return this.http.post<HttpResponse<any>>(
-      `${this.API_URL}/register`,
-      user,
-      this.httpOptions
-    );
-  }
+  /* ----------------- LOGIN METHOD  ------------------------ */
 
   login(
-    login: string,
-    password: string
-  ): Observable<HttpResponse<ResponseDto>> {
+    userLogin:IUserLogin
+  ): Observable<HttpResponse<IResponseLoginDto>> {
+
     return this.http
-      .post<ResponseDto>(
-        `${this.API_URL}/login`,
-        { login, password },
+      .post<IResponseLoginDto>(
+        `${this.API_URL}/user/login`,
+        userLogin,
         { ...this.httpOptions, observe: 'response' }
       )
       .pipe(
         tap((resp) => {
-          const token = resp.body!.token;
-          const roles = this.decodeJwt(token).roles
-          const userName = this.decodeJwt(token).name
-          const user: UserInterface = {
-            token: token,
-            role: roles,
-            userName: userName
+
+          const objComplete:IResponseLoginDto = {
+            token: resp.body!.token,
+            acessInfo: resp.body!.acessInfo
           }
-          this.store.dispatch({type: 'loadUser', payload: user});
-          this.setCookie(TOKEN_KEY, token, 1);
-          const decodedToken = this.decodeJwt(token);
-          this.setRoles(decodedToken.roles);
-          this.redirectToBlog();
-          this.notificationService.showToast(TypeToast.Success, 'Login', 'Login efetuado com sucesso');
+
+          this.setInfo( objComplete);
+
         }),
         
         ignoreElements()
       );
-
-      
-      
   }
 
-  logout() {
-    this.cookieService.delete(TOKEN_KEY);
-    this.cookieService.delete(ROLES_KEY);
-    this.router.navigateByUrl('/login');
-    this.store.dispatch({type: 'reset'});
+  /* ----------------- LOGIN METHOD  ------------------------ */
 
+  /* ----------------- GET CODE TO RESET PASSWORD METHOD  ------------------------ */
+
+  getCodeToResetPassword(email: string): Observable<HttpResponse<IResponseReset>> {
+    return this.http
+      .post<IResponseReset>(
+        `${this.API_URL}/user/reset-code`,
+        { email },
+        { ...this.httpOptions, observe: 'response' }
+      ) 
+  }
+
+  /* ----------------- GET CODE TO RESET PASSWORD METHOD  ------------------------ */
+
+  /* ----------------- RESET PASSWORD METHOD  ------------------------ */
+  resetPassword(emailAndtoken: EmailObjPasswordAndTokenDto) : Observable<HttpResponse<IResponseReset>>{
+    return this.http
+    .post<IResponseReset>(
+      `${this.API_URL}/user/reset-password`,
+       emailAndtoken ,
+      { ...this.httpOptions, observe: 'response' }
+    ) 
+    
+  }
+  /* ----------------- RESET PASSWORD METHOD  ------------------------ */
+
+
+  logout() {
+    this.cleanInfo();
+    this.router.navigateByUrl('/login');
   }
   
 
@@ -123,7 +115,7 @@ export class AuthService {
       const expiresDate: Date = new Date(
         today.getTime() + expires * 24 * 60 * 60 * 1000
       ); // Multiplica por milissegundos para calcular a data correta
-      this.cookieService.set(name, value, { expires: expiresDate });
+      this.cookieService.set(name, value, { expires: expiresDate },);
     } else {
       this.cookieService.set(name, value);
     }
@@ -135,40 +127,79 @@ export class AuthService {
 
   decodeJwt(token: string): any {
     try {
-      return jwt_decode(token);
+      return jwtDecode(token);
     } catch (error) {
       console.error('Error decoding JWT token:', error);
       return null;
     }
   }
 
+  private setInfo( obj: IResponseLoginDto){
+    
+    const roles = this.decodeJwt(obj.token).roles
+    const userName = this.decodeJwt(obj.token).name
+    this.setNameRoleToken(userName, roles);
+
+/*     this.ouvidoria$.next(this.hastheAuth(obj.acessInfo));
+ */
+    this.user.next(obj);
+  
+    this.setCookie(environment.TOKEN_KEY, obj.token, 1);
+
+
+    this.redirect(roles);
+  }
+  
+/*   private hastheAuth(acessInfo: { permission: string[]; availiableCompanies: string[]; }): boolean {
+    return acessInfo.permission.includes('OUVIDORIA');
+  } */
+
+
+
   getUserName(): string {
-    if(this.getToken(TOKEN_KEY)){
-      return this.decodeJwt(this.getToken(TOKEN_KEY)).name;
+    if(this.getToken(environment.TOKEN_KEY)){
+      return this.decodeJwt(this.getToken(environment.TOKEN_KEY)).name;
     }else{
-      return this.getToken(USER_NAME);
+      return this.getToken(environment.USER_NAME);
     }
      
   }
 
   getRoles(){
-    return this.getToken(ROLES_KEY);
+    return this.getToken(environment.ROLES_KEY);
   }
 
-  cleanRoles() {
+  private cleanInfo() {
     this.user.next(null);
+    this.cookieService.delete(environment.TOKEN_KEY);
+    this.cookieService.delete(environment.ROLES_KEY);
   }
 
-  setRoles(roles: Role) {
-    let user = { role: roles } as UserCadastro;
-    this.user.next(user);
-    this.setCookie(ROLES_KEY, roles);
+   private setNameRoleToken(name : string, roles: Role) {
+
+    /* this.user.next(user); */
+    this.setCookie(environment.ROLES_KEY, roles);
+    const tokenObj : IToken = { roles: roles, name: name}
+    this.token$.next(tokenObj);
+    this.role$.next(roles);
   }
 
-  private redirectToBlog() {
-    this.router.navigate(['home'])
+  private redirect(roles: Role) {
+    if(roles.includes(Role.ADMIN)){
+      this.router.navigate(['/home/news']);
+    }
+    else if(roles.includes(Role.USER)){
+      this.router.navigate(['/home/news']);
+    }
   }
 
+  notificationToastSucess(){
+    this.notifications.showToast(TypeToast.Success, 'Login', 'Login efetuado com sucesso');
+  }
+
+  getTokenFromObservable(): Observable<IToken | null>{
+    return this.token$.asObservable();
+  }
 
 
 }
