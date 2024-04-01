@@ -5,9 +5,9 @@
 .size-up-icon{
     border-radius:2rem;
     transition:1s;
-    background-color:#435E8B;
+    background-color:var(--secundary-blue);
     color:white;
-    border: 1px solid #435E8B;
+    border: 1px solid var(--secundary-blue);
     margin-bottom:10vh
 
 }

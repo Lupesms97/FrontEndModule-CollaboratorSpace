@@ -14,15 +14,17 @@ import ptBR from 'date-fns/locale/pt-BR';
   providedIn: 'root'
 })
 export class EventsService {
-  private readonly API_URL_R = 'http://localhost:8081/events';
+  private readonly API_URL_R = 'assets/events.json';
   private events$: Observable<CalendarEvent[]> | undefined;
 
   constructor(private http: HttpClient) {
     this.refreshEvents();
   }
 
+
+/*   /all */
   setEventsOnObservable(): Observable<CalendarEvent[]> {
-    return this.http.get<CalendarI[]>(`${this.API_URL_R}/all`).pipe(
+    return this.http.get<CalendarI[]>(`${this.API_URL_R}`).pipe(
       map((items) => items.map(this.convertJsonToCalendarEvent)),
     );
   }

@@ -1,16 +1,20 @@
 @import url('https://fonts.googleapis.com/css2?family=Cabin:wght@400;600;700&family=Lobster&family=Tilt+Neon&display=swap');
-/* angular-cli file: src/styles.css */
 @import "../node_modules/angular-calendar/css/angular-calendar.css";
 @import 'ngx-toastr/toastr';
-/* font-family: 'Cabin', sans-serif;
-font-family: 'Lobster', sans-serif;
-font-family: 'Tilt Neon', sans-serif; */
+
 
 *{
     font-family: 'Cabin', sans-serif;
     margin:0;
     padding:0;
+}
 
+:root{
+    --primary-white:#d4d6d9;
+    --secundary-white:#f2f4f5;
+    --primary-blue:#276ab4;
+    --secundary-blue:#435e8b;
+    --terciary-blue:#9d9fa3;
 }
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

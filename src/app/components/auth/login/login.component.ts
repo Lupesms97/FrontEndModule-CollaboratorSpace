@@ -4,6 +4,8 @@ import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthService } from 'src/app/core/auth/auth.service';
 import { NotificationService } from 'src/app/core/notificationService/notification.service';
+import { IResponseLoginDto } from 'src/app/shared/models/IResponseLoginDto';
+import { IUserLogin } from 'src/app/shared/models/IUserLogin';
 import { ResponseDto } from 'src/app/shared/models/ResponseDto';
 import { TypeToast } from 'src/app/shared/models/TypeToastenum';
 import { UserLogin } from 'src/app/shared/models/UserLogin';
@@ -15,49 +17,47 @@ import { UserLogin } from 'src/app/shared/models/UserLogin';
 })
 export class LoginComponent {
 
-
   constructor(private authService: AuthService,
     private router: Router,
     private notifications: NotificationService
     ) {}
   alertMessage: any = ''
 
-  user: UserLogin = {
+  user: IUserLogin = {
     login: '',
     password: ''
   }
 
-  resp:ResponseDto = {
+  resp:IResponseLoginDto = {
     token: '',
-    message: ''
+    acessInfo: {
+      permission: [],
+      availiableCompanies: []
+    }
   }
 
-
-
-
-
-
   autenticar(form: NgForm){
-    this.router.navigate(['//home/news']);
-/*     let userLogin:UserLogin = {
+  
+    let userLogin:IUserLogin = {
       login: form.value.login,
       password: form.value.password
     }
 
-    this.authService.login(userLogin.login, userLogin.password)
+    this.authService.login(userLogin)
       .subscribe(
-        (response: HttpResponse<ResponseDto>) => {
-          const token = response.body?.token;
-          const status = response.status;
-          const role:string = this.authService.decodeJwt(token!).roles;
-          this.alertMessage = response.body?.message;       
+        (response: HttpResponse<IResponseLoginDto>) => {
+
+        
         },
-        (error) => {          this.alertMessage = 'Usuário ou senha inválidos';
+        (error) => {     
+          
+          this.alertMessage = 'Usuário ou senha inválidos';
           this.notifications.showToast(TypeToast.Error, 'Login', 'Usuário ou senha inválidos');
         }
-      ); */
+      );
 
   }
+
 
     
 }
