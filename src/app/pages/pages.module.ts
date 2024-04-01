@@ -1,4 +1,4 @@
-import { Injectable, NgModule } from '@angular/core';
+import { Component, Injectable, NgModule } from '@angular/core';
 import { CommonModule, JsonPipe, NgIf } from '@angular/common';
 
 import { PagesRoutingModule } from './pages-routing.module';
@@ -16,6 +16,8 @@ import { NavbarComponent } from '../shared/navbar/navbar.component';
 import {FormGroup, FormControl} from '@angular/forms';
 import { BenefitsComponent } from './benefits/benefits.component';
 import { TiComponent } from './ti/ti.component';
+import { AvailableTrailsComponent } from './available-trails/available-trails.component';
+import { ComponentModule } from '../components/components.module';
 
 @NgModule({
   declarations: [  
@@ -26,16 +28,18 @@ import { TiComponent } from './ti/ti.component';
     ProfileComponent,
     NavbarComponent,
     BenefitsComponent,
-    TiComponent
+    TiComponent,
+    AvailableTrailsComponent
   ],
   imports: [
-    CommonModule,
     PagesRoutingModule,
+    ComponentModule,
     FormsModule,
     ReactiveFormsModule,
     CommonModule,
     NgxPaginationModule,
     CalendarModule.forRoot({ provide: DateAdapter, useFactory: adapterFactory }),
+
 
   ],
   exports: [CalendarComponent],

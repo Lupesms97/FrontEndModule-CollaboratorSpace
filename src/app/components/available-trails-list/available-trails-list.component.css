@@ -1,0 +1,39 @@
+body{margin-top:20px;
+    background-color: #e4e6e9;
+    color: #41464d;
+}
+
+.border-2 {
+    border-width: 2px!important;
+    border-style: solid!important;
+    border-color: transparent;
+}
+
+.letter-spacing {
+    letter-spacing: .5px!important;
+}
+.font-bolder, .text-600 {
+    font-weight: 600!important;
+}
+
+.deleted-text{
+text-decoration:line-through;;    
+}
+
+
+.btn-custom{
+    background-color:white;
+}
+.btn-custom a{
+    color: var(--secundary-blue);
+}
+.btn-custom:hover a{
+    color: white;
+}
+.rounded-custom:hover {
+    transition:.5s;
+    background-color: var(--terciary-blue);
+}
+.rounded-custom{
+    border-radius:2rem!important
+}
