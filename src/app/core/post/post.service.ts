@@ -11,7 +11,7 @@ import { PostPublisher } from 'src/app/shared/models/PostPublisher';
 })
 export class PostService {
 
-  private readonly API_URL_R = 'http://localhost:8081/posts';
+  private readonly API_URL_R = './assets/content.json';
   private posts$: Observable<Post[]> | undefined;
   
 
@@ -21,9 +21,9 @@ export class PostService {
   ) {
     this.refreshPosts();
   }
-
-  private setPostsOnObservable(): Observable<Post[]> {
-    return this.http.get<Post[]>(`${this.API_URL_R}/allPosts`)
+/*   /allPosts
+ */  private setPostsOnObservable(): Observable<Post[]> {
+    return this.http.get<Post[]>(`${this.API_URL_R}`)
       .pipe(
         tap((posts) => {
           // Atualiza os posts quando os dados são buscados
