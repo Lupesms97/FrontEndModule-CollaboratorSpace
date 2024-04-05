@@ -1,28 +1,3 @@
-<!-- <nav class="navbar navbar-expand-lg bg-body-tertiary ">
-    <div class="container-fluid">
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-       
-        <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
-
-            <div class="me-2 row">
-                <button class="btn btn-outline-dark" (click)="logout()">Logout</button>
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <li class="nav-item" *ngIf="showPublisherButton()">
-                    <a class="nav-link" (click)="goToPublisher()">Criar Post</a>
-                    </li>
-                    <li class="nav-item">
-                    <a class="nav-link " (click)="goToBlog()">Blog</a>
-                    </li>
-                                    <li class="nav-item">
-                    <a class="nav-link " (click)="goToBlog()">Blog</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </div>
-</nav> -->
 
 <nav class="navbar navbar-expand-lg bg-body-tertiary">
     <div class="container-fluid">
@@ -35,29 +10,31 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
             <li class="nav-item">
-                <button class="btn btn-primary" (click)="navigateTo('news')"><i class="fa-regular fa-newspaper fa-lg"></i>&nbsp; Avisos</button>
+                <button class="btn btn-primary" (click)="navigateTo('news')"><i class="fa-solid fa-newspaper" ></i>&nbsp; Avisos</button>
             </li>
-       <!--      <li class="nav-item dropdown dropstart" ></li> -->
             <li class="nav-item dropdown" >
-                <button class="btn btn-primary" data-bs-toggle="dropdown" href="#" role="button" data-bs-auto-close="outside" aria-expanded="false"><i class="fa-solid fa-house"></i>&nbsp; Menu</button>
+                <button class="btn btn-primary" data-bs-toggle="dropdown" href="#" role="button" data-bs-auto-close="outside" aria-expanded="false"><i class="bi bi-house" style="font-size:1.2rem"></i>&nbsp; Menu</button>
                 <ul class="dropdown-menu dropdown-menu-end ">
                     <li><p class="dropdown-header">{{username}}</p></li>
                     <li><hr class="dropdown-divider"></li>
                     <li *ngIf="showPublisherButton()">
-                        <a class="dropdown-item" (click)="navigateTo('publisher')"><i class="fa-solid fa-pencil" style="color: #435e8b;"></i> Criar Post</a>
+                        <a class="dropdown-item" (click)="navigateTo('publisher')"><i class="bi bi-pencil-square" style="color: #435e8b;font-size:1.5rem"></i> Criar Post</a>
                     </li>
                     <li>
-                        <a class="dropdown-item" (click)="navigateTo('benefits')"><i class="fa-solid fa-bag-shopping" style="color: #435e8b;"></i> Beneficios</a>
+                        <a class="dropdown-item" (click)="navigateTo('benefits')"><i class="bi bi-bookmark-plus" style="color: #435e8b;font-size:1.5rem"></i> Beneficios</a>
                     </li>
                     <li>
-                        <a class="dropdown-item" (click)="navigateTo('calendar')"><i class="fa-solid fa-calendar-days" style="color: #435e8b;"></i> Calendário</a>
+                        <a class="dropdown-item" (click)="navigateTo('calendar')"><i class="bi bi-calendar-range" style="color: #435e8b;font-size:1.5rem" ></i> Calendário</a>
+                    </li>
+                    <li>
+                        <a class="dropdown-item" (click)="navigateTo('trilhas-disponiveis')"><i class="bi bi-compass" style="color: #435e8b;font-size:1.5rem"></i> Trilhas</a>
                     </li>
                     <li >            
-                        <a class="dropdown-item" (click)="navigateTo('userProfile')"><i class="fa-solid fa-user-gear" style="color: #435e8b;" ></i> Usuário</a>
+                        <a class="dropdown-item" (click)="navigateTo('userProfile')"><i style="color: #435e8b;font-size:1.5rem"class="bi bi-person-fill-gear"></i> Usuário</a>
                     </li>
                     <li><hr class="dropdown-divider"></li>
                     <li>
-                        <a class="dropdown-item" (click)="logout()"><i class="fa-solid fa-right-from-bracket" style="color: #435e8b;"></i> Sair</a>
+                        <a class="dropdown-item" (click)="logout()"><i class="bi bi-box-arrow-right" style="color: #435e8b;font-size:1.5rem"></i> Sair</a>
                     </li>
                 </ul>
             </li>

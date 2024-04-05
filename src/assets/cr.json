@@ -2,32 +2,38 @@
     {
         "percentageOfConclution": 90,
         "name": "OnBoarding Boas Vindas",
-        "resourceLocation": "67469826-1b68-41b5-a222-001d361a6b36"
+        "resourceLocation": "67469826-1b68-41b5-a222-001d361a6b36",
+        "about":"On Boarding"
     },
     {
         "percentageOfConclution": 60,
         "name": "Como realizamos sonhos!",
-        "resourceLocation": "fc17bbd2-f1c4-4f8e-b918-9f75d946ac31"
+        "resourceLocation": "fc17bbd2-f1c4-4f8e-b918-9f75d946ac31",
+        "about":"Sales"
     },
     {
-        "percentageOfConclution": 75,
+        "percentageOfConclution": 10,
         "name": "Treinamento de customer success",
-        "resourceLocation": "eb9ebe7c-38c5-4d82-817d-90ff53e8e59e"
+        "resourceLocation": "eb9ebe7c-38c5-4d82-817d-90ff53e8e59e",
+        "about":"Customer Success"
     },
     {
         "percentageOfConclution": 85,
         "name": "Imerção Comercial Técnica",
-        "resourceLocation": "5876dab3-c4d1-4655-8b4e-130b4ed91950"
+        "resourceLocation": "5876dab3-c4d1-4655-8b4e-130b4ed91950",
+        "about":"Sales"
     },
     {
         "percentageOfConclution": 70,
-        "name": "A ciência por trás de uma venda",
-        "resourceLocation": "48e83f85-6920-4ad3-a56c-c0374c03f5e5"
+        "name": "Promovendo a inovação",
+        "resourceLocation": "48e83f85-6920-4ad3-a56c-c0374c03f5e5",
+        "about":"Marketing"
     },
     {
         "percentageOfConclution": 50,
-        "name": "WhatsApp e seu potencial",
-        "resourceLocation": "9b6c828b-53a7-4e3b-87a4-b3e8fc6cf58a"
+        "name": "Desenvolvendo a liderança",
+        "resourceLocation": "9b6c828b-53a7-4e3b-87a4-b3e8fc6cf58a",
+        "about":"Development"
     }
 ]
 

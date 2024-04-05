@@ -1,6 +1,7 @@
-body{margin-top:20px;
-    background-color: #e4e6e9;
-    color: #41464d;
+body{
+  margin-top:20px;
+  background-color: #e4e6e9;
+  color: #41464d;
 }
 
 .border-2 {
@@ -17,9 +18,23 @@ body{margin-top:20px;
 }
 
 .deleted-text{
-text-decoration:line-through;;    
+text-decoration:line-through;  
 }
+.card{
+    border:none;
+    border-radius:1rem;
+}
+.card-body{
+    border-radius:1rem;
+    background-color: var(--secundary-blue);
+}
+.card-body:hover{
 
+  background-color: var(--primary-blue);
+}
+.card-title{
+    font-size:0.9rem;
+}
 
 .btn-custom{
     background-color:white;
@@ -37,3 +52,76 @@ text-decoration:line-through;;
 .rounded-custom{
     border-radius:2rem!important
 }
+
+.progress-wrapper {
+    height: 0.2rem;
+
+  }
+  
+  progress[value] {
+    width: 100%; /* Para ocupar todo o espaço do wrapper */
+    height: 100%; /* Para ocupar toda a altura do wrapper */
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    border: none;
+    background: var(--terciary-blue); /* Cor de fundo */
+  }
+  
+  progress[value]::-webkit-progress-bar {
+    border-radius: 10em; /* Borda arredondada */
+    background: var(--terciary-blue); /* Cor de fundo */
+  }
+  
+  progress[value]::-webkit-progress-value {
+    border-radius: 10em; /* Borda arredondada */
+    background: white; /* Cor do preenchimento */
+  }
+  
+  progress[value]::-moz-progress-bar {
+    border-radius: 10em; /* Borda arredondada */
+    background: white; /* Cor do preenchimento */
+  }
+  
+  label {
+    font-size: 0.7rem;
+    display: block;
+    margin: 0 0 ;
+  }
+  .text-custom-color{
+    color:var(--primary-grey);
+  }
+/* Estilo para a seção da imagem e do texto */
+.image-section {
+    position: absolute;
+    right: -1rem;
+    top: -1.5rem;
+  }
+  
+  /* Estilo para a imagem quadriculada */
+  .quad-image {
+    width: 80px; /* Ajuste conforme necessário */
+    height: auto; /* Ajuste conforme necessário */
+    border: none; /* Cor da borda da imagem */
+    border-radius: 10px; /* Arredondar as bordas */
+  }
+  
+  /* Estilo para o texto sobre a imagem */
+  .image-text {
+    position: absolute;
+    top: 55%;
+    right: 50%;
+    transform: translate(50%, -50%);
+    color: black; /* Cor do texto */
+    font-size: 0.8rem; /* Tamanho da fonte */
+    line-height:0.7rem;
+  }
+  #icon-style{
+    position: absolute;
+    top: 50%;
+    right: 50%;
+    transform: translate(50%, -50%);
+    font-size: 1.8rem; /* Tamanho da fonte */
+  }
+  
+  

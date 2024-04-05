@@ -28,9 +28,14 @@
     margin-bottom:5vh;
     height:6vh;
     width:10vw;
-    background:#4B555E;
+    background: var(--terciary-blue);
     border:none;
     border-radius:2rem;
+}
+.btn-primary:hover{
+
+    background: var(--primary-blue);
+
 }
 @media(max-width: 768px){
     .container{

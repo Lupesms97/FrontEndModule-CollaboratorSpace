@@ -5,7 +5,7 @@
 		"shortContent": "Descubra o lançamento do nosso produto inovador.",
 		"content": "Estamos emocionados em anunciar o lançamento do nosso produto mais recente que vai revolucionar a indústria. Saiba mais sobre suas incríveis características e como ele pode transformar sua vida. Este é um marco importante para nós, e mal podemos esperar para compartilhar essa inovação com você.",
 		"date": "2023-11-01",
-		"imageURL": "https://exemplo.com/novoproduto.jpg"
+		"imageUrl": "assets/icons/so-logo.png"
 	},
 	{
 		"id": "654a91dbce7f641d81186db4",
@@ -13,7 +13,7 @@
 		"shortContent": "Participe da nossa conferência de tecnologia de classe mundial.",
 		"content": "Está chegando a época do ano para a nossa conferência de tecnologia anual. Explore as últimas tendências, ouça palestrantes renomados e faça networking com profissionais da indústria. Garanta o seu lugar e não perca este evento emocionante.",
 		"date": "2023-11-10",
-		"imageURL": "https://exemplo.com/conferenciatecnologia.jpg"
+		"imageUrl": "assets/icons/so-logo.png"
 	},
 	{
 		"id": "654a91dbce7f641d81186db5",
@@ -21,7 +21,7 @@
 		"shortContent": "Celebramos você, nosso cliente valioso.",
 		"content": "No Dia do Cliente, queremos expressar nossa gratidão por escolher nossa empresa. Prepare-se para ofertas exclusivas, descontos e brindes especiais. Você é a razão do nosso sucesso, e estamos ansiosos para mostrar nosso apreço.",
 		"date": "2023-11-15",
-		"imageURL": "https://exemplo.com/diacliente.jpg"
+		"imageUrl": "assets/icons/so-logo.png"
 	},
 	{
 		"id": "654a91dbce7f641d81186db6",
@@ -29,7 +29,7 @@
 		"shortContent": "Comprometidos com um futuro mais sustentável.",
 		"content": "Estamos orgulhosos de anunciar nosso próximo seminário de sustentabilidade. Descubra as ações que estamos tomando para preservar o meio ambiente e como você pode se envolver. Juntos, podemos construir um futuro mais verde e sustentável.",
 		"date": "2023-11-20",
-		"imageURL": "https://exemplo.com/seminariosustentabilidade.jpg"
+		"imageUrl": "assets/icons/so-logo.png"
 	},
 	{
 		"id": "654a91dbce7f641d81186db7",
@@ -37,7 +37,7 @@
 		"shortContent": "Junte-se ao nosso programa de reciclagem para um planeta mais limpo.",
 		"content": "Estamos lançando um programa de reciclagem em parceria com organizações locais. Traga seus itens recicláveis e ajude a reduzir o impacto ambiental. Juntos, podemos fazer a diferença na proteção do nosso planeta.",
 		"date": "2023-11-25",
-		"imageURL": "https://exemplo.com/programareciclagem.jpg"
+		"imageUrl": "assets/icons/so-logo.png"
 	},
 	{
 		"id": "654a91dbce7f641d81186db8",
@@ -45,7 +45,7 @@
 		"shortContent": "Invista em seu crescimento pessoal e profissional.",
 		"content": "Participe do nosso workshop de desenvolvimento pessoal e adquira habilidades que impulsionarão sua carreira. Explore tópicos como liderança, comunicação eficaz e gerenciamento de tempo. Invista em si mesmo e alcance seu potencial máximo.",
 		"date": "2023-12-01",
-		"imageURL": "https://exemplo.com/workshopdesenvolvimento.jpg"
+		"imageUrl": "assets/icons/so-logo.png"
 	},
 	{
 		"id": "654a91dbce7f641d81186db9",
@@ -53,7 +53,7 @@
 		"shortContent": "Faça parte da nossa campanha de doações de Natal.",
 		"content": "Neste Natal, unimos esforços para espalhar a alegria. Participe da nossa campanha de doações, onde cada contribuição ajuda a fazer a diferença na vida de quem mais precisa. Junte-se a nós e faça uma diferença positiva nesta temporada festiva.",
 		"date": "2023-12-10",
-		"imageURL": "https://exemplo.com/campanhadenatal.jpg"
+		"imageUrl": "assets/icons/so-logo.png"
 	},
 	{
 		"id": "654a91dbce7f641d81186dba",
@@ -61,7 +61,7 @@
 		"shortContent": "Seja voluntário e crie impacto em sua comunidade.",
 		"content": "Nosso programa de voluntariado corporativo está em pleno andamento. Junte-se a nós para apoiar causas locais, desde a educação até a assistência a pessoas necessitadas. Faça parte de uma equipe que se preocupa com a comunidade.",
 		"date": "2023-12-15",
-		"imageURL": "https://exemplo.com/voluntariadocorporativo.jpg"
+		"imageUrl": "assets/icons/so-logo.png"
 	},
 	{
 		"id": "654a91dbce7f641d81186dbb",
@@ -69,7 +69,7 @@
 		"shortContent": "Reconhecendo líderes em sustentabilidade.",
 		"content": "Estamos orgulhosos de anunciar nosso prêmio anual de excelência em sustentabilidade. Reconhecemos indivíduos e organizações que fizeram contribuições significativas para um planeta mais sustentável. Celebre conosco os vencedores e inspire-se com suas realizações.",
 		"date": "2023-12-20",
-		"imageURL": "https://exemplo.com/premioexcelenciasustentabilidade.jpg"
+		"imageUrl": "assets/icons/so-logo.png"
 	},
 	{
 		"id": "654a91dbce7f641d81186dbc",
@@ -77,6 +77,6 @@
 		"shortContent": "Celebre as conquistas do ano com nossa festa especial.",
 		"content": "Junte-se a nós na nossa festa de final de ano, onde celebraremos as conquistas do ano e anteciparemos um futuro brilhante. Haverá música, comida deliciosa e uma noite de diversão e celebração. Reserve sua vaga e prepare-se para uma noite inesquecível.",
 		"date": "2023-12-31",
-		"imageURL": "https://exemplo.com/festafinaldeano.jpg"
+		"imageUrl": "assets/icons/so-logo.png"
 	}
 ]

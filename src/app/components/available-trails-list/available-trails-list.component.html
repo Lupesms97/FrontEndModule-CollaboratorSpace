@@ -1,32 +1,31 @@
-<div class="container">
-    <div class="mt-5">
-          <div class="d-style btn btn-brc-tp border-2 bgc-white btn-outline-blue btn-h-outline-blue btn-a-outline-blue w-100 my-2 py-3 shadow-sm">
-            <!-- Basic Plan -->
-            <div class="row align-items-center mt-5 rounded-custom p-1" *ngFor="let item of courses" style="background-color: #276ab4; color: antiquewhite;">
-              <div class="col-12 col-md-4">
-                <p class="pt-3  text-600 text-white letter-spacing">
-                    {{item.name}}
-                </p>
-              </div>
-    
-              <div class="col-12 col-md-4">
-     
-                    <div class="progress" role="progressbar" aria-label="Animated striped example" [attr.aria-valuenow]="item.percentageOfConclution" aria-valuemin="0" aria-valuemax="100">
-                   <div class="progress-bar progress-bar-striped progress-bar-animated" [style.width.%]="item.percentageOfConclution">{{item.percentageOfConclution}}%</div>
-                   </div>
-
-              </div>
-              
-              <div class="col-12 col-md-2 text-center  p-1">
-                <p class="pt-3  text-600 text-white letter-spacing">
-                    22/02/2024
-                </p>
-              </div>
-              <div class="col-12 col-md-2 text-center btn-custom rounded-custom">
-                <a href="#" class="btn px-4 py-25 w-75 text-600">Iniciar</a>
-              </div>
+<div class="container mt-5">
+  <div class="row row-cols-1 row-cols-md-3 g-4">
+    <div class="col" *ngFor="let trail of trails">
+      <div class="card h-100 ">
+        <div class="card-body">
+          <!-- Conteúdo do card -->
+          <p class="card-text text-custom-color">{{trail.about}}</p>
+          <h5 class="card-title text-white">{{trail.name}}</h5>
+          <div class="my-2">
+            <!-- Progresso -->
+            <div class="progress-wrapper">
+              <progress id="file" max="100" value="{{trail.percentageOfConclution}}" class="text-white"></progress>
             </div>
-    
+            <br>
+            <label for="file" class="text-white custom-text-file">Concluído: {{trail.percentageOfConclution}}%</label>
+          </div>
+          <!-- Botão de Iniciar -->
+          <div class="col-12 text-center btn-custom rounded-custom">
+            <a href="#" class="btn px-2 py-25 w-75 text-600 pe-2" [routerLink]="['/trilhas-disponiveis', trail.name]" (click)="setTrailDetail(trail.resourceLocation)">Iniciar</a>
+          </div>
+          
+          <!-- Nova seção para a imagem e o texto -->
+          <div class="image-section">
+            <img src="assets/hex-yellow.png" alt="Quadriculada" class="quad-image">
+            <i id="icon-style" [class]="getIcon(trail)" style="color:black"></i>
           </div>
         </div>
+      </div>
     </div>
+  </div>
+</div>

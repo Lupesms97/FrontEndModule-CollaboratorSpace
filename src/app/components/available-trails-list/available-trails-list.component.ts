@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
-import { CourseService } from 'src/app/core/courses/course.service';
-import { CourseResume } from 'src/app/shared/models/CourseResume';
+import { Router } from '@angular/router';
+import { TrailService } from 'src/app/core/trail/trails.service';
+import { TrailsResume } from 'src/app/shared/models/TrailsResume';
 
 @Component({
   selector: 'app-available-trails-list',
@@ -10,14 +11,40 @@ import { CourseResume } from 'src/app/shared/models/CourseResume';
 export class AvailableTrailsListComponent {
   percentage = 30;
 
-  courses : CourseResume[] = [];
+  trails: TrailsResume[] = [];
 
   constructor(
-   private courseService: CourseService
+    private trailService: TrailService,
+    private router: Router
   ) {
-    this.courseService.getResumeCourses().subscribe((courses) => {
-      this.courses = courses;
+    this.trailService.getResumeTrails().subscribe((trails) => {
+      this.trails = trails;
     });
   }
 
+  goToCourseTrail(course: TrailsResume) {
+    let nameLowerCase = course.name.toLowerCase();
+    this.router.navigate([`/trilha/${nameLowerCase}/text`]);
+  }
+
+  getIcon(course: TrailsResume): string {
+    switch (course.about) {
+      case 'Sales':
+        return 'bi bi-cash-coin';
+      case 'Marketing':
+        return 'bi bi-megaphone';
+      case 'Development':
+        return 'bi bi-signpost-2-fill';
+      case 'On Boarding':
+        return 'bi bi-people';
+      case 'Customer Success':
+        return 'bi bi-compass';
+      default:
+        return 'bi bi-code';
+    }
+  }
+
+  setTrailDetail(identifier: string) {
+   this.trailService.setOnDetalis(identifier);
+  }
 }
