@@ -1,6 +1,6 @@
 <div class="container-fluid p-2 body-custom">
-  <div class="row ">
-    <div class="col-lg-4 col-md-3 ps-lg-5 ps-md-0 breadcrumb-container">
+  <div class="row">
+    <div class="col-lg-4 col-md-6 ps-lg-5 ps-md-0 breadcrumb-container">
         <nav style="--bs-breadcrumb-divider: url(&#34;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Cpath d='M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z' fill='%236c757d'/%3E%3C/svg%3E&#34;);" aria-label="breadcrumb">
             <ol class="breadcrumb">
               <li class="breadcrumb-item text-white">Trilha</li>
@@ -11,10 +11,10 @@
             {{trailDetailed.name}}
         </h6>
     </div>
-    <div class="col-lg-4 col-md-3">
+    <div class="col-lg-4">
 
     </div>
-    <div class="col-lg-4 col-md-3 d-flex ps-lg-5 ps-md-0">
+    <div class="col-lg-4 col-md-6 d-flex ps-lg-5 ps-md-0">
         <div class="progress-wrapper col">
           <progress id="file" max="100" value="{{trailDetailed.percentageOfConclution}}" class="text-white">{{trailDetailed.percentageOfConclution}}</progress>
           <label for="file" class="text-white custom-text-file">Concluído: {{trailDetailed.percentageOfConclution}}%</label>
@@ -22,7 +22,7 @@
       
         <div class="image-section text-center col">
           <img src="assets/hex-yellow.png" alt="Quadriculada" class="quad-image">
-          <i id="icon-style" [class]="getIcon(trailDetailed)" style="color:white"></i>
+          <i id="icon-style" class="bi bi-compass" style="color:white"></i>
         </div>
     </div>
   </div>
