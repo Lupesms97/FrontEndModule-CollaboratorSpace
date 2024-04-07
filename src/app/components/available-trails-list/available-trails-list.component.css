@@ -106,16 +106,6 @@ text-decoration:line-through;
     border-radius: 10px; /* Arredondar as bordas */
   }
   
-  /* Estilo para o texto sobre a imagem */
-  .image-text {
-    position: absolute;
-    top: 55%;
-    right: 50%;
-    transform: translate(50%, -50%);
-    color: black; /* Cor do texto */
-    font-size: 0.8rem; /* Tamanho da fonte */
-    line-height:0.7rem;
-  }
   #icon-style{
     position: absolute;
     top: 50%;

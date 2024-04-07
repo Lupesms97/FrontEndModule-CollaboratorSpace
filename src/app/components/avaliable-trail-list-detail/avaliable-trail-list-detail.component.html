@@ -14,16 +14,16 @@
     <div class="col-lg-4">
 
     </div>
-    <div class="col-lg-4 col-md-6 d-flex ps-lg-5 ps-md-0">
-        <div class="progress-wrapper col">
-          <progress id="file" max="100" value="{{trailDetailed.percentageOfConclution}}" class="text-white">{{trailDetailed.percentageOfConclution}}</progress>
-          <label for="file" class="text-white custom-text-file">Concluído: {{trailDetailed.percentageOfConclution}}%</label>
-        </div>
-      
-        <div class="image-section text-center col">
-          <img src="assets/hex-yellow.png" alt="Quadriculada" class="quad-image">
-          <i id="icon-style" class="bi bi-compass" style="color:white"></i>
-        </div>
-    </div>
+    <div class="col-lg-4 col-md-6 d-flex ps-lg-5 ps-md-0 position-relative">
+      <div class="progress-wrapper col">
+        <progress id="file" max="100" value="{{trailDetailed.percentageOfConclution}}" class="text-white">{{trailDetailed.percentageOfConclution}}</progress>
+        <label for="file" class="text-white custom-text-file">Concluído: {{trailDetailed.percentageOfConclution}}%</label>
+      </div>
+    
+      <div class="image-section text-center col">
+        <img src="assets/hex-yellow.png" alt="Quadriculada" class="quad-image">
+        <i id="icon-style" [class]="getIcon(trailDetailed)" style="color:white"></i>
+      </div>
+  </div>
   </div>
 </div>

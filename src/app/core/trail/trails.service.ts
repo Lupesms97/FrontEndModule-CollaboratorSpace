@@ -1,10 +1,11 @@
 import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
-import { Injectable } from '@angular/core';
+import { inject, Injectable } from '@angular/core';
 import { BehaviorSubject, map, Observable, of, tap } from 'rxjs';
 import { environment } from 'src/app/environments/variables.environments';
 import { TrailsResume } from 'src/app/shared/models/TrailsResume';
 import { AuthService } from '../auth/auth.service';
 import { IToken } from 'src/app/shared/models/IToken';
+import { CookieService } from 'ngx-cookie-service';
 
 @Injectable({
   providedIn: 'root'
@@ -16,6 +17,8 @@ export class TrailService {
   private courseOnDetils: BehaviorSubject<TrailsResume> = new BehaviorSubject<TrailsResume>({} as TrailsResume);
 
   private readonly URL = 'assets/cr.json';
+
+  private cookieService = inject(CookieService)
 
   constructor(
     private http : HttpClient,
@@ -57,19 +60,26 @@ export class TrailService {
   }
 
   public  setOnDetalis(id: string): BehaviorSubject<TrailsResume> {
+    this.cookieService.set(environment.LAST_TRAIL_ON, id);
     const course = this.$listResumeTrails.value.find((course) => course.resourceLocation === id)!;
     this.courseOnDetils.next(course);
-    console.log(this.courseOnDetils);
     return this.courseOnDetils;
   }
 
   public getTrailOnDetils():Observable<TrailsResume>{
-    console.log(this.courseOnDetils);
-    return this.courseOnDetils.asObservable();
+    if(this.courseOnDetils.value.resourceLocation === ''){
+      const id = this.cookieService.get(environment.LAST_TRAIL_ON);
+      if(id){
+        this.setOnDetalis(id);
+        return this.courseOnDetils.asObservable(); 
+      }
+    }
+    return this.courseOnDetils.asObservable(); 
+
   }
 
   public cleanTrailOnDetils(){
-    console.log(this.courseOnDetils);
+    this.cookieService.delete(environment.LAST_TRAIL_ON);
     this.courseOnDetils.next({} as TrailsResume);
   }
   

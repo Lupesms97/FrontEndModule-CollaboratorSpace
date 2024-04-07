@@ -23,6 +23,7 @@ export class AvaliableTrailListDetailComponent implements OnInit, OnDestroy{
     this.trailService.getTrailOnDetils().subscribe((trail) => {
       this.trailDetailed = trail;
     });
+
   }
   getIcon(course: TrailsResume): string {
     switch (course.about) {
