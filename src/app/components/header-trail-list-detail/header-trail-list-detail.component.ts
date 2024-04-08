@@ -4,11 +4,11 @@ import { TrailService } from 'src/app/core/trail/trails.service';
 import { TrailsResume } from 'src/app/shared/models/TrailsResume';
 
 @Component({
-  selector: 'app-avaliable-trail-list-detail',
-  templateUrl: './avaliable-trail-list-detail.component.html',
-  styleUrls: ['./avaliable-trail-list-detail.component.css']
+  selector: 'app-header-trail-list-detail',
+  templateUrl: './header-trail-list-detail.component.html',
+  styleUrls: ['./header-trail-list-detail.component.css']
 })
-export class AvaliableTrailListDetailComponent implements OnInit, OnDestroy{
+export class HeaderTrailListDetailComponent  implements OnInit, OnDestroy{
 
 
   private router = inject(ActivatedRoute);
@@ -46,3 +46,4 @@ export class AvaliableTrailListDetailComponent implements OnInit, OnDestroy{
 /*     this.trailService.cleanTrailOnDetils();
  */  }
 }
+

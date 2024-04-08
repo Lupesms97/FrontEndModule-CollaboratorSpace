@@ -4,16 +4,16 @@ import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { AvailableTrailsListComponent } from './available-trails-list/available-trails-list.component';
 import { CommonModule } from '@angular/common';
-import { AvaliableTrailListDetailComponent } from './avaliable-trail-list-detail/avaliable-trail-list-detail.component';
-
-
+import { HeaderTrailListDetailComponent } from './header-trail-list-detail/header-trail-list-detail.component';
+import { ListDetailedTrailComponent } from './list-detailed-trail/list-detailed-trail.component';
 
 
 @NgModule({
   declarations: [
     LoginComponent,
     AvailableTrailsListComponent,
-    AvaliableTrailListDetailComponent,
+    HeaderTrailListDetailComponent,
+    ListDetailedTrailComponent,
   ],
   imports: [
     FormsModule,
@@ -23,7 +23,8 @@ import { AvaliableTrailListDetailComponent } from './avaliable-trail-list-detail
   exports: [
     LoginComponent,
     AvailableTrailsListComponent,
-    AvaliableTrailListDetailComponent
+    HeaderTrailListDetailComponent,
+    ListDetailedTrailComponent
   ]
 })
 export class ComponentModule { }
