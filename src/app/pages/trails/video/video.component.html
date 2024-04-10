@@ -1,4 +1,10 @@
-<iframe width="853" height="480" src="https://www.youtube.com/embed/jDr1Gga6Tbc?controls=0" title="Vídeo Onboarding"
-  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-   referrerpolicy="strict-origin-when-cross-origin" allowfullscreen >
-</iframe>
+<div class="container">
+    <h1>Incorporar Vídeo do YouTube</h1>
+    <youtube-player 
+     [videoId]="videoId"
+    suggestedQuality="highres"
+    [height]="600"
+    [width]="1080"
+    [startSeconds]="43"
+    [endSeconds]="60" (onStateChange)="onStateChange($event)" modestbranding="1"></youtube-player>
+  </div>

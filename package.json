@@ -19,6 +19,7 @@
     "@angular/platform-browser": "^16.2.12",
     "@angular/platform-browser-dynamic": "^16.2.12",
     "@angular/router": "^16.2.12",
+    "@angular/youtube-player": "^16.1.5",
     "@ngrx/store": "^16.3.0",
     "angular-calendar": "^0.31.0",
     "bootstrap": "^5.3.2",
