@@ -18,8 +18,8 @@
             </div>
         </div>
         <div class="col-lg-12 col-md-12 p-3">     
-            <button class="w-100 btn btn-primary btn-lg text-center btn-custom rounded-custom">
-                <a href="#" class="btn text-white text-600" [routerLink]="['/trilhas-disponiveis']">Recomeçar</a>
+            <button class="w-100 btn btn-primary btn-lg text-center btn-custom rounded-custom" (click)="goTo('video')">
+                <a href="#" class="btn text-white text-600" >Recomeçar</a>
             </button>
               
         </div>
@@ -46,8 +46,8 @@
             </div>
         </div>
         <div class="col-lg-12 col-md-12 p-3">     
-            <button class="w-100 btn btn-primary btn-lg text-center btn-custom rounded-custom">
-                <a href="#" class="btn text-white text-600" [routerLink]="['/trilhas-disponiveis']">Iniciar</a>
+            <button class="w-100 btn btn-primary btn-lg text-center btn-custom rounded-custom"  (click)="goTo('text')">
+                <a href="#" class="btn text-white text-600" >Iniciar</a>
             </button>
         </div>
     </div>
@@ -72,8 +72,8 @@
             </div>
         </div>
         <div class="col-lg-12 col-md-12 p-3">     
-            <button class="w-100 btn btn-primary btn-lg text-center btn-custom rounded-custom">
-                <a href="#" class="btn text-white text-600" [routerLink]="['/trilhas-disponiveis']">Iniciar</a>
+            <button class="w-100 btn btn-primary btn-lg text-center btn-custom rounded-custom" (click)="goTo('question')">
+                <a href="#" class="btn text-white text-600" >Iniciar</a>
             </button>
               
         </div>

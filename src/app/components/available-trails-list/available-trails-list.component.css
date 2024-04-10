@@ -52,7 +52,11 @@ text-decoration:line-through;
 .rounded-custom{
     border-radius:2rem!important
 }
+.btn{
+  width:100%!important;
+  border-radius:2rem!important
 
+}
 .progress-wrapper {
     height: 0.2rem;
 
