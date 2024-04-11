@@ -1,5 +1,5 @@
 .body-custom {
-  width: 100% !important;
+
   background-color: var(--terciary-blue);
 }
 .breadcrumb .breadcrumb-item {
@@ -44,9 +44,8 @@ label {
   #icon-style {
     bottom: -16rem !important; /* Posiciona o ícone no centro verticalmente */
     font-size: 2.9rem; /* Tamanho da fonte */
-  }
-  #icon-style {
     color: black !important;
+
   }
   .quad-image {
     width: 110px; /* Ajuste conforme necessário */
