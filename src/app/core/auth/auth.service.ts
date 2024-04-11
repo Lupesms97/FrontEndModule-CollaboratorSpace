@@ -140,8 +140,7 @@ export class AuthService {
     const userName = this.decodeJwt(obj.token).name
     this.setNameRoleToken(userName, roles);
 
-/*     this.ouvidoria$.next(this.hastheAuth(obj.acessInfo));
- */
+
     this.user.next(obj);
   
     this.setCookie(environment.TOKEN_KEY, obj.token, 1);
@@ -150,10 +149,6 @@ export class AuthService {
     this.redirect(roles);
   }
   
-/*   private hastheAuth(acessInfo: { permission: string[]; availiableCompanies: string[]; }): boolean {
-    return acessInfo.permission.includes('OUVIDORIA');
-  } */
-
 
 
   getUserName(): string {
@@ -177,7 +172,6 @@ export class AuthService {
 
    private setNameRoleToken(name : string, roles: Role) {
 
-    /* this.user.next(user); */
     this.setCookie(environment.ROLES_KEY, roles);
     const tokenObj : IToken = { roles: roles, name: name}
     this.token$.next(tokenObj);
