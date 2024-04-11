@@ -31,7 +31,7 @@ import { TrailsModule } from './trails/trails.module';
     BenefitsComponent,
     TiComponent,
     AvailableTrailsComponent,
-    LoginPageComponent,
+    LoginPageComponent
   ],
   imports: [
     PagesRoutingModule,
