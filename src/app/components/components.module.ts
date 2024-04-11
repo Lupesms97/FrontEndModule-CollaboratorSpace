@@ -6,6 +6,8 @@ import { AvailableTrailsListComponent } from './available-trails-list/available-
 import { CommonModule } from '@angular/common';
 import { HeaderTrailListDetailComponent } from './header-trail-list-detail/header-trail-list-detail.component';
 import { ListDetailedTrailComponent } from './list-detailed-trail/list-detailed-trail.component';
+import { VideoPlayerComponent } from './video-player/video-player.component';
+import { YouTubePlayerModule } from '@angular/youtube-player';
 
 
 @NgModule({
@@ -14,17 +16,20 @@ import { ListDetailedTrailComponent } from './list-detailed-trail/list-detailed-
     AvailableTrailsListComponent,
     HeaderTrailListDetailComponent,
     ListDetailedTrailComponent,
+    VideoPlayerComponent,
   ],
   imports: [
     FormsModule,
     RouterModule,
-    CommonModule
+    CommonModule,
+    YouTubePlayerModule
   ],
   exports: [
     LoginComponent,
     AvailableTrailsListComponent,
     HeaderTrailListDetailComponent,
-    ListDetailedTrailComponent
+    ListDetailedTrailComponent, 
+    VideoPlayerComponent
   ]
 })
 export class ComponentModule { }
