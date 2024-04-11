@@ -1,0 +1,14 @@
+<div class="video-container" #videoContainer *ngIf="!finish">
+    <youtube-player 
+      [videoId]="videoId" 
+      [playerVars]="playerVars"
+      (ready)="onPlayerReady($event)"
+      (stateChange)="onPlayerStateChange($event)"
+      [width]="sizeWidth"
+      [height]="sizeHeight"
+    ></youtube-player>
+  </div>
+  
+  <div *ngIf="finish" class="loader">
+    <i class="bi bi-check-circle"></i>
+  </div>
