@@ -8,7 +8,7 @@ import { QuestionComponent } from './question/question.component';
 import { TrailComponent } from './trail/trail.component';
 import { NavbarComponent } from 'src/app/shared/navbar/navbar.component';
 import { ComponentModule } from 'src/app/components/components.module';
-import { YouTubePlayerModule } from '@angular/youtube-player';
+import { YouTubePlayer, YouTubePlayerModule } from '@angular/youtube-player';
 
 
 @NgModule({
@@ -25,7 +25,6 @@ import { YouTubePlayerModule } from '@angular/youtube-player';
         FormsModule,
         NavbarComponent,
         ComponentModule,
-        YouTubePlayerModule
         
     ]
 })
