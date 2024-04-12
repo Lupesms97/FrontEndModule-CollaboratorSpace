@@ -26,7 +26,7 @@ export class HeaderTrailListDetailComponent  implements OnInit, OnDestroy{
 
   }
   getIcon(course: TrailsResume): string {
-    switch (course.about) {
+    switch (course.department) {
       case 'Sales':
         return 'bi bi-cash-coin';
       case 'Marketing':

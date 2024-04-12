@@ -23,12 +23,12 @@ export class AvailableTrailsListComponent {
   }
 
   goToCourseTrail(course: TrailsResume) {
-    let nameLowerCase = course.name.toLowerCase();
-    this.router.navigate([`/trilha/${nameLowerCase}/text`]);
+    
+    this.router.navigate([`/trilha/${course.title}/text`]);
   }
 
   getIcon(course: TrailsResume): string {
-    switch (course.about) {
+    switch (course.department) {
       case 'Sales':
         return 'bi bi-cash-coin';
       case 'Marketing':

@@ -1,39 +1,39 @@
 [
     {
         "percentageOfConclution": 90,
-        "name": "OnBoarding Boas Vindas",
+        "title": "OnBoarding Boas Vindas",
         "resourceLocation": "67469826-1b68-41b5-a222-001d361a6b36",
-        "about":"On Boarding"
+        "department":"On Boarding"
     },
     {
         "percentageOfConclution": 60,
-        "name": "Como realizamos sonhos!",
+        "title": "Como realizamos sonhos!",
         "resourceLocation": "fc17bbd2-f1c4-4f8e-b918-9f75d946ac31",
-        "about":"Sales"
+        "department":"Sales"
     },
     {
         "percentageOfConclution": 10,
-        "name": "Treinamento de customer success",
+        "title": "Treinamento de customer success",
         "resourceLocation": "eb9ebe7c-38c5-4d82-817d-90ff53e8e59e",
-        "about":"Customer Success"
+        "department":"Customer Success"
     },
     {
         "percentageOfConclution": 85,
-        "name": "Imerção Comercial Técnica",
+        "title": "Imerção Comercial Técnica",
         "resourceLocation": "5876dab3-c4d1-4655-8b4e-130b4ed91950",
-        "about":"Sales"
+        "department":"Sales"
     },
     {
         "percentageOfConclution": 70,
-        "name": "Promovendo a inovação",
+        "title": "Promovendo a inovação",
         "resourceLocation": "48e83f85-6920-4ad3-a56c-c0374c03f5e5",
-        "about":"Marketing"
+        "department":"Marketing"
     },
     {
         "percentageOfConclution": 50,
-        "name": "Desenvolvendo a liderança",
+        "title": "Desenvolvendo a liderança",
         "resourceLocation": "9b6c828b-53a7-4e3b-87a4-b3e8fc6cf58a",
-        "about":"Development"
+        "department":"Development"
     }
 ]
 

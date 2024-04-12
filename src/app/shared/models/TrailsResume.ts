@@ -1,6 +1,6 @@
 export interface TrailsResume {
     percentageOfConclution: number;
-    name: string;
+    title: string;
     resourceLocation: string;
-    about: string;
+    department: string;
 }

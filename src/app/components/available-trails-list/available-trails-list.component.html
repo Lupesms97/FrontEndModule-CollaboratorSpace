@@ -4,8 +4,8 @@
       <div class="card h-100 ">
         <div class="card-body">
           <!-- Conteúdo do card -->
-          <p class="card-text text-custom-color">{{trail.about}}</p>
-          <h5 class="card-title text-white">{{trail.name}}</h5>
+          <p class="card-text text-custom-color">{{trail.department}}</p>
+          <h5 class="card-title text-white">{{trail.title}}</h5>
           <div class="my-2">
             <!-- Progresso -->
             <div class="progress-wrapper">
@@ -16,7 +16,7 @@
           </div>
           <!-- Botão de Iniciar -->
           <div class=" col-12 text-center btn-custom rounded-custom">
-            <a href="#" class=" btn px-2 py-25 w-75 text-600 pe-2" [routerLink]="['/trilhas-disponiveis', trail.name]" (click)="setTrailDetail(trail.resourceLocation)">Iniciar</a>
+            <a href="#" class=" btn px-2 py-25 w-75 text-600 pe-2" [routerLink]="['/trilhas-disponiveis', trail.title]" (click)="setTrailDetail(trail.resourceLocation)">Iniciar</a>
           </div>
           
           <!-- Nova seção para a imagem e o texto -->
