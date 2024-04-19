@@ -4,6 +4,13 @@
 <div class="content-custom">
    <app-header-trail-list-detail ></app-header-trail-list-detail>
 </div>
-<div class="content mt-5 px-4">
+<div *ngIf="!(listLoadData| async)">
+    <div class="text-center" >
+        <div class="spinner-border" role="status">
+            <span class="visually-hidden">Loading...</span>
+        </div>
+    </div>
+</div>
+<div class="content mt-5 px-4" *ngIf="(listLoadData| async)">
     <app-list-detailed-trail></app-list-detailed-trail>
  </div>

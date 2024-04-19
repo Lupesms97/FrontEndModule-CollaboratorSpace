@@ -4,18 +4,18 @@ import { TrailsRoutingModule } from './trails-routing.module';
 import { FormsModule } from '@angular/forms';
 import { VideoComponent } from './video/video.component';
 import { TextComponent } from './text/text.component';
-import { QuestionComponent } from './question/question.component';
 import { TrailComponent } from './trail/trail.component';
 import { NavbarComponent } from 'src/app/shared/navbar/navbar.component';
 import { ComponentModule } from 'src/app/components/components.module';
+import { QuizComponent } from './quiz/quiz.component';
 
 
 @NgModule({
     declarations: [
         VideoComponent,
         TextComponent,
-        QuestionComponent,
-        TrailComponent
+        TrailComponent,
+        QuizComponent
     ],
     exports: [TrailComponent],
     imports: [

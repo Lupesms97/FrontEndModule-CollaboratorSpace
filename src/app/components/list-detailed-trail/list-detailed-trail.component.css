@@ -21,6 +21,9 @@
     color: #000; /* Cor inicial */
 
 }
+.btn-custom a{
+    font-size:1rem
+}
 
 @media (max-width: 768px) {
     .card-title{

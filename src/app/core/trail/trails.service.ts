@@ -75,7 +75,6 @@ export class TrailService {
       }
     }
     return this.courseOnDetils.asObservable(); 
-
   }
 
   public cleanTrailOnDetils(){

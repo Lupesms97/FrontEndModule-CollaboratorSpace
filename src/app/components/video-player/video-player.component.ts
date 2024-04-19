@@ -8,7 +8,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class VideoPlayerComponent implements OnInit {
 
-  private apiLoaded = false;
+  apiLoaded = false;
   finish = false;
   routerParam = ''
   @ViewChild('videoContainer') videoContainer!: ElementRef;
@@ -37,7 +37,7 @@ export class VideoPlayerComponent implements OnInit {
 
   onPlayerReady(event: any) {
     // Aqui você pode adicionar lógica personalizada quando o player estiver pronto
-    console.log('Player ready');
+    this.apiLoaded = true;
 
   }
 

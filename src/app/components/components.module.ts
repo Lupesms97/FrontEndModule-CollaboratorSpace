@@ -8,6 +8,7 @@ import { HeaderTrailListDetailComponent } from './header-trail-list-detail/heade
 import { ListDetailedTrailComponent } from './list-detailed-trail/list-detailed-trail.component';
 import { VideoPlayerComponent } from './video-player/video-player.component';
 import { YouTubePlayerModule } from '@angular/youtube-player';
+import { QuestionComponent } from './question/question.component';
 
 
 @NgModule({
@@ -17,6 +18,7 @@ import { YouTubePlayerModule } from '@angular/youtube-player';
     HeaderTrailListDetailComponent,
     ListDetailedTrailComponent,
     VideoPlayerComponent,
+    QuestionComponent,
   ],
   imports: [
     FormsModule,
@@ -29,7 +31,8 @@ import { YouTubePlayerModule } from '@angular/youtube-player';
     AvailableTrailsListComponent,
     HeaderTrailListDetailComponent,
     ListDetailedTrailComponent, 
-    VideoPlayerComponent
+    VideoPlayerComponent,
+    QuestionComponent
   ]
 })
 export class ComponentModule { }

@@ -1,0 +1,50 @@
+/* question.component.css */
+
+.question-container {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.btn-custom {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 8vh;
+    width: 40% !important;
+    background-color: var(--primary-blue);
+    border-radius: 2rem !important;
+  }
+  .btn-custom a {
+    color: white;
+  }
+  
+  .btn-custom:hover {
+    transition: 0.5s;
+    background-color: var(--terciary-blue);
+  }
+  .button-style {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .btn {
+    border-radius: 2rem !important;
+  }
+.p-custom {
+  padding-left: 35%;
+}
+.img-style-text-component {
+  width: 20vw;
+  height: auto;
+}
+.option-text {
+    font-size: 1.2rem;
+    margin-left:2vw;
+}
+
+@media (max-width: 768px) {
+  .img-style-text-component {
+    width: 40vw;
+    height: auto;
+  }
+}

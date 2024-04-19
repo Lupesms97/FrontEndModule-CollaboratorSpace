@@ -1,0 +1,65 @@
+.content {
+  margin-top: 5vh !important;
+  padding: 4rem;
+}
+.btn-custom {
+  margin: 0 10vw 10vh 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 8vh;
+  width: 20% !important;
+  background-color: var(--primary-blue);
+  border-radius: 2rem !important;
+}
+.btn-custom a {
+  color: white;
+}
+
+.btn-custom:hover {
+  transition: 0.5s;
+  background-color: var(--terciary-blue);
+}
+.button-style {
+  display: flex;
+  justify-content: right;
+  align-items: center;
+}
+.btn {
+  border-radius: 2rem !important;
+}
+.img-style-text-component {
+  width: 20vw;
+  height: auto;
+}
+@keyframes moveRightAndBack {
+  0% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(50px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.animated-item {
+  animation: moveRightAndBack 2s ease-in-out infinite;
+}
+
+.btn-custom:hover .animated-item {
+  animation: none;
+}
+@media (max-width: 768px) {
+    .img-style-text-component {
+        width: 40vw;
+        height: auto;
+    }
+  .content {
+    padding: 2rem;
+  }
+  .btn-custom {
+    width: 40% !important;
+  }
+}

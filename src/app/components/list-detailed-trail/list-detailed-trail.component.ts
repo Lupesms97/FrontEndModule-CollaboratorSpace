@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { TrailDetailed } from 'src/app/shared/models/TrailDetailed';
 import { TrailDetailedData } from 'src/app/shared/models/TrailDetailedInfo';
 
 @Component({

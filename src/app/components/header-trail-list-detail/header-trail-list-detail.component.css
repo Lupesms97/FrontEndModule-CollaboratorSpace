@@ -11,17 +11,17 @@
   top: -0.4rem;
 }
 .quad-image {
-  width: 75px; /* Ajuste conforme necessário */
-  height: auto; /* Ajuste conforme necessário */
-  border: none; /* Cor da borda da imagem */
-  border-radius: 10px; /* Arredondar as bordas */
-  position: relative; /* Garante que o ícone seja posicionado relativo a esta imagem */
+  width: 75px;  
+  height: auto; 
+  border: none; 
+  border-radius: 10px;
+  position: relative; 
 }
 #icon-style {
-  font-size: 1.9rem; /* Tamanho da fonte */
-  position: absolute; /* Posicionamento absoluto em relação à imagem */
-  left: 50%; /* Posiciona o ícone no centro horizontalmente */
-  transform: translate(-50%, -50%); /* Centraliza o ícone */
+  font-size: 1.9rem; 
+  position: absolute; 
+  left: 50%; 
+  transform: translate(-50%, -50%); 
   top: 2.6rem;
 }
 
@@ -42,14 +42,14 @@ label {
 
 @media (max-width: 768px) {
   #icon-style {
-    bottom: -16rem !important; /* Posiciona o ícone no centro verticalmente */
-    font-size: 2.9rem; /* Tamanho da fonte */
-  }
-  #icon-style {
+    bottom: -16rem !important; 
+    font-size: 2.9rem; 
     color: black !important;
+
   }
+
   .quad-image {
-    width: 110px; /* Ajuste conforme necessário */
+    width: 110px; 
     bottom: 9.8rem;
   }
   .image-section {

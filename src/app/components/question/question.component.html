@@ -1,0 +1,30 @@
+
+<!-- question.component.html -->
+
+<div class="text-center">
+    <img src="assets/icons/logo-sels.png" alt="Logo Pura" class="img-style-text-component">
+</div>
+
+<div class="question-container">
+    <h2>{{ currentQuestion.question }}</h2>
+    <div class=" pt-5">
+        <div class="list-item d-flex p-custom pt-3" *ngFor="let option of currentQuestion.options">
+            <input type="radio" class="btn-check mt-2" [id]="option" name="options-outlined" autocomplete="off" [value]="option" (change)="updateUserAnswer(option)">
+            <label class="btn btn-outline-success" [for]="option"><span class="option-text">{{ option }}</span></label>   
+        </div>   
+    </div>
+    <div class="mt-5 pt-5">
+        <div class="button-style col-12 " *ngIf="forWheretoGo()" >
+            <div class="w-100 btn-custom rounded-custom " (click)="nextQuestion()" >
+              <a class="text-decoration-none px-2 text-600 text-center animated-item">Próxima</a>
+            </div>
+        </div>
+        <div class=" button-style  col-12 " *ngIf="!forWheretoGo()">
+            <div class="w-100 btn-custom rounded-custom"  (click)="backToTrailList()">
+              <a class="text-decoration-none px-2 text-600 text-center animated-item">Finalizar &nbsp;<i class="bi bi-arrow-right"></i></a>
+            </div>
+        </div>
+    </div>
+
+  </div>
+  
